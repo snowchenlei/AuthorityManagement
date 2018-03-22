@@ -1,6 +1,6 @@
 ﻿//表格初始化
 var table = {
-    init: function (url, columns) {
+    init: function (url, columns, height) {
         //绑定table的viewmodel
 		this.myViewModel = new ko.bootstrapTableViewModel({
 			url: url,         //请求后台的URL（*）
@@ -23,7 +23,7 @@ var table = {
             singleSelect: true,                 //单选
 			minimumCountColumns: 2,             //最少允许的列数
 			clickToSelect: true,                //是否启用点击选中行
-			height: document.documentElement.clientHeight-15,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+			height: height,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
 			uniqueId: "Id",                     //每一行的唯一标识，一般为主键列
 			showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
 			cardView: false,                    //是否显示详细视图
@@ -72,7 +72,7 @@ function DateFormat(format, date) {
     }
     for (var k in o) {
         if (new RegExp("(" + k + ")").test(format)) {
-            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+            format = format.replace(RegExp.$1, RegExp.$1.length === 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
         }
     }
     return format;

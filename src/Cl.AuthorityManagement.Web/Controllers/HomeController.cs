@@ -33,7 +33,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
             ViewBag.Name = String.IsNullOrEmpty(userInfo.Name) ? "至尊" : userInfo.Name;
             return View();
         }
-
+        
         [HttpGet]
         [ChildActionOnly]
         public string MenuHeader()

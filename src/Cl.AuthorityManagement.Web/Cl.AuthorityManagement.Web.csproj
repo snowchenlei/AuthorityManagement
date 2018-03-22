@@ -275,7 +275,9 @@
     <Content Include="Content\customerMain.css" />
     <Content Include="Content\customer\bootstrap-tab.js" />
     <Content Include="Content\customer\dataInit.js" />
+    <Content Include="Content\customer\frame-common.js" />
     <Content Include="Content\customer\knockout.bootstraptable.js" />
+    <Content Include="Content\customer\timeBucket.js" />
     <Content Include="Content\jquery-validate\jquery.unobtrusive-ajax.js" />
     <Content Include="Content\jquery-validate\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />

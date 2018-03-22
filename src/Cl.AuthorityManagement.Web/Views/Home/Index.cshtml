@@ -529,8 +529,8 @@
                     </div><!-- /.ace-settings-box -->
                 </div>
                 <div class="tab-content" style="border: 0px;padding: 0px;position: static;">
-                    <div role="tabpanel" class="tab-pane active" id="tab_0">
-                        <iframe src="/Home/Welcome" width="100%" class="contentFrame" name="tab_0" id="tab_0" title="欢迎" scrolling="no" frameborder="0"></iframe>
+                    <div role="tabpanel" class="tab-pane active" style="margin:0px;padding:0px;" id="tab_0">
+                        <iframe src="/Home/Welcome" class="contentFrame" width="100%" name="tab_0" id="tab_0" title="欢迎"frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="auto" allowtransparency="yes"></iframe>
                     </div>
                 </div>
                     @*<div id="contentFrame"></div>*@
@@ -600,14 +600,19 @@
         $(window).resize(function () {
             ChangeIFrame();
         });
-        var height = document.documentElement.clientHeight - (parseInt($('.footer').css('height'))
-            + parseInt($('#navbar').css('height'))
-            + parseInt($('#breadcrumbs').css('height')));
+        var height = getHeight();
         function ChangeIFrame() {
-            var height = document.documentElement.clientHeight - (parseInt($('.footer').css('height'))
-                + parseInt($('#navbar').css('height'))
-                + parseInt($('#breadcrumbs').css('height')));
-           $('.contentFrame').css('height', height);
+            var height = getHeight();
+            $('.contentFrame').css('height', height);
+        }
+
+        //获取主体内容(iframe)的高度
+        function getHeight() {
+            return document.documentElement.clientHeight
+                - (parseInt($('.footer').css('height'))
+                    + parseInt($('#navbar').css('height'))
+                    + parseInt($('#breadcrumbs').css('height')))
+                - 5;
         }
         
         function ChangeNav() {

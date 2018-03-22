@@ -36,7 +36,8 @@ namespace Cl.AuthorityManagement.Web.Controllers
             return View();
         }
 
-        public JsonResult Load(int pageIndex, int pageSize)
+        public JsonResult Load(int pageIndex, int pageSize, string roleName,
+            DateTime startTime, DateTime endTime)
         {
             PageHelper.GetPageIndex(ref pageIndex);
             PageHelper.GetPageSize(ref pageSize);
