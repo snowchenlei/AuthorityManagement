@@ -1,0 +1,214 @@
+﻿@{
+    ViewBag.Title = "权限管理";
+    Layout = "~/Views/Shared/_LayoutPageTreeTable.cshtml";
+}
+
+<!--弹出层-->
+<div class="modal fade" id="modifyModal" role="dialog" aria-labelledby="modifyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modifyContent">
+            @*@Html.Partial("Edit")*@
+        </div>
+    </div>
+</div>
+
+<!--搜索-->
+<div class="panel panel-default" style="display: none;">
+    <div class="panel-heading">查询条件</div>
+    <div class="panel-body">
+        <form id="formSearch" class="form-horizontal">
+            <div class="form-group" style="margin-top:15px">
+                <label class="control-label col-sm-1" for="txt_search_departmentname">部门名称</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txt_search_departmentname">
+                </div>
+                <label class="control-label col-sm-1" for="txt_search_statu">状态</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txt_search_statu">
+                </div>
+                <div class="col-sm-4" style="text-align:left;">
+                    <button type="button" style="margin-left:50px" id="btn_query" class="btn btn-primary">查询</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        var modules = @Html.Raw(ViewBag.Modules);
+        var columns = [
+            { checkbox: true },
+            { field: 'Id', title: 'Id', visible: false },
+            { field: 'Name', title: '模块名称' },
+            { field: 'Url', title: '请求地址' },
+            { field: 'Sort', title: '排序' },
+            { field: 'IconName', title: '图标名称' },
+            { field: 'ParentName', title: '父模块名称' },
+            { field: 'ParentId', title: '父模块Id', visible: false },
+        ];
+        $(function () {
+            //1、初始化表格
+            table.init('/Module/Load', columns);
+            //2.初始化Button的点击事件
+            operate.init();
+            //3.其余组件初始化
+            //loadEditPage();
+        });
+        var operate = {
+            //初始化按钮事件
+            init: function () {
+                this.add();
+                this.edit();
+                this.del();
+                this.setModuleElements();
+                this.EditModel = {
+                    Id: ko.observable(),
+                    Name: ko.observable(),
+                    Url: ko.observable(),
+                    Sort: ko.observable(),
+                    IconName: ko.observable(),
+                    ParentName: ko.observable(),
+                    ParentId: ko.observableArray()
+                };
+            },
+            //新增
+            add: function () {
+                $('#btnAdd').on("click", function () {
+                    loadEditPage('添加模块');
+                    $("#modifyModal").modal().on("shown.bs.modal", function () {
+                        var oEmptyModel = {
+                            Id: ko.observable(),
+                            Name: ko.observable(),
+                            Url: ko.observable(),
+                            Sort: ko.observable(),
+                            IconName: ko.observable(),
+                            ParentName: ko.observable(),
+                            ParentId: ko.observableArray()
+                        };
+                        ko.utils.extend(operate.EditModel, oEmptyModel);
+                        //激活绑定(需要绑定的模型，[绑定的标签作用域])
+                        ko.applyBindings(operate.EditModel, document.getElementById("modifyModal"));
+                        //complete();
+                        //operate.operateSave();
+                    }).on('hidden.bs.modal', function () {
+                        ko.cleanNode(document.getElementById("modifyModal"));
+                    });
+                });
+            },
+            //编辑
+            edit: function () {
+                $('#btnEdit').on("click", function () {
+                    var arrselectedData = table.myViewModel.getSelections();
+                    if (!operate.check(arrselectedData)) { return; }
+                    loadEditPage('修改模块');
+                    //当有选择行时弹出框
+                    $("#modifyModal").modal().on("shown.bs.modal", function () {
+                        //var arrselectedData = table.myViewModel.getSelections();
+                        //if (!operate.check(arrselectedData)) { return; }
+                        //将选中该行数据有数据Model通过Mapping组件转换为viewmodel
+                        ko.utils.extend(operate.EditModel, ko.mapping.fromJS(arrselectedData[0]));
+                        ko.applyBindings(operate.EditModel, document.getElementById("modifyModal"));
+                        //complete();
+                        //operate.operateSave();
+                    }).on('hidden.bs.modal', function () {
+                        //关闭弹出框的时候清除绑定(这个清空包括清空绑定和清空注册事件)
+                        ko.cleanNode(document.getElementById("modifyModal"));
+                    });
+                });
+            },
+            //删除
+            del: function () {
+                $('#btnDel').on('click', function () {
+                    var arrselectedData = table.myViewModel.getSelections();
+                    if (!operate.check(arrselectedData)) { return; }
+                    bootbox.confirm({
+                        size: 'small',
+                        title: "删除",
+                        message: "确定要删除吗？",
+                        callback: function (result) {
+                            if (result) {
+                                $.post('/Module/Delete', { id: arrselectedData[0].Id }, function (data) {
+                                    if (data.State == 1) {
+                                        toastr.success(data.Message);
+                                        table.myViewModel.refresh();
+                                    } else {
+                                        toastr.error(data.Message);
+                                    }
+                                });
+                            }
+                        }
+                    });
+                });
+            },
+            //设置角色
+            setModuleElements: function () {
+                $('#btnSetModuleElements').on('click', function () {
+                    var arrselectedData = table.myViewModel.getSelections();
+                    if (!operate.check(arrselectedData)) { return; }
+                    loadElementPage(arrselectedData[0].Id);
+                    $("#modifyModal").modal().on("shown.bs.modal", function () {
+                    }).on('hidden.bs.modal', function () {
+                        //关闭弹出框的时候清除绑定(这个清空包括清空绑定和清空注册事件)
+                        ko.cleanNode(document.getElementById("modifyModal"));
+                    });
+                })
+            },
+            //数据校验
+            check: function (arr) {
+                if (arr.length <= 0) {
+                    toastr.warning("请至少选择一行数据");
+                    return false;
+                }
+                if (arr.length > 1) {
+                    toastr.warning("只能编辑一行数据");
+                    return false;
+                }
+                return true;
+            }
+        }
+        var module = {
+            init: function () {
+                $('#ParentId').select2({
+                    language: "zh-CN",// 指定语言为中文，国际化才起效
+                    placeholder: '请选择',
+                    width: '300',
+                    data: modules
+                });
+            }
+        }
+        //加载修改页面
+        function loadEditPage(title) {
+            $.get('/Module/Edit', function (data) {
+                $('#modifyContent').html(data);
+                $('#modelTitle').text(title);
+                module.init();
+            });
+        }
+        //加载角色设置页面
+        function loadElementPage(id) {
+            $.get('/Module/ModuleElements', { 'moduleId': id }, function (data) {
+                setData(data, id);
+            });
+        }
+        //保存数据
+        function saveSuccess(data) {
+            if (data.State == undefined) {
+                $('#modifyContent').html(data);
+            }
+            else {
+                if (data.State == 1) {
+                    toastr.success(data.Message);
+                    $('#close_edit').click();
+                    table.myViewModel.refresh();
+                } else {
+                    toastr.error(data.Message);
+                }
+            }
+        }
+        function saveFailure(data) {
+            toastr.error(data);
+        }
+    </script>
+}

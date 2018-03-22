@@ -1,0 +1,36 @@
+﻿<style>
+    checkbox {
+        width: 15px;
+        height: 15px;
+        vertical-align: middle;
+    }
+
+    .chkSp {
+        vertical-align: middle;
+    }
+</style>
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="modelTitle">@ViewBag.Title</h4>
+</div>
+<div class="modal-body">
+    @RenderBody()
+</div>
+<div class="modal-footer">
+    <button type="button" id="close_edit" class="btn btn-sm btn-primary" data-dismiss="modal">关闭</button>
+    <button id="btnSave" type="submit" class="btn btn-sm btn-success">保存</button>
+    <input type="hidden" id="hidElementId" />
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#btnSave').on('click', function () {
+            var elementId = '';
+            $('.elements:checked').each(function () {
+                elementId += $(this).data('id') + ',';
+            });
+            
+            var hidElementId = $('#hidElementId').val();
+            CallSave(hidElementId, elementId);
+        });
+    });
+</script>
