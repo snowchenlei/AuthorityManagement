@@ -2,6 +2,7 @@
 using Cl.AuthorityManagement.Common;
 using Cl.AuthorityManagement.Common.Conversion;
 using Cl.AuthorityManagement.Entity;
+using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
 using Cl.AuthorityManagement.Model;
 using Cl.AuthorityManagement.Model.Mvc;
@@ -36,30 +37,68 @@ namespace Cl.AuthorityManagement.Web.Controllers
             return View();
         }
 
-        public JsonResult Load(int pageIndex, int pageSize, string roleName,
-            DateTime startTime, DateTime endTime)
+        public JsonResult Load(int pageIndex, int pageSize, string sort,
+            OrderType order, string roleName,DateTime startTime, DateTime endTime)
         {
             PageHelper.GetPageIndex(ref pageIndex);
             PageHelper.GetPageSize(ref pageSize);
             int totalCount;
-            IQueryable<Role> role = RoleServices
-                .LoadEntities(r => true)
-                .OrderByDescending(r => r.Sort)
-                .ThenByDescending(r => r.Id);
-            #region 一些查询排序
-            //if (true)
-            //{
-            //    role = role.Where(r => r.Name == "");
-            //}
-            //if(true)
-            //{
-            //    role = role.OrderBy(r => r.Id);
-            //}
+            var tempRoles = RoleServices.LoadEntities(r => true);
+            #region 查询
+            if (!String.IsNullOrEmpty(roleName))
+            {
+                tempRoles = tempRoles.Where(r => r.Name.Contains(roleName.Trim()));
+            }
+            if (startTime > new DateTime(1970, 1, 1))
+            {
+                tempRoles = tempRoles.Where(r => r.AddTime > startTime);
+            }
+            if (endTime > startTime)
+            {
+                tempRoles = tempRoles.Where(r => r.AddTime < endTime);
+            }
             #endregion
 
-            totalCount = role.Count();
-            var roles = RoleServices
-                .LoadPageEntities(pageIndex, pageSize, role);
+            #region 排序
+
+            switch (order)
+            {
+                default:
+                case OrderType.ASC:
+                    if ("AddTime".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        tempRoles = tempRoles.OrderBy(r => r.AddTime).ThenBy(r => r.Id);
+                    }
+                    else if ("Sort".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        tempRoles = tempRoles.OrderBy(r => r.Sort).ThenBy(r => r.Id);
+                    }
+                    else
+                    {
+                        tempRoles = tempRoles.OrderBy(r => r.Id);
+                    }
+                    break;
+                case OrderType.DESC:
+                    if ("AddTime".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        tempRoles = tempRoles.OrderByDescending(r => r.AddTime).ThenBy(r => r.Id);
+                    }
+                    else if ("Sort".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        tempRoles = tempRoles.OrderByDescending(r => r.Sort).ThenBy(r => r.Id);
+                    }
+                    else
+                    {
+                        tempRoles = tempRoles.OrderByDescending(r => r.Id);
+                    }
+                    break;
+            }
+            #endregion
+
+            //var roles = RoleServices
+            //    .LoadPageEntities(pageIndex, pageSize, role);
+            var roles = RoleServices.LoadPageEntities(pageIndex, pageSize, tempRoles);
+            totalCount = tempRoles.Count();
 
             int pageCount = PageHelper.GetPageCount(totalCount, pageSize);
             return Json(new
