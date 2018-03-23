@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Cl.AuthorityManagement.Common;
 using Cl.AuthorityManagement.Entity;
+using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
 using Cl.AuthorityManagement.Model;
 using Cl.AuthorityManagement.Model.Mvc;
@@ -27,20 +28,45 @@ namespace Cl.AuthorityManagement.Web.Controllers
             return View();
         }
 
-        public JsonResult Load(int pageIndex, int pageSize)
+        public JsonResult Load(int pageIndex, int pageSize, string sort,
+            OrderType order, string name, DateTime startTime, DateTime endTime)
         {
             PageHelper.GetPageIndex(ref pageIndex);
             PageHelper.GetPageSize(ref pageSize);
-            int totalCount;
-            IQueryable<ModuleElement> role = ModuleElementServices
-                .LoadEntities(r => true)
-                .OrderByDescending(r => r.Sort)
-                .ThenByDescending(r => r.Id);
+            IQueryable<ModuleElement> tempElements = ModuleElementServices.LoadEntities(e => true);
 
-            totalCount = role.Count();
+            #region 查询
+            if (!String.IsNullOrEmpty(name))
+            {
+                tempElements = tempElements.Where(u => u.Name.Contains(name.Trim()));
+            }            
+            if (startTime > new DateTime(1970, 1, 1))
+            {
+                tempElements = tempElements.Where(u => u.AddTime > startTime);
+            }
+            if (endTime > startTime)
+            {
+                tempElements = tempElements.Where(u => u.AddTime < endTime);
+            }
+            #endregion
+
+            #region 排序
+            if ("AddTime".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
+            {
+                tempElements = Sort(tempElements, e => e.AddTime, order).ThenBy(e => e.Id);
+            }
+            else if ("Sort".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
+            {
+                tempElements = Sort(tempElements, e => e.Sort, order).ThenBy(e => e.Id);
+            }
+            else
+            {
+                tempElements = Sort(tempElements, u => u.Id, order);
+            }
+            #endregion
             var roles = ModuleElementServices
-                .LoadPageEntities(pageIndex, pageSize, role);
-
+                .LoadPageEntities(pageIndex, pageSize, tempElements);
+            int totalCount = roles.Count();
             int pageCount = PageHelper.GetPageCount(totalCount, pageSize);
             return Json(new
             {

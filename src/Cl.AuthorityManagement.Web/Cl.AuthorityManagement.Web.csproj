@@ -267,6 +267,7 @@
     <Content Include="Content\bootstrap-table\bootstrap-table.js" />
     <Content Include="Content\bootstrap-table\bootstrap-table.min.css" />
     <Content Include="Content\bootstrap-table\bootstrap-table.min.js" />
+    <Content Include="Content\bootstrap-table\extensions\bootstrap-table-export.js" />
     <Content Include="Content\bootstrap-table\extensions\bootstraptable.formatter.js" />
     <Content Include="Content\bootstrap-table\locale\bootstrap-table-zh-CN.js" />
     <Content Include="Content\bootstrap-table\locale\bootstrap-table-zh-CN.min.js" />
@@ -274,6 +275,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\customerMain.css" />
     <Content Include="Content\customer\bootstrap-tab.js" />
+    <Content Include="Content\customer\common.js" />
     <Content Include="Content\customer\dataInit.js" />
     <Content Include="Content\customer\frame-common.js" />
     <Content Include="Content\customer\knockout.bootstraptable.js" />
@@ -304,6 +306,30 @@
     <Content Include="Content\select2\js\select2.js" />
     <Content Include="Content\select2\js\select2.min.js" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\TableExport-3.3.13\css\tableexport.css" />
+    <Content Include="Content\TableExport-3.3.13\css\tableexport.min.css" />
+    <Content Include="Content\TableExport-3.3.13\img\csv.svg" />
+    <Content Include="Content\TableExport-3.3.13\img\icsv.png" />
+    <Content Include="Content\TableExport-3.3.13\img\itxt.png" />
+    <Content Include="Content\TableExport-3.3.13\img\ixls.png" />
+    <Content Include="Content\TableExport-3.3.13\img\ixlsx.png" />
+    <Content Include="Content\TableExport-3.3.13\img\txt.svg" />
+    <Content Include="Content\TableExport-3.3.13\img\xls.svg" />
+    <Content Include="Content\TableExport-3.3.13\img\xlsx.svg" />
+    <Content Include="Content\TableExport-3.3.13\js\tableexport.js" />
+    <Content Include="Content\TableExport-3.3.13\js\tableexport.min.js" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\FileSaver\FileSaver.min.js" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\html2canvas\html2canvas.min.js" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\js-xlsx\xlsx.core.min.js" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\jsPDF-AutoTable\jspdf.plugin.autotable.js" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\jsPDF-AutoTable\LICENSE.txt" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\jsPDF\jspdf.min.js" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\jsPDF\MIT-LICENSE.txt" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\pdfmake\mirza_fonts.js" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\pdfmake\pdfmake.min.js" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\pdfmake\vfs_fonts.js" />
+    <Content Include="Content\tableExport.jquery.plugin\tableExport.js" />
+    <Content Include="Content\tableExport.jquery.plugin\tableExport.min.js" />
     <Content Include="Content\toastr\css\toastr.css" />
     <Content Include="Content\toastr\css\toastr.min.css" />
     <Content Include="Content\toastr\js\toastr.js" />
@@ -343,6 +369,10 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\toastr\css\toastr.less" />
     <Content Include="Content\toastr\css\toastr.scss" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\FileSaver\LICENSE.md" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\html2canvas\LICENSE" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\js-xlsx\LICENSE" />
+    <Content Include="Content\tableExport.jquery.plugin\libs\pdfmake\LICENSE" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -446,6 +476,9 @@
       <Project>{1601CAAB-EB72-41AA-B833-F7AB20AF82EB}</Project>
       <Name>Cl.AuthorityManagement.Util</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Content\TableExport-3.3.13\typings\tableexport.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

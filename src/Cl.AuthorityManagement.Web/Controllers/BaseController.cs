@@ -1,11 +1,13 @@
 ﻿using Autofac;
 using Cl.AuthorityManagement.Entity;
+using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
 using Cl.AuthorityManagement.Library.Mvc;
 using Cl.AuthorityManagement.Web.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
@@ -49,6 +51,22 @@ namespace Cl.AuthorityManagement.Web.Controllers
             {
                 //判断用户是否具有访问方法的权限
             }
+        }
+
+        protected IOrderedQueryable<T> Sort<T, S>(IQueryable<T> resource, Expression<Func<T, S>> orderbyLamada, OrderType orderType)
+        {
+            IOrderedQueryable<T> result = null;
+            switch (orderType)
+            {
+                default:
+                case OrderType.ASC:
+                    result = resource.OrderBy(orderbyLamada);
+                    break;
+                case OrderType.DESC:
+                    result = resource.OrderByDescending(orderbyLamada);
+                    break;
+            }
+            return result;
         }
     }
 }

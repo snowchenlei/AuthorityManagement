@@ -63,7 +63,12 @@
         $(function () {
             //$('#modifyModal').modal('show');
             //1、初始化表格
-            table.init('/Role/Load', columns);
+            table.init('/Role/Load', columns, {
+                fileName: '角色管理',           //文件名称设置  
+                worksheetName: 'sheet1',        //表格工作区名称  
+                tableName: '角色管理',
+                excelstyles: ['background-color', 'color', 'font-size', 'font-weight'],
+            });
             //2、初始化Button的点击事件
             operate.init();
             //3、pannel初始化

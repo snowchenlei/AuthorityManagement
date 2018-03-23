@@ -60,38 +60,17 @@ namespace Cl.AuthorityManagement.Web.Controllers
             #endregion
 
             #region 排序
-
-            switch (order)
+            if ("AddTime".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
             {
-                default:
-                case OrderType.ASC:
-                    if ("AddTime".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        tempRoles = tempRoles.OrderBy(r => r.AddTime).ThenBy(r => r.Id);
-                    }
-                    else if ("Sort".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        tempRoles = tempRoles.OrderBy(r => r.Sort).ThenBy(r => r.Id);
-                    }
-                    else
-                    {
-                        tempRoles = tempRoles.OrderBy(r => r.Id);
-                    }
-                    break;
-                case OrderType.DESC:
-                    if ("AddTime".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        tempRoles = tempRoles.OrderByDescending(r => r.AddTime).ThenBy(r => r.Id);
-                    }
-                    else if ("Sort".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        tempRoles = tempRoles.OrderByDescending(r => r.Sort).ThenBy(r => r.Id);
-                    }
-                    else
-                    {
-                        tempRoles = tempRoles.OrderByDescending(r => r.Id);
-                    }
-                    break;
+                tempRoles = Sort(tempRoles, r => r.AddTime, order).ThenBy(r => r.Id);
+            }
+            else if ("Sort".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
+            {
+                tempRoles = Sort(tempRoles, r => r.Sort, order).ThenBy(r => r.Id);
+            }
+            else
+            {
+                tempRoles = Sort(tempRoles, r => r.Id, order);
             }
             #endregion
 

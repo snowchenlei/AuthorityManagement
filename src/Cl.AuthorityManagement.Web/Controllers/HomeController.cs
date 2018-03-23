@@ -1,5 +1,8 @@
-﻿using Cl.AuthorityManagement.Entity;
+﻿using Cl.AuthorityManagement.Common.Conversion;
+using Cl.AuthorityManagement.Common.Http;
+using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.IServices;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +37,26 @@ namespace Cl.AuthorityManagement.Web.Controllers
             return View();
         }
         
+        public string Weather()
+        {
+            string url = "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js";
+            string result = HttpServer.HttpGet(url);
+            // 请求到的原始string需要处理一下才能解析  
+            result = result.Split('=')[1].Trim().TrimEnd(';');
+            // 解析json字符串  
+            JObject jobj = JObject.Parse(result);
+            // 国家  
+            string country = jobj["country"]?.ToString();
+            // 省份  
+            string province = jobj["province"]?.ToString();
+            // 城市
+            string city = jobj["city"]?.ToString();
+            
+            result = HttpServer.HttpGet("http://wthrcdn.etouch.cn/weather_mini?city=" + HttpUtility.UrlEncode(city.Replace("市", "")));
+
+            return "";
+        }
+
         [HttpGet]
         [ChildActionOnly]
         public string MenuHeader()

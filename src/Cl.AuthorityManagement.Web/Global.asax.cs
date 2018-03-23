@@ -23,7 +23,7 @@ namespace Cl.AuthorityManagement.Web
 
             //自定义注册
             AutoFacConfig.Register();
-            AutoMapperConfig.Register();            
+            AutoMapperConfig.Register();
         }
     }
 }

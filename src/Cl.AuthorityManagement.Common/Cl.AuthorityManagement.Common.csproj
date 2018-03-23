@@ -46,6 +46,8 @@
     <Compile Include="Conversion\ConvertHelper.cs" />
     <Compile Include="Conversion\RandomChinese.cs" />
     <Compile Include="Conversion\Serialization.cs" />
+    <Compile Include="DataHelper.cs" />
+    <Compile Include="Http\HttpServer.cs" />
     <Compile Include="PageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

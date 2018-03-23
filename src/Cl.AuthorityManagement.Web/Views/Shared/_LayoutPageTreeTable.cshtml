@@ -11,8 +11,9 @@
 
     <!-- page specific plugin styles -->
     @*<link rel="stylesheet" href="/Content/ace/css/jquery-ui.min.css" />*@
-    <link rel="stylesheet" href="/Content/ace/css/bootstrap-datepicker3.min.css" />
     <link href="~/Content/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+    @*<link href="~/Content/TableExport-3.3.13/css/tableexport.min.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <link href="~/Content/select2/css/select2.min.css" rel="stylesheet" />
     <link href="~/Content/toastr/css/toastr.min.css" rel="stylesheet" />
 
@@ -80,6 +81,11 @@
         <div class="bs-bars pull-left">
             <div id="toolbar" class="btn-group">
                 @Html.Action("MenuHeader", "Home", new { area = "Manager", moduleId = ViewBag.ModuleId })
+                <select style="margin-right: 10px;border-radius: 4px;" id="sel_exportoption">
+                    <option value="basic">导出本页</option>
+                    <option value="all">导出所有</option>
+                    <option value="selected">导出选中项</option>
+                </select>
             </div>
         </div>
         <table id="tb-body" data-bind="bootstrapTable :$root"></table>
@@ -88,48 +94,55 @@
     <script type="text/javascript">
         if ('ontouchstart' in document.documentElement) document.write("<script src='/Content/ace/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
     </script>
-
-    @*<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>*@
-
+    <!-- jquery -->
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    @*<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>*@
-
-    <!-- page specific plugin scripts -->
-    <script src="~/Content/bootstrap-table/bootstrap-table.js"></script>
-    <script src="~/Content/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-
-    <!-- ace scripts -->
-    <script src="/Content/ace/js/ace-elements.min.js"></script>
-    <script src="/Content/ace/js/ace.min.js"></script>
-
-    <!-- inline scripts related to this page -->
-    <script src="~/Content/customer/dataInit.js"></script>
-    <script src="~/Content/customer/frame-common.js"></script>
-
-    <script src="~/Content/bootstrap-table/extensions/bootstraptable.formatter.js"></script>
-    <script src="~/Content/toastr/js/toastr.min.js"></script>
-    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>*@    
-    <script src="~/Content/bootbox/bootbox.min.js"></script>
-
-    <script src="~/Content/select2/js/select2.full.min.js"></script>
-    <script src="~/Content/select2/js/i18n/zh-CN.js"></script>
-
-    <script src="~/Content/zTree/js/jquery.ztree.all.min.js"></script>
-
+    <!-- jquery-validate -->
     <script src="~/Content/jquery-validate/jquery.validate.min.js"></script>
     <script src="~/Content/jquery-validate/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Content/jquery-validate/jquery.unobtrusive-ajax.min.js"></script>
-
-    <script src="~/Content/knockout/knockout-3.4.2.js"></script>
-    <script src="~/Content/knockout/extensions/knockout.mapping-latest.js"></script>
-    <script src="~/Content/customer/knockout.bootstraptable.js"></script>
-
-    <link href="~/Content/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <!-- bootstrap -->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>*@
+    <!-- bootstrap-datetimepicker -->
     <script src="~/Content/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
     <script src="~/Content/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <!-- bootstrap-table -->
+    <script src="~/Content/bootstrap-table/bootstrap-table.js"></script>
+    <script src="~/Content/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- 导出 -->
+    <script src="~/Content/bootstrap-table/extensions/bootstrap-table-export.js"></script>
+    <script src="~/Content/tableExport.jquery.plugin/libs/FileSaver/FileSaver.min.js"></script>
+    @*<!-- Excel 2007+ XML Format -->
+        <script src="~/Content/tableExport.jquery.plugin/libs/js-xlsx/xlsx.core.min.js"></script>
+        <!-- PDF -->
+        <script src="~/Content/tableExport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
+        <script src="~/Content/tableExport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+        <!-- PNG -->
+        <script src="~/Content/tableExport.jquery.plugin/libs/html2canvas/html2canvas.min.js"></script>*@
+    <script src="~/Content/tableExport.jquery.plugin/tableExport.min.js"></script>
+
+    <!-- 弹框 -->
+    <script src="~/Content/toastr/js/toastr.min.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>*@
+    <script src="~/Content/bootbox/bootbox.min.js"></script>
+    <!-- select2 -->
+    <script src="~/Content/select2/js/select2.full.min.js"></script>
+    <script src="~/Content/select2/js/i18n/zh-CN.js"></script>
+    <!-- zTree -->
+    <script src="~/Content/zTree/js/jquery.ztree.all.min.js"></script>
+    <!-- knockout -->
+    <script src="~/Content/knockout/knockout-3.4.2.js"></script>
+    <script src="~/Content/knockout/extensions/knockout.mapping-latest.js"></script>
+    <!-- ace scripts -->
+    @*<script src="/Content/ace/js/ace-elements.min.js"></script>
+        <script src="/Content/ace/js/ace.min.js"></script>*@
+
+    <!-- 自定义 -->
+    <script src="~/Content/customer/dataInit.js"></script>
+    <script src="~/Content/customer/common.js"></script>
+    <script src="~/Content/customer/frame-common.js"></script>
+    <script src="~/Content/bootstrap-table/extensions/bootstraptable.formatter.js"></script>
+    <script src="~/Content/customer/knockout.bootstraptable.js"></script>
     <script>
         function setData(data, id) {
             $('#modifyContent').html(data);

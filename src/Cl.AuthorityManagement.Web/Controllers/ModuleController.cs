@@ -2,6 +2,7 @@
 using Cl.AuthorityManagement.Common;
 using Cl.AuthorityManagement.Common.Conversion;
 using Cl.AuthorityManagement.Entity;
+using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
 using Cl.AuthorityManagement.Model;
 using Cl.AuthorityManagement.Model.Mvc;
@@ -50,14 +51,51 @@ namespace Cl.AuthorityManagement.Web.Controllers
             ViewBag.Modules = Serialization.SerializeObject(modules);
         }
 
-        public JsonResult Load(int pageIndex, int pageSize)
+        public JsonResult Load(int pageIndex, int pageSize, string sort,
+            OrderType order, string moduleName, int parentId,
+            DateTime startTime, DateTime endTime)
         {
             PageHelper.GetPageIndex(ref pageIndex);
             PageHelper.GetPageSize(ref pageSize);
-            int totalCount;
+
+            var tempModules = ModuleServices.LoadEntities(m => true);
+            #region 查询
+            if (!String.IsNullOrEmpty(moduleName))
+            {
+                tempModules = tempModules.Where(u => u.Name.Contains(moduleName.Trim()));
+            }
+            if (parentId>0)
+            {
+                tempModules = tempModules.Where(u => u.Parent.Id == parentId);
+            }
+            if (startTime > new DateTime(1970, 1, 1))
+            {
+                tempModules = tempModules.Where(u => u.AddTime > startTime);
+            }
+            if (endTime > startTime)
+            {
+                tempModules = tempModules.Where(u => u.AddTime < endTime);
+            }
+            #endregion
+
+            #region 排序
+            if ("AddTime".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
+            {
+                tempModules = Sort(tempModules, r => r.AddTime, order).ThenBy(r => r.Id);
+            }
+            else if ("Sort".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
+            {
+                tempModules = Sort(tempModules, r => r.Sort, order).ThenBy(r => r.Id);
+            }
+            else
+            {
+                tempModules = Sort(tempModules, r => r.Id, order);
+            }
+            #endregion
             var modules = ModuleServices
-                .LoadPageEntities(pageIndex, pageSize, out totalCount,
-                    m => true, m => m.Id);
+                .LoadPageEntities(pageIndex, pageSize, tempModules);
+            int totalCount = modules.Count();
+
             int pageCount = PageHelper.GetPageCount(totalCount, pageSize);
             return Json(new
             {

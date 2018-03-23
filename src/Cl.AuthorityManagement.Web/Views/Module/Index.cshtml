@@ -13,29 +13,50 @@
 </div>
 
 <!--搜索-->
-<div class="panel panel-default" style="display: none;">
-    <div class="panel-heading">查询条件</div>
-    <div class="panel-body">
-        <form id="formSearch" class="form-horizontal">
-            <div class="form-group" style="margin-top:15px">
-                <label class="control-label col-sm-1" for="txt_search_departmentname">部门名称</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="txt_search_departmentname">
-                </div>
-                <label class="control-label col-sm-1" for="txt_search_statu">状态</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="txt_search_statu">
-                </div>
-                <div class="col-sm-4" style="text-align:left;">
-                    <button type="button" style="margin-left:50px" id="btn_query" class="btn btn-primary">查询</button>
-                </div>
+<div class="panel-group" id="accordion">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <span style="font-size:16px;">查询条件</span>
+            <span class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#searchPanel" style="float: right;">
+                    <i id="searchTitle" class="glyphicon glyphicon-menu-up"></i>
+                </a>
+            </span>
+        </div>
+        <div id="searchPanel" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <form id="formSearch" class="form-horizontal">
+                    <div class="form-group" style="margin-top:15px">
+                        <label class="control-label col-md-1" for="txt_search_moduleName">模块名称</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" id="txt_search_moduleName">
+                        </div>
+                        <label class="control-label col-md-1" for="select_search_module">父模块</label>
+                        <div class="col-md-2">
+                            @*<input type="text" class="form-control col-md-8" id="txt_search_userName">*@
+                            <select class="form-control" id="select_search_module"></select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-md-2 control-label" style="float: left;">添加时间</label>
+                            <div id="startTime" class="input-group date form_datetime col-md-5" style="float: left;">
+                                <input class="form-control" id="txt_search_startTime" size="16" type="text" value="" readonly>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-th" style="display: none;"></span><span class="glyphicon glyphicon-minus"></span></span>
+                            </div>
+                            <div id="endTime" class="input-group date form_datetime col-md-5" style="float: left;">
+                                <input class="form-control" id="txt_search_endTime" size="16" type="text" value="" readonly>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
 @section Scripts
 {
+    <script src="~/Content/customer/timeBucket.js"></script>
     <script type="text/javascript">
         var modules = @Html.Raw(ViewBag.Modules);
         var columns = [
@@ -43,18 +64,27 @@
             { field: 'Id', title: 'Id', visible: false },
             { field: 'Name', title: '模块名称' },
             { field: 'Url', title: '请求地址' },
-            { field: 'Sort', title: '排序' },
+            { field: 'Sort', title: '排序', sortable: true },
             { field: 'IconName', title: '图标名称' },
             { field: 'ParentName', title: '父模块名称' },
             { field: 'ParentId', title: '父模块Id', visible: false },
+            { field: 'AddTime', title: '添加时间', sortable: true }
         ];
         $(function () {
+            module.init();
             //1、初始化表格
-            table.init('/Module/Load', columns);
+            table.init('/Module/Load', columns, {
+                fileName: '模块管理',           //文件名称设置
+                worksheetName: 'sheet1',        //表格工作区名称
+                tableName: '模块管理',
+                excelstyles: ['background-color', 'color', 'font-size', 'font-weight'],
+            });
             //2.初始化Button的点击事件
             operate.init();
-            //3.其余组件初始化
-            //loadEditPage();
+            //3、pannel初始化
+            loadPanel();
+            //4、时间初始化
+            setDate();
         });
         var operate = {
             //初始化按钮事件
@@ -173,10 +203,29 @@
                 $('#ParentId').select2({
                     language: "zh-CN",// 指定语言为中文，国际化才起效
                     placeholder: '请选择',
-                    width: '300',
+                    width: '100%',
+                    data: modules
+                });
+                $('#select_search_module').select2({
+                    language: "zh-CN",// 指定语言为中文，国际化才起效
+                    placeholder: '请选择',
+                    width: '100%',
                     data: modules
                 });
             }
+        }
+        //搜索
+        function queryParams(params) {
+            return {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+                pageSize: params.limit,   //页面大小
+                pageIndex: params.offset / params.limit + 1,  //页码
+                sort: params.sort,
+                order: params.order,
+                moduleName: $('#txt_search_moduleName').val(),
+                parentId: $('#select_search_module').val(),
+                startTime: DateFormat("yyyy/MM/dd HH:mm", $("#startTime").data("datetimepicker").getDate()),
+                endTime: DateFormat("yyyy/MM/dd HH:mm", $("#endTime").data("datetimepicker").getDate())
+            };
         }
         //加载修改页面
         function loadEditPage(title) {

@@ -89,12 +89,13 @@
             </button>
 
             <div class="navbar-header pull-left">
-                <a href="index.html" class="navbar-brand">
+                <a href="/Home/Index" class="navbar-brand">
                     <small>
                         <i class="fa fa-leaf"></i>
                         养卡后台管理系统
                     </small>
                 </a>
+                <span style="line-height: 45px;color: #fff;font-size: 16px;"><span id="now"></span></span>
             </div>
 
             <div class="navbar-buttons navbar-header pull-right" role="navigation">
@@ -452,11 +453,12 @@
             <div class="main-content-inner">
                 @*<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 
-                </div>*@
+                    </div>*@
                 <nav id="breadcrumbs" style="background-color: #F5F5F5;">
                     <ul class="nav nav-tabs" id="tabHeader" style="padding-left: 20px;">
                         <li role="presentation" id="tab_tab_0" data-id="tab_0" class="active">
-                            <a href="#tab_0" aria-controls="#tab_0" role="tab" data-toggle="tab">欢迎
+                            <a href="#tab_0" aria-controls="#tab_0" role="tab" data-toggle="tab">
+                                欢迎
                                 <i class="glyphicon glyphicon-remove" style="cursor: pointer;" tabclose="tab_0"></i>
                             </a>
                         </li>
@@ -530,37 +532,37 @@
                 </div>
                 <div class="tab-content" style="border: 0px;padding: 0px;position: static;">
                     <div role="tabpanel" class="tab-pane active" style="margin:0px;padding:0px;" id="tab_0">
-                        <iframe src="/Home/Welcome" class="contentFrame" width="100%" name="tab_0" id="tab_0" title="欢迎"frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="auto" allowtransparency="yes"></iframe>
+                        <iframe src="/Home/Welcome" class="contentFrame" width="100%" name="tab_0" id="tab_0" title="欢迎" frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="auto" allowtransparency="yes"></iframe>
                     </div>
                 </div>
-                    @*<div id="contentFrame"></div>*@
+                @*<div id="contentFrame"></div>*@
             </div><!-- /.main-content -->
         </div>
         <div class="footer">
-                <div class="footer-inner">
-                    <div class="footer-content">
-                        <span class="bigger-120">
-                            <span class="blue bolder">Ace</span>
-                            Application &copy; 2013-2014
-                        </span>
+            <div class="footer-inner">
+                <div class="footer-content">
+                    <span class="bigger-120">
+                        <span class="blue bolder">Snow</span>
+                        Application &copy; 2018-2018
+                    </span>
 
-                        &nbsp; &nbsp;
-                        <span class="action-buttons">
-                            <a href="#">
-                                <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-                            </a>
+                    &nbsp; &nbsp;
+                    <span class="action-buttons">
+                        <a href="#">
+                            <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+                        </a>
 
-                            <a href="#">
-                                <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
-                            </a>
+                        <a href="#">
+                            <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+                        </a>
 
-                            <a href="#">
-                                <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
-                            </a>
-                        </span>
-                    </div>
+                        <a href="#">
+                            <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+                        </a>
+                    </span>
                 </div>
             </div>
+        </div>
 
         <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
             <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
@@ -575,7 +577,7 @@
     <script src="~/Content/ace/js/jquery-1.11.3.min.js"></script>
     <![endif]-->
     <script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='~/Content/ace/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+        if ('ontouchstart' in document.documentElement) document.write("<script src='~/Content/ace/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
     </script>
     <script src="~/Content/ace/js/bootstrap.min.js"></script>
 
@@ -593,6 +595,7 @@
     <script src="~/Content/ace/js/ace.min.js"></script>
 
     <script src="~/Content/customer/bootstrap-tab.js"></script>
+    <script src="~/Content/customer/common.js"></script>
     <!-- inline scripts related to this page -->
     <script type="text/javascript">
         ChangeNav();
@@ -600,6 +603,12 @@
         $(window).resize(function () {
             ChangeIFrame();
         });
+        setInterval(function () {
+            $('#now').text(DateFormat("yyyy年MM月dd日 HH:mm:ss", new Date()));
+        }, 1000);
+        $.getJSON('/Home/Weather', function () {
+        });
+
         var height = getHeight();
         function ChangeIFrame() {
             var height = getHeight();
@@ -614,7 +623,7 @@
                     + parseInt($('#breadcrumbs').css('height')))
                 - 5;
         }
-        
+
         function ChangeNav() {
             $('.nav-list .deepNav').click(function () {
                 $('li').removeClass('active');

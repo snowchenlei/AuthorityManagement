@@ -79,20 +79,11 @@ namespace Cl.AuthorityManagement.Web.Controllers
             #region 排序
             if ("AddTime".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
             {
-                switch (order)
-                {
-                    default:
-                    case OrderType.ASC:
-                        tempUsers = tempUsers.OrderBy(u => u.AddTime).ThenBy(u => u.Id);
-                        break;
-                    case OrderType.DESC:
-                        tempUsers = tempUsers.OrderByDescending(u => u.AddTime).ThenBy(u => u.Id);
-                        break;
-                }
+                tempUsers = Sort(tempUsers, u => u.AddTime, order).ThenBy(u => u.Id);
             }
             else
             {
-                tempUsers = tempUsers.OrderBy(u => u.Id);
+                tempUsers = Sort(tempUsers, u => u.Id, order);
             } 
             #endregion
             var users = UserInfoServices
