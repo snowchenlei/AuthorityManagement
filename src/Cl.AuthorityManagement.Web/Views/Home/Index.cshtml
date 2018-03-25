@@ -89,18 +89,24 @@
             </button>
 
             <div class="navbar-header pull-left" style="white-space: nowrap;">
-                <a href="/Home/Index" class="navbar-brand">
+                <a href="/Home/Index" class="navbar-brand" style="margin-top: 1px;">
                     <small>
                         <i class="fa fa-leaf"></i>
                         养卡后台管理系统
                     </small>
                 </a>
-                <span style="line-height: 45px;color: #fff;font-size: 16px;"><span id="now"></span></span>
-                <iframe scrolling="no" src="//tianqiapi.com/api.php?style=ta&skin=pitaya" frameborder="0" width="220" height="24" allowtransparency="true"></iframe>
+                <iframe scrolling="no" src="//tianqiapi.com/api.php?style=ta&skin=pitaya&fontsize=16&paddingtop=10&color=FFF" frameborder="0" width="220" height="40" allowtransparency="true" style="padding-top: 2px;margin-left: 50px;"></iframe>
+                @*<iframe scrolling="no" src="//tianqiapi.com/api.php?style=tq&skin=pitaya&fontsize=16&paddingtop=10&color=FFF" frameborder="0" width="100%" height="25 " allowtransparency="true"></iframe>*@
             </div>
 
             <div class="navbar-buttons navbar-header pull-right" role="navigation">
                 <ul class="nav ace-nav">
+                    <li style="line-height: 22px;margin-right: 10px;">
+                        <span style="color: #fff;font-size: 16px;">
+                            <span id="date"></span><br/><span id="now"></span>
+                        </span>
+                    </li>
+
                     <li class="grey dropdown-modal">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="ace-icon fa fa-tasks"></i>
@@ -605,7 +611,9 @@
             ChangeIFrame();
         });
         setInterval(function () {
-            $('#now').text(DateFormat("yyyy年MM月dd日 HH:mm:ss", new Date()));
+            var date = new Date();
+            $('#date').text(DateFormat("yyyy年MM月dd日", date));
+            $('#now').text(DateFormat(" 星期w HH:mm:ss", date));
         }, 1000);
         $.getJSON('/Home/Weather', function () {
         });
