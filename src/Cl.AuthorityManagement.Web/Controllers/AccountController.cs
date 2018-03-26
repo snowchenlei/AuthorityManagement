@@ -1,4 +1,5 @@
-﻿using Cl.AuthorityManagement.Entity;
+﻿using Cl.AuthorityManagement.Common;
+using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.IServices;
 using Cl.AuthorityManagement.Model;
 using Cl.AuthorityManagement.Model.Mvc;
@@ -39,23 +40,33 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 login.Password = null;
                 return View();
             }
-            //if (Session["verCode"] == null || !string.Equals(Session["verCode"].ToString()
-            //    , login.VerifyCode, StringComparison.InvariantCultureIgnoreCase))
-            //{
-            //    ModelState.AddModelError("", "验证码错误");
-            //    return View();
-            //}
+            if (Session["verCode"] == null || !string.Equals(Session["verCode"].ToString()
+                , login.VerifyCode, StringComparison.InvariantCultureIgnoreCase))
+            {
+                ModelState.AddModelError("VerifyCode", "验证码错误");
+                return View();
+            }
             UserInfo userInfo = UserInfoServices.LoadFirst(
                 entity => entity.UserName == login.UserName
                 && entity.Password == login.Password);
 
             if (userInfo == null)
             {
-                ModelState.AddModelError("", "用户名与密码不匹配");
+                ModelState.AddModelError("Password", "用户名与密码不匹配");
                 return View();
             }
             Session["LoginUser"] = userInfo;            
             return RedirectToAction("Index", "Home");
+        }
+        /// <summary>
+        /// 获取验证码
+        /// </summary>
+        public FileResult GetVerifyCodeImage()
+        {
+            string code = string.Empty;
+            byte[] buffer = VerifyCode.Create(4, out code);
+            Session["verCode"] = code;
+            return File(buffer, @"image/jpeg");
         }
     }
 }
