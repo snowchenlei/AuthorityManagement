@@ -22,7 +22,7 @@ namespace Cl.AuthorityManagement.Data
         public virtual DbSet<Module> Module { get; set; }
         public virtual DbSet<ModuleElement> ModuleElement { get; set; }
         public virtual DbSet<Role> Role { get; set; }
-        public virtual DbSet<Permission> Permission { get; set; }
+        //public virtual DbSet<Permission> Permission { get; set; }
         public virtual DbSet<UserInfo> UserInfo { get; set; }
         public virtual DbSet<UserInfoModuleElement> UserInfoModuleElement { get; set; }
         public virtual DbSet<RoleModuleElement> RoleModuleElement { get; set; }

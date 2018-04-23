@@ -73,8 +73,6 @@ namespace Cl.AuthorityManagement.Entity
         [JsonIgnore]
         public virtual ICollection<UserInfoModuleElement> UserInfos { get; set; }
         [JsonIgnore]
-        public virtual ICollection<Role> Roles { get; set; }
-        [JsonIgnore]
         public virtual ICollection<RoleModuleElement> RoleModuleElement { get; set; }
 
         public int CompareTo(object obj)
