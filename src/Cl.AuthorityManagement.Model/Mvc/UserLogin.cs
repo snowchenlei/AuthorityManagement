@@ -31,7 +31,7 @@ namespace Cl.AuthorityManagement.Model.Mvc
         /// 验证码
         /// </summary>
         [Display(Name = "验证码")]
-        //[Required(ErrorMessage = "请输入{0}")]
+        [Required(ErrorMessage = "请输入{0}")]
         public string VerifyCode { get; set; }
     }
 }

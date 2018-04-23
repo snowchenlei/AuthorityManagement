@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
@@ -41,15 +42,15 @@ namespace Cl.AuthorityManagement.Web.Controllers
             Controllername = Request.RequestContext.RouteData.Values["controller"].ToString();
             Actionname = filterContext.ActionDescriptor.ActionName.ToLower();
             
+            var function = this.GetType().GetMethods().FirstOrDefault(u => u.Name.ToLower() == Actionname);
+            if (function == null)
+                throw new Exception("未能找到Action");
+
             userInfo = Session["LoginUser"] as UserInfo;
             if (userInfo == null)
             {
                 filterContext.Result = new RedirectResult("/Account/Login");
                 return;
-            }
-            else
-            {
-                //判断用户是否具有访问方法的权限
             }
         }
 
