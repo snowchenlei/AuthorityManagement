@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace Cl.AuthorityManagement.Entity
 {
-    public class RoleModuleElement
+    public class BaseModuleElement
     {
         public int Id { get; set; }
-        [JsonIgnore]
-        public virtual Role Role { get; set; }
         [JsonIgnore]
         public virtual ModuleElement ModuleElement { get; set; }
         [JsonIgnore]

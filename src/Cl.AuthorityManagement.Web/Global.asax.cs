@@ -8,6 +8,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
 using Cl.AuthorityManagement.Web.App_Start;
+using System.Web.Optimization;
 
 namespace Cl.AuthorityManagement.Web
 {
@@ -20,7 +21,7 @@ namespace Cl.AuthorityManagement.Web
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
             //自定义注册
             AutoFacConfig.Register();
             AutoMapperConfig.Register();

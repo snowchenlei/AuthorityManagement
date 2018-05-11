@@ -4,6 +4,7 @@ using Cl.AuthorityManagement.Common.Conversion;
 using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
+using Cl.AuthorityManagement.Library.Mvc;
 using Cl.AuthorityManagement.Model;
 using Cl.AuthorityManagement.Model.Mvc;
 using Cl.AuthorityManagement.Util;
@@ -16,7 +17,7 @@ using System.Web.Mvc;
 
 namespace Cl.AuthorityManagement.Web.Controllers
 {
-    public class RoleController : BaseController
+    public class RoleController : AuthorizationController
     {
         private readonly IRoleServices RoleServices = null;
         private readonly IModuleServices ModuleServices = null;
@@ -32,6 +33,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
         }
 
         // GET: Role
+        [OutputCache(Duration = 120, VaryByCustom = "Index_Key")]
         public ActionResult Index()
         {
             return View();
@@ -92,34 +94,72 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 })
             }, JsonRequestBehavior.AllowGet);
         }
-        
+
         [HttpGet]
-        //[ChildActionOnly]
+        [AjaxOnly]
+        [Authenticate]
+        [OutputCache(Duration = 120)]
+        public ActionResult Add()
+        {
+            return PartialView("Edit");
+        }
+
+        [HttpPost]
+        [Authenticate]
+        public ActionResult Add(RoleEdit roleEdit)
+        {
+            if (ModelState.IsValid)
+            {
+                Role role = Mapper.Map<Role>(roleEdit);
+                //role.IsDelete = 0;
+                RoleServices.AddEntity(role);
+                return Json(new Result<int>
+                {
+                    State = 1,
+                    Message = "添加成功",
+                    Data = role.Id
+                });
+            }
+            else
+            {
+                IEnumerable<object> errors = ModelStateToJson();
+                return Json(new Result<object>
+                {
+                    State = 0,
+                    Message = "错误",
+                    Data = errors
+                });
+            }
+        }
+
+        [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
+        [OutputCache(Duration = 120)]
         public ActionResult Edit()
         {
             return PartialView();
         }
 
         [HttpPost]
+        [Authenticate]
         public ActionResult Edit(RoleEdit roleEdit)
         {
             if (ModelState.IsValid)
             {
-                if (roleEdit.Id.HasValue)
+                Role role = RoleServices
+                    .LoadFirst(r => r.Id == roleEdit.Id.Value);
+                if (role == null)
                 {
-                    Role role = RoleServices
-                        .LoadFirst(r => r.Id == roleEdit.Id.Value);
-                    if(role == null)
+                    return Json(new Result
                     {
-                        return Json(new Result
-                        {
-                            State = 0,
-                            Message = "修改的角色不存在"
-                        });
-                    }
-                    role.Name = roleEdit.Name;
-                    role.Sort = roleEdit.Sort;
-                    RoleServices.EditEntity(role);
+                        State = 0,
+                        Message = "修改的角色不存在"
+                    });
+                }
+                role = Mapper.Map(roleEdit, role);
+                if (RoleServices.EditEntity(role))
+                {
                     return Json(new Result
                     {
                         State = 1,
@@ -128,17 +168,23 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 }
                 else
                 {
-                    Role role = Mapper.Map<Role>(roleEdit);
-                    RoleServices.AddEntity(role);
-                    return Json(new Result<int>
+                    return Json(new Result
                     {
                         State = 1,
-                        Message = "添加成功",
-                        Data = role.Id
+                        Message = "修改失败"
                     });
                 }
             }
-            return PartialView();
+            else
+            {
+                IEnumerable<object> errors = ModelStateToJson();
+                return Json(new Result<object>
+                {
+                    State = 0,
+                    Message = "错误",
+                    Data = errors
+                });
+            }
         }
 
         /// <summary>
@@ -170,6 +216,8 @@ namespace Cl.AuthorityManagement.Web.Controllers
 
         #region 设置模块
         [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
         public ActionResult Modules(int roleId)
         {
             Role role = RoleServices
@@ -197,7 +245,9 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 });
             }
         }
+
         [HttpPost]
+        [Authenticate]
         public ActionResult Modules(int firstId, string secondId)
         {
             string[] tempIds = secondId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -234,6 +284,8 @@ namespace Cl.AuthorityManagement.Web.Controllers
 
         #region 设置元素
         [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
         public ActionResult ModuleElements(int roleId)
         {
             Role role = RoleServices
@@ -252,7 +304,9 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 });
             }
         }
+
         [HttpPost]
+        [Authenticate]
         public ActionResult ModuleElements(int roleId, string elementId, int moduleId)
         {
             string[] tempIds = elementId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -286,8 +340,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 });
             }
         }
-
-
+        
         private string GetModuleTreeJson(Role role)
         {
             return Serialization.SerializeObject(role.Modules
@@ -299,6 +352,8 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 }));
         }
 
+        [HttpGet]
+        [AjaxOnly]
         public string Elements(int roleId, int moduleId)
         {
             Module module = ModuleServices

@@ -19,13 +19,13 @@ namespace Cl.AuthorityManagement.Data
                 new MigrateDatabaseToLatestVersion<AuthorityManagementContext, Configuration>());
         }
 
-        public virtual DbSet<Module> Module { get; set; }
-        public virtual DbSet<ModuleElement> ModuleElement { get; set; }
-        public virtual DbSet<Role> Role { get; set; }
+        public virtual IDbSet<Module> Module { get; set; }
+        public virtual IDbSet<ModuleElement> ModuleElement { get; set; }
+        public virtual IDbSet<Role> Role { get; set; }
         //public virtual DbSet<Permission> Permission { get; set; }
-        public virtual DbSet<UserInfo> UserInfo { get; set; }
-        public virtual DbSet<UserInfoModuleElement> UserInfoModuleElement { get; set; }
-        public virtual DbSet<RoleModuleElement> RoleModuleElement { get; set; }
+        public virtual IDbSet<UserInfo> UserInfo { get; set; }
+        public virtual IDbSet<UserInfoModuleElement> UserInfoModuleElement { get; set; }
+        public virtual IDbSet<RoleModuleElement> RoleModuleElement { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

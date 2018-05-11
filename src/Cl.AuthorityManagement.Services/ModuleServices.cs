@@ -62,5 +62,31 @@ namespace Cl.AuthorityManagement.Services
             modules.Sort();
             return modules;
         }
+
+        /// <summary>
+        /// 是否拥有访问模块的权限
+        /// </summary>
+        /// <param name="controllerName">控制器名称</param>
+        /// <param name="user">登陆用户信息</param>
+        /// <returns>是否拥有</returns>
+        public bool IsHaveModule(string controllerName, UserInfo user)
+        {
+            Func<Module, bool> predicate = m => m.Parent != null && m.Url.IndexOf("/" + controllerName + "/") == 0;
+            //用户模块线
+            if (user.Modules.Any(predicate))
+            {
+                return true;
+            }
+            //用户角色模块线
+            bool isHaveModule = user.Roles
+                .Any(r => r.Modules
+                    .Any(predicate));
+
+            if (isHaveModule)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

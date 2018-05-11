@@ -11,9 +11,6 @@ namespace Cl.AuthorityManagement.Repository
     public partial class RoleRepository:BaseRepository<Role>, IRoleRepository
     {
     }
-    public partial class PermissionRepository:BaseRepository<Permission>, IPermissionRepository
-    {
-    }
     public partial class UserInfoRepository:BaseRepository<UserInfo>, IUserInfoRepository
     {
     }

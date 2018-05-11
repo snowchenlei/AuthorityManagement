@@ -11,10 +11,8 @@ namespace Cl.AuthorityManagement.Entity
     /// <summary>
     /// 角色
     /// </summary>
-    public class Role : BaseEntity
+    public class Role : Entity
     {
-        public int Id { get; set; }
-
         /// <summary>
         /// 角色名称
         /// </summary>

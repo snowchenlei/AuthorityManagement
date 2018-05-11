@@ -17,16 +17,54 @@ namespace Cl.AuthorityManagement.Web.Controllers
 {
     public class BaseController : Controller
     {
-        protected UserInfo userInfo = null;
-        protected string Controllername;   //当前控制器小写名称
-        protected string Actionname;        //当前Action小写名称
+        protected UserInfo UserInfo = null;
+        protected MethodInfo Function = null;
+        protected string ControllerName;   //当前控制器小写名称
+        protected string ActionName;        //当前Action小写名称
+
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            base.OnActionExecuting(filterContext);
+
+            ControllerName = Request.RequestContext.RouteData.Values["controller"].ToString();
+            ActionName = filterContext.ActionDescriptor.ActionName.ToLower();
+
+            Function = this.GetType().GetMethods().FirstOrDefault(u => u.Name.ToLower() == ActionName);
+            if (Function == null)
+                throw new Exception("未能找到Action");
+
+            UserInfo = Session["LoginUser"] as UserInfo;
+
+#if DEBUG
+            if (UserInfo == null)
+            {
+                IUserInfoServices userInfoServices = AutoFacConfig.Container.Resolve<IUserInfoServices>();
+                UserInfo = userInfoServices.LoadFirst(u => u.UserName == "admin");
+            }
+#endif
+            if (UserInfo == null)
+            {
+                filterContext.Result = new RedirectResult("/Manager/Account/Login");
+                return;
+            }
+            else
+            {
+                Authorization(ref filterContext);
+            }
+        }
+
+        protected virtual void Authorization(ref ActionExecutingContext filterContext)
+        {
+            //默认不处理
+        }
+
         protected override JsonResult Json(object data, string contentType, Encoding contentEncoding, JsonRequestBehavior behavior)
         {
             if (behavior == JsonRequestBehavior.DenyGet
-                && string.Equals(this.Request.HttpMethod, "GET",
-                                 StringComparison.OrdinalIgnoreCase))
-                //Call JsonResult to throw the same exception as JsonResult
+                && string.Equals(this.Request.HttpMethod, "GET", StringComparison.OrdinalIgnoreCase))
+            {
                 return new JsonResult();
+            }
             return new JsonNetResult()
             {
                 Data = data,
@@ -35,39 +73,15 @@ namespace Cl.AuthorityManagement.Web.Controllers
             };
         }
 
-        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        protected IEnumerable<object> ModelStateToJson()
         {
-            base.OnActionExecuting(filterContext);
-
-            Controllername = Request.RequestContext.RouteData.Values["controller"].ToString();
-            Actionname = filterContext.ActionDescriptor.ActionName.ToLower();
-            
-            var function = this.GetType().GetMethods().FirstOrDefault(u => u.Name.ToLower() == Actionname);
-            if (function == null)
-                throw new Exception("未能找到Action");
-
-            userInfo = Session["LoginUser"] as UserInfo;
-            if (userInfo == null)
-            {
-                filterContext.Result = new RedirectResult("/Account/Login");
-                return;
-            }
-        }
-
-        protected IOrderedQueryable<T> Sort<T, S>(IQueryable<T> resource, Expression<Func<T, S>> orderbyLamada, OrderType orderType)
-        {
-            IOrderedQueryable<T> result = null;
-            switch (orderType)
-            {
-                default:
-                case OrderType.ASC:
-                    result = resource.OrderBy(orderbyLamada);
-                    break;
-                case OrderType.DESC:
-                    result = resource.OrderByDescending(orderbyLamada);
-                    break;
-            }
-            return result;
+            var errors = ModelState.Where(m => m.Value.Errors.Any())
+                .Select(m => new
+                {
+                    m.Key,
+                    Errors = String.Join("", m.Value.Errors.Select(e => e.ErrorMessage))
+                });
+            return errors;
         }
     }
 }

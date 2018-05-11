@@ -11,10 +11,8 @@ namespace Cl.AuthorityManagement.Entity
     /// <summary>
     /// 模块
     /// </summary>
-    public class Module : BaseEntity, IComparable
+    public class Module : Entity, IComparable
     {
-        public int Id { get; set; }
-
         /// <summary>
         /// 名称
         /// </summary>

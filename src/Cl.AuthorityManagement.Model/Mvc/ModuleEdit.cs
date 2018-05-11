@@ -40,6 +40,6 @@ namespace Cl.AuthorityManagement.Model.Mvc
         public string IconName { get; set; }
 
         [Display(Name = "父模块")]
-        public int ParentId { get; set; }
+        public int? ParentId { get; set; }
     }
 }

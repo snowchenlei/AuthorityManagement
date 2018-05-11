@@ -8,10 +8,10 @@
     //如果TAB不存在，创建一个新的TAB
     if (!$("#" + id)[0]) {
         //创建新TAB的title
-        title = '<li role="presentation" id="tab_' + id + '" data-id="' + id + '"><a href="#' + id + '" aria-controls="' + id + '" role="tab" data-toggle="tab">' + options.title;
+        title = '<li role="presentation" id="tab_' + id + '" data-id="' + id + '"><a href="#' + id + '" aria-controls="' + id + '" role="tab" data-toggle="tab"><span>' + options.title + '</span>';
         //是否允许关闭
         if (options.close) {
-            title += ' <i class="glyphicon glyphicon-remove" style="cursor: pointer;" tabclose="' + id + '"></i>';
+            title += ' <i class="glyphicon glyphicon-remove wb-close-mini" style="cursor: pointer;" tabclose="' + id + '"></i>';
         }
         title += '</a></li>';
         //是否指定TAB内容
@@ -29,18 +29,15 @@
     $("#" + id).addClass("active");
 };
 var closeTab = function (id) {
-    //如果关闭的是当前激活的TAB，激活他的前一个TAB
+    //如果关闭的是当前激活的TAB，激活最后一个TAB；如果是最后一个，激活它的前一个
     if ($("li.active").attr('id') === "tab_" + id) {
-        var $prev = $("#tab_" + id).prev();
-        if ($prev.length > 0) {
-            $prev.addClass('active');
-            $("#" + $prev.data('id')).prev().addClass('active');
+        var $last = $("#" + $("li.active").attr('id')).parent().find('>li:last');
+        debugger
+        if ($last.is($("li.active"))) {
+            $last.prev().children('a').click();
         } else {
-            var $last = $("#tab_" + id).parent().find('>li:last');
-            $last.addClass('active');
-            $("#tab_" + id).prev().addClass('active');
-            $("#" + $last.data('id')).addClass('active');
-        }        
+            $last.children('a').click();
+        }
     }
     //关闭TAB
     $("#tab_" + id).remove();
