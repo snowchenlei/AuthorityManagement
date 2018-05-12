@@ -17,5 +17,13 @@ namespace Cl.AuthorityManagement.IServices
         /// <param name="roleIds">用户拥有的角色Id</param>
         /// <returns>选中的元素</returns>
         List<ModuleElement> LoadSelectElements(int userId, int moduleId, int[] roleIds);
+
+        /// <summary>
+        /// 是否拥有访问模块元素的权限
+        /// </summary>
+        /// <param name="actionName">控制器名称</param>
+        /// <param name="user">登陆用户信息</param>
+        /// <returns>是否拥有</returns>
+        bool IsHaveModuleElement(string controllerName, string actionName, UserInfo user);
     }
 }

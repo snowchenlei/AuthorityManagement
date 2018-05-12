@@ -11,10 +11,8 @@ namespace Cl.AuthorityManagement.Entity
     /// <summary>
     /// 权限
     /// </summary>
-    public class Permission : BaseEntity
+    public class Permission : Entity
     {
-        public int Id { get; set; }
-
         /// <summary>
         /// 权限名称
         /// </summary>

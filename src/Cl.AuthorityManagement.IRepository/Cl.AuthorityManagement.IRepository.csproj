@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="IDBSession.cs" />
+    <Compile Include="IModuleRepository.cs" />
     <Compile Include="IRepository.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

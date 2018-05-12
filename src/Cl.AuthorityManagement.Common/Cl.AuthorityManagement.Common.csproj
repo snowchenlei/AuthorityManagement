@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +49,8 @@
     <Compile Include="Conversion\RandomChinese.cs" />
     <Compile Include="Conversion\Serialization.cs" />
     <Compile Include="DataHelper.cs" />
+    <Compile Include="Encryption\Md5Encryption.cs" />
+    <Compile Include="EnumHelper.cs" />
     <Compile Include="Http\HttpServer.cs" />
     <Compile Include="PageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Cl.AuthorityManagement.Enum\Cl.AuthorityManagement.Enum.csproj">
+      <Project>{58790FEC-B410-4D29-AD6B-316D807BB59C}</Project>
+      <Name>Cl.AuthorityManagement.Enum</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,5 +24,13 @@ namespace Cl.AuthorityManagement.IServices
         /// <param name="userInfo">用户</param>
         /// <returns>选中的模块</returns>
         List<Module> LoadSelectModules(UserInfo userInfo);
+
+        /// <summary>
+        /// 是否拥有访问模块的权限
+        /// </summary>
+        /// <param name="controllerName">控制器名称</param>
+        /// <param name="user">登陆用户信息</param>
+        /// <returns>是否拥有</returns>
+        bool IsHaveModule(string controllerName, UserInfo user);
     }
 }

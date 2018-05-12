@@ -3,6 +3,7 @@ using Cl.AuthorityManagement.Common;
 using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
+using Cl.AuthorityManagement.Library.Mvc;
 using Cl.AuthorityManagement.Model;
 using Cl.AuthorityManagement.Model.Mvc;
 using System;
@@ -13,7 +14,7 @@ using System.Web.Mvc;
 
 namespace Cl.AuthorityManagement.Web.Controllers
 {
-    public class ModuleElementController : BaseController
+    public class ModuleElementController : AuthorizationController
     {
         private readonly IModuleElementServices ModuleElementServices = null;
         public ModuleElementController(
@@ -23,6 +24,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
         }
 
         // GET: ModuleElement
+        [OutputCache(Duration = 120, VaryByCustom = "Index_Key")]
         public ActionResult Index()
         {
             return View();
@@ -89,38 +91,69 @@ namespace Cl.AuthorityManagement.Web.Controllers
         }
 
         [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
+        [OutputCache(Duration = 120)]
+        public ActionResult Add()
+        {
+            return PartialView("Edit");
+        }
+
+        [HttpPost]
+        [Authenticate]
+        public ActionResult Add(ModuleElementEdit moduleElementEdit)
+        {
+            if (ModelState.IsValid)
+            {
+                ModuleElement moduleElement = Mapper.Map<ModuleElement>(moduleElementEdit);
+                ModuleElementServices.AddEntity(moduleElement);
+                return Json(new Result<int>
+                {
+                    State = 1,
+                    Message = "添加成功",
+                    Data = moduleElement.Id
+                });
+            }
+            else
+            {
+                IEnumerable<object> errors = ModelStateToJson();
+                return Json(new Result<object>
+                {
+                    State = 0,
+                    Message = "错误",
+                    Data = errors
+                });
+            }
+        }
+
+        [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
+        [OutputCache(Duration = 120)]
         public ActionResult Edit()
         {
             return PartialView();
         }
 
         [HttpPost]
+        [Authenticate]
         public ActionResult Edit(ModuleElementEdit moduleElementEdit)
         {
             if (ModelState.IsValid)
             {
-                if (moduleElementEdit.Id.HasValue)
+                ModuleElement moduleElement = ModuleElementServices
+                    .LoadFirst(r => r.Id == moduleElementEdit.Id.Value);
+                if (moduleElement == null)
                 {
-                    ModuleElement moduleElement = ModuleElementServices
-                        .LoadFirst(r => r.Id == moduleElementEdit.Id.Value);
-                    if (moduleElement == null)
+                    return Json(new Result
                     {
-                        return Json(new Result
-                        {
-                            State = 0,
-                            Message = "修改的角色不存在"
-                        });
-                    }
-                    //moduleElement = Mapper.Map<ModuleElement>(moduleElementEdit);
-                    moduleElement.Attr = moduleElementEdit.Attr;
-                    moduleElement.Class = moduleElementEdit.Class;
-                    moduleElement.DomId = moduleElementEdit.DomId;
-                    moduleElement.Icon = moduleElementEdit.Icon;
-                    moduleElement.Remark = moduleElementEdit.Remark;
-                    moduleElement.Name = moduleElementEdit.Name;
-                    moduleElement.Sort = moduleElementEdit.Sort;
-                    moduleElement.Script = moduleElementEdit.Script;
-                    ModuleElementServices.EditEntity(moduleElement);
+                        State = 0,
+                        Message = "修改的角色不存在"
+                    });
+                }
+                moduleElement = Mapper.Map(moduleElementEdit, moduleElement);
+                if (ModuleElementServices.EditEntity(moduleElement))
+                {
                     return Json(new Result
                     {
                         State = 1,
@@ -129,17 +162,23 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 }
                 else
                 {
-                    ModuleElement moduleElement = Mapper.Map<ModuleElement>(moduleElementEdit);
-                    ModuleElementServices.AddEntity(moduleElement);
-                    return Json(new Result<int>
+                    return Json(new Result
                     {
-                        State = 1,
-                        Message = "添加成功",
-                        Data = moduleElement.Id
+                        State = 0,
+                        Message = "修改失败"
                     });
                 }
             }
-            return PartialView();
+            else
+            {
+                IEnumerable<object> errors = ModelStateToJson();
+                return Json(new Result<object>
+                {
+                    State = 0,
+                    Message = "错误",
+                    Data = errors
+                });
+            }
         }
 
         /// <summary>
@@ -148,6 +187,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authenticate]
         public ActionResult Delete(int id)
         {
             ModuleElement moduleElement = ModuleElementServices

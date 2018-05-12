@@ -66,6 +66,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mvc\AjaxOnlyAttribute.cs" />
+    <Compile Include="Mvc\AuthenticateAttribute.cs" />
+    <Compile Include="Mvc\CustomerResultAttribute.cs" />
     <Compile Include="Mvc\CustomExceptionAttribute.cs" />
     <Compile Include="Mvc\JsonNetResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

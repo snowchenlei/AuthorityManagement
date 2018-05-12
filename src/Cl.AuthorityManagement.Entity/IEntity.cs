@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Cl.AuthorityManagement.Entity
 {
-    public class BaseEntity
+    interface IEntity : IEntity<int>
     {
-        public DateTime? AddTime { get; set; } = DateTime.Now;
+    }
+    public interface IEntity<TPrimaryKey>
+    {
+        TPrimaryKey Id { get; set; }
+        DateTime? AddTime { get; set; }
     }
 }

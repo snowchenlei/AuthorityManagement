@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Cl.AuthorityManagement.Common;
 using Cl.AuthorityManagement.Common.Conversion;
+using Cl.AuthorityManagement.Common.Encryption;
 using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
+using Cl.AuthorityManagement.Library.Mvc;
 using Cl.AuthorityManagement.Model;
 using Cl.AuthorityManagement.Model.Mvc;
 using Cl.AuthorityManagement.Util;
@@ -15,7 +17,7 @@ using System.Web.Mvc;
 
 namespace Cl.AuthorityManagement.Web.Controllers
 {
-    public class UserController : BaseController
+    public class UserController : AuthorizationController
     {
         private readonly IUserInfoServices UserInfoServices = null;
         private readonly IRoleServices RoleServices = null;
@@ -37,17 +39,10 @@ namespace Cl.AuthorityManagement.Web.Controllers
         }
 
         // GET: User
+        [OutputCache(Duration = 120, VaryByCustom = "Index_Key")]
         public ActionResult Index()
         {
-            InitSelect();
             return View();
-        }
-
-        /// <summary>
-        /// 加载下拉数据
-        /// </summary>
-        public void InitSelect()
-        {
         }
 
         public JsonResult Load(int pageIndex, int pageSize, string sort,
@@ -107,7 +102,47 @@ namespace Cl.AuthorityManagement.Web.Controllers
         }
 
         [HttpGet]
-        //[ChildActionOnly]
+        [AjaxOnly]
+        [Authenticate]
+        [OutputCache(Duration = 120)]
+        public ActionResult Add()
+        {
+            return PartialView("Edit");
+        }
+
+        [HttpPost]
+        [Authenticate]
+        public ActionResult Add(UserEdit userEdit)
+        {
+            if (ModelState.IsValid)
+            {
+                UserInfo user = Mapper.Map<UserInfo>(userEdit);
+                user.Password = Md5Encryption.Encrypt(Md5Encryption.Encrypt(user.Password, Md5EncryptionType.Strong));
+                UserInfoServices.AddEntity(user);
+
+                return Json(new Result<int>
+                {
+                    State = 1,
+                    Message = "添加成功",
+                    Data = user.Id
+                });
+            }
+            else
+            {
+                IEnumerable<object> errors = ModelStateToJson();
+                return Json(new Result<object>
+                {
+                    State = 0,
+                    Message = "错误",
+                    Data = errors
+                });
+            }
+        }
+
+        [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
+        [OutputCache(Duration = 120)]
         public ActionResult Edit()
         {
             return PartialView();
@@ -124,24 +159,19 @@ namespace Cl.AuthorityManagement.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (userEdit.Id.HasValue)
-                {
-                    UserInfo user = UserInfoServices
+                UserInfo user = UserInfoServices
                         .LoadFirst(u => u.Id == userEdit.Id.Value);
-                    if(user == null)
+                if (user == null)
+                {
+                    return Json(new Result
                     {
-                        return Json(new Result
-                        {
-                            State = 0,
-                            Message = "修改的用户不存在"
-                        });
-                    }
-
-                    user.UserName = userEdit.UserName?.Trim();
-                    user.Password = userEdit.Password?.Trim();
-                    user.PhoneNumber = userEdit.PhoneNumber?.Trim();
-                    user.IsCanUse = userEdit.IsCanUse;
-                    UserInfoServices.EditEntity(user);
+                        State = 0,
+                        Message = "修改的用户不存在"
+                    });
+                }
+                user = Mapper.Map(userEdit, user);
+                if (UserInfoServices.EditEntity(user))
+                {
                     return Json(new Result
                     {
                         State = 1,
@@ -150,19 +180,24 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 }
                 else
                 {
-                    UserInfo user = Mapper.Map<UserInfo>(userEdit);
-                    user.AddTime = DateTime.Now;
-                    UserInfoServices.AddEntity(user);
-                    
-                    return Json(new Result<int>
+                    return Json(new Result
                     {
                         State = 1,
-                        Message = "添加成功",
-                        Data = user.Id
+                        Message = "修改失败"
                     });
+
                 }
             }
-            return PartialView(userEdit);
+            else
+            {
+                IEnumerable<object> errors = ModelStateToJson();
+                return Json(new Result<object>
+                {
+                    State = 0,
+                    Message = "错误",
+                    Data = errors
+                });
+            }
         }
 
         /// <summary>
@@ -193,6 +228,8 @@ namespace Cl.AuthorityManagement.Web.Controllers
 
         #region 设置角色
         [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
         public ActionResult Roles(int userId)
         {
             UserInfo user = UserInfoServices
@@ -219,7 +256,9 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 });
             }
         }
+
         [HttpPost]
+        [Authenticate]
         public ActionResult Roles(int firstId, string secondId)
         {
             string[] tempIds = secondId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -257,6 +296,8 @@ namespace Cl.AuthorityManagement.Web.Controllers
 
         #region 设置模块
         [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
         public ActionResult Modules(int userId)
         {
             UserInfo user = UserInfoServices
@@ -283,7 +324,9 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 });
             }
         }
+
         [HttpPost]
+        [Authenticate]
         public ActionResult Modules(int firstId, string secondId)
         {
             string[] tempIds = secondId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -321,6 +364,8 @@ namespace Cl.AuthorityManagement.Web.Controllers
 
         #region 设置元素
         [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
         public ActionResult ModuleElements(int userId)
         {
             UserInfo user = UserInfoServices
@@ -339,7 +384,9 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 });
             }
         }
+
         [HttpPost]
+        [Authenticate]
         public ActionResult ModuleElements(int userId, string elementId, int moduleId)
         {
             string[] tempIds = elementId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);

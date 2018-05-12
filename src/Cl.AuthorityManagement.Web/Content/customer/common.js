@@ -26,3 +26,31 @@ function DateFormat(format, date) {
     }
     return format;
 }
+
+//时间间隔
+function DateAdd(type, value) {
+    var date = new Date();
+    switch (type) {
+        case "y":
+            date.setYear(date.getFullYear() + value);
+            date = new Date(date.getTime());
+            break;
+        case "M":
+            date.setMonth(date.getMonth() + value);
+            date = new Date(date.getTime());
+            break;
+        case "d":
+            date.setDate(date.getDate() + value);
+            date = new Date(date.getTime());
+            break;
+        case "h":
+            date.setHours(date.getHours() + value);
+            date = new Date(date.getTime());
+            break;
+        case "m":
+            date.setMinutes(date.getMinutes() + value);
+            date = new Date(date.getTime());
+            break;
+    }
+    return date;
+}

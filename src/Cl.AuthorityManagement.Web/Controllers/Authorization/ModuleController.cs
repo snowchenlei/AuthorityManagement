@@ -4,6 +4,7 @@ using Cl.AuthorityManagement.Common.Conversion;
 using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
+using Cl.AuthorityManagement.Library.Mvc;
 using Cl.AuthorityManagement.Model;
 using Cl.AuthorityManagement.Model.Mvc;
 using Cl.AuthorityManagement.Util;
@@ -18,7 +19,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
     /// <summary>
     /// 模块管理
     /// </summary>
-    public class ModuleController : BaseController
+    public class ModuleController : AuthorizationController
     {
         private readonly IModuleServices ModuleServices = null;
         private readonly IModuleElementServices ModuleElementServices = null;
@@ -31,6 +32,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
         }
 
         // GET: Module
+        [OutputCache(Duration = 120, VaryByCustom = "Index_Key")]
         public ActionResult Index()
         {
             InitSelect();
@@ -115,40 +117,95 @@ namespace Cl.AuthorityManagement.Web.Controllers
         }
 
         [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
+        [OutputCache(Duration = 120)]
+        public ActionResult Add()
+        {
+            return PartialView("Edit");
+        }
+
+        [HttpPost]
+        [Authenticate]
+        public ActionResult Add(ModuleEdit moduleEdit)
+        {
+            if (ModelState.IsValid)
+            {
+                Module parent = null;
+                if (moduleEdit.ParentId.HasValue && moduleEdit.ParentId.Value > 0)
+                {
+                    parent = ModuleServices
+                        .LoadFirst(m => m.Id == moduleEdit.ParentId);
+                }
+                Module module = Mapper.Map<Module>(moduleEdit);
+                module.AddTime = DateTime.Now;
+                if (parent != null)
+                {
+                    module.Parent = parent;
+                }
+                ModuleServices.AddEntity(module);
+
+                return Json(new Result<int>
+                {
+                    State = 1,
+                    Message = "添加成功",
+                    Data = module.Id
+                });
+            }
+            else
+            {
+                IEnumerable<object> errors = ModelStateToJson();
+                return Json(new Result<object>
+                {
+                    State = 0,
+                    Message = "错误",
+                    Data = errors
+                });
+            }
+        }
+
+        [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
+        [OutputCache(Duration = 120)]
         public ActionResult Edit()
         {
             return PartialView();
         }
 
+        [HttpPost]
+        [Authenticate]
         public ActionResult Edit(ModuleEdit moduleEdit)
         {
             if (ModelState.IsValid)
             {
-                Module parent = ModuleServices
-                    .LoadFirst(m => m.Id == moduleEdit.ParentId);
-
-                if (moduleEdit.Id.HasValue)
+                Module parent = null;
+                if (moduleEdit.ParentId.HasValue)
                 {
-                    Module module = ModuleServices
+                    parent = ModuleServices
+                        .LoadFirst(m => m.Id == moduleEdit.ParentId);
+                }
+                Module module = ModuleServices
                         .LoadFirst(u => u.Id == moduleEdit.Id.Value);
-                    if (module == null)
+                if (module == null)
+                {
+                    return Json(new Result
                     {
-                        return Json(new Result
-                        {
-                            State = 0,
-                            Message = "修改的用户不存在"
-                        });
-                    }
-
-                    module.Name = moduleEdit.Name?.Trim();
-                    module.Url = moduleEdit.Url?.Trim();
-                    module.IconName = moduleEdit.IconName?.Trim();
-                    module.Sort = moduleEdit.Sort;
-                    if (parent != null)
-                    {
-                        module.Parent = parent;
-                    }
-                    ModuleServices.EditEntity(module);
+                        State = 0,
+                        Message = "修改的用户不存在"
+                    });
+                }
+                module = Mapper.Map(moduleEdit, module);
+                module.Name = moduleEdit.Name?.Trim();
+                module.Url = moduleEdit.Url?.Trim();
+                module.IconName = moduleEdit.IconName?.Trim();
+                module.Sort = moduleEdit.Sort;
+                if (parent != null)
+                {
+                    module.Parent = parent;
+                }
+                if (ModuleServices.EditEntity(module))
+                {
                     return Json(new Result
                     {
                         State = 1,
@@ -157,23 +214,23 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 }
                 else
                 {
-                    Module module = Mapper.Map<Module>(moduleEdit);
-                    module.AddTime = DateTime.Now;
-                    if (parent != null)
+                    return Json(new Result
                     {
-                        module.Parent = parent;
-                    }
-                    ModuleServices.AddEntity(module);
-
-                    return Json(new Result<int>
-                    {
-                        State = 1,
-                        Message = "添加成功",
-                        Data = module.Id
+                        State = 0,
+                        Message = "修改失败"
                     });
                 }
             }
-            return PartialView(moduleEdit);
+            else
+            {
+                IEnumerable<object> errors = ModelStateToJson();
+                return Json(new Result<object>
+                {
+                    State = 0,
+                    Message = "错误",
+                    Data = errors
+                });
+            }
         }
 
         /// <summary>
@@ -182,6 +239,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authenticate]
         public ActionResult Delete(int id)
         {
             Module module = ModuleServices
@@ -219,6 +277,8 @@ namespace Cl.AuthorityManagement.Web.Controllers
 
         #region 设置模块元素
         [HttpGet]
+        [AjaxOnly]
+        [Authenticate]
         public ActionResult ModuleElements(int moduleId)
         {
             Module module = ModuleServices
@@ -247,6 +307,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
         }
 
         [HttpPost]
+        [Authenticate]
         public ActionResult ModuleElements(int firstId, string secondId)
         {
             string[] tempIds = secondId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);

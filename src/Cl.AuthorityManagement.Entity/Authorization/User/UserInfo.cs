@@ -12,10 +12,8 @@ namespace Cl.AuthorityManagement.Entity
     /// <summary>
     /// 用户
     /// </summary>
-    public class UserInfo:BaseEntity
+    public class UserInfo:Entity
     {
-        public int Id { get; set; }
-
         [StringLength(50)]
         public string Name { get; set; }
 

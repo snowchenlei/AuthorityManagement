@@ -46,6 +46,7 @@
     <Compile Include="Mvc\PageInfo.cs" />
     <Compile Include="Mvc\PermissionEdit.cs" />
     <Compile Include="Mvc\RoleEdit.cs" />
+    <Compile Include="Mvc\Select2Model.cs" />
     <Compile Include="Mvc\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />

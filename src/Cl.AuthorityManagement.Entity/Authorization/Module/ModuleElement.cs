@@ -11,9 +11,8 @@ namespace Cl.AuthorityManagement.Entity
     /// <summary>
     /// 元素
     /// </summary>
-    public class ModuleElement : BaseEntity, IComparable
+    public class ModuleElement : Entity, IComparable
     {
-        public int Id { get; set; }
         /// <summary>
 	    /// Html元素 ID
 	    /// </summary>
@@ -26,6 +25,10 @@ namespace Cl.AuthorityManagement.Entity
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Action { get; set; }
 
         /// <summary>
 	    /// 类型
@@ -72,8 +75,6 @@ namespace Cl.AuthorityManagement.Entity
         public virtual ICollection<Module> Modules { get; set; }
         [JsonIgnore]
         public virtual ICollection<UserInfoModuleElement> UserInfos { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<Role> Roles { get; set; }
         [JsonIgnore]
         public virtual ICollection<RoleModuleElement> RoleModuleElement { get; set; }
 
