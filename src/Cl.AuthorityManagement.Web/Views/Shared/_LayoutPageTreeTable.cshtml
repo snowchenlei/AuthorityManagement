@@ -19,7 +19,7 @@
 
     <link href="~/Content/zTree/css/metroStyle/metroStyle.css" rel="stylesheet" />
     @*<link href="~/Content/zTree/css/demo.css" rel="stylesheet" />*@
-
+    <link href="~/Content/customer/loader.css" rel="stylesheet" />
     <link href="~/Content/customerMain.css" rel="stylesheet" />
     @RenderSection("style", required: false)
     <style type="text/css">
@@ -29,52 +29,15 @@
         .breadcrumb, .breadcrumb > li > a, .btn {
             display: inline-block;
         }
-        /*.btn {
-            color: #FFF !important;
-            text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-            background-image: none !important;
-            border: 5px solid #FFF;
-            border-radius: 0;
-            box-shadow: none !important;
-            -webkit-transition: background-color .15s,border-color .15s,opacity .15s;
-            -o-transition: background-color .15s,border-color .15s,opacity .15s;
-            transition: background-color .15s,border-color .15s,opacity .15s;
-            vertical-align: middle;
-            margin: 0;
-            position: relative;
-        }
-        .btn, .btn-default, .btn-default.focus, .btn-default:focus, .btn.focus, .btn:focus {
-            background-color: #ABBAC3 !important;
-            border-color: #ABBAC3;
-        }
-        .btn-danger, .btn-danger.focus, .btn-danger:focus {
-            background-color: #D15B47 !important;
-            border-color: #D15B47;
-        }
-        .btn-warning, .btn-warning.focus, .btn-warning:focus {
-            background-color: #FFB752 !important;
-            border-color: #FFB752;
-        }
-        .btn-info, .btn-info.focus, .btn-info:focus {
-            background-color: #6FB3E0 !important;
-            border-color: #6FB3E0;
-        }
-        .btn-primary, .btn-primary.focus, .btn-primary:focus {
-            background-color: #428BCA !important;
-            border-color: #428BCA;
-        }
-        .btn-success, .btn-success.focus, .btn-success:focus {
-            background-color: #87B87F !important;
-            border-color: #87B87F;
-        }
-        .btn-success.focus:hover, .btn-success:active:hover, .btn-success:focus:active, .btn-success:focus:hover, .btn-success:hover, .open > .btn-success.dropdown-toggle, .open > .btn-success.dropdown-toggle.focus, .open > .btn-success.dropdown-toggle:active, .open > .btn-success.dropdown-toggle:focus, .open > .btn-success.dropdown-toggle:hover {
-            background-color: #629B58 !important;
-            border-color: #87B87F;
-        }*/
     </style>
 </head>
 <body>
-
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+        <div class="load_title">正在加载站点<br></div>
+    </div>
     <div class="panel-body" style="padding-bottom:0px;">
         @RenderBody()
         @*<div id="toolbar"></div>*@
@@ -149,6 +112,8 @@
             $('#hidElementId').val(id);
         }
         $(function () {
+            $('body').addClass('loaded');
+            $('#loader-wrapper .load_title').remove();
             $.fn.datetimepicker.dates['zh-CN'] = {
                 //具体配置可参见官网-I18N国际化
                 days: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"],

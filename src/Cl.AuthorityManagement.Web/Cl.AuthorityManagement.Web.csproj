@@ -279,7 +279,10 @@
     <Content Include="Content\customer\dataInit.js" />
     <Content Include="Content\customer\frame-common.js" />
     <Content Include="Content\customer\knockout.bootstraptable.js" />
+    <Content Include="Content\customer\loader.css" />
     <Content Include="Content\customer\timeBucket.js" />
+    <Content Include="Content\customer\unLock.js" />
+    <Content Include="Content\fullscreen\jquery.fullscreen.js" />
     <Content Include="Content\jquery-validate\jquery.unobtrusive-ajax.js" />
     <Content Include="Content\jquery-validate\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
@@ -334,6 +337,8 @@
     <Content Include="Content\toastr\css\toastr.min.css" />
     <Content Include="Content\toastr\js\toastr.js" />
     <Content Include="Content\toastr\js\toastr.min.js" />
+    <Content Include="Content\unlock\js\unlock.js" />
+    <Content Include="Content\unlock\less\unlock.css" />
     <Content Include="Content\zTree\css\awesomeStyle\awesome.css" />
     <Content Include="Content\zTree\css\awesomeStyle\img\loading.gif" />
     <Content Include="Content\zTree\css\demo.css" />
@@ -373,6 +378,7 @@
     <Content Include="Content\tableExport.jquery.plugin\libs\html2canvas\LICENSE" />
     <Content Include="Content\tableExport.jquery.plugin\libs\js-xlsx\LICENSE" />
     <Content Include="Content\tableExport.jquery.plugin\libs\pdfmake\LICENSE" />
+    <Content Include="Content\unlock\less\unlock.less" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -390,6 +396,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\ModuleElementController.cs" />
@@ -432,6 +439,7 @@
     <Content Include="Views\User\ModuleElements.cshtml" />
     <Content Include="Views\Shared\_LayoutCheckElement.cshtml" />
     <Content Include="Views\Role\ModuleElements.cshtml" />
+    <Content Include="Views\Demo\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -492,7 +500,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>57711</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

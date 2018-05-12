@@ -28,7 +28,6 @@
         <link href="~/Content/ace/css/ace-part2.min.css" rel="stylesheet" />
     <![endif]-->
     <link href="~/Content/ace/css/ace-rtl.min.css" rel="stylesheet" />
-
     <!--[if lte IE 9]>
         <link href="~/Content/ace/css/ace-ie.min.css" rel="stylesheet" />
     <![endif]-->
@@ -37,6 +36,7 @@
         <script src="~/Content/ace/js/html5shiv.min.js"></script>
         <script src="~/Content/ace/js/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body class="login-layout">
@@ -273,9 +273,31 @@
     <script type="text/javascript">
         if ('ontouchstart' in document.documentElement) document.write("<script src='~/Content/ace/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
     </script>
-
     <!-- inline scripts related to this page -->
     <script type="text/javascript">
+        function requestFullScreen(element) {
+            // 判断各种浏览器，找到正确的方法
+            //必须按钮点击，全屏后会直接退出
+            var requestMethod = element.requestFullScreen || //W3C
+                element.webkitRequestFullScreen || //Chrome等
+                element.mozRequestFullScreen || //FireFox
+                element.msRequestFullScreen; //IE11
+            debugger
+            if (requestMethod) {
+                requestMethod.call(element);
+            }
+            else if (typeof window.ActiveXObject !== "undefined") {//for Internet Explorer
+                var wscript = new ActiveXObject("WScript.Shell");
+                if (wscript !== null) {
+                    wscript.SendKeys("{F11}");
+                }
+            }
+        }
+        //requestFullScreen(document.documentElement);
+        //document.documentElement.requestFullScreen()
+        // 启动全屏!
+        //launchFullScreen(); // 整个网页
+
         jQuery(function ($) {
             $(document).on('click', '.toolbar a[data-target]', function (e) {
                 e.preventDefault();

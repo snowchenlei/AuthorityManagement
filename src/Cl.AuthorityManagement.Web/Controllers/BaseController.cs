@@ -52,6 +52,15 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 filterContext.Result = new RedirectResult("/Account/Login");
                 return;
             }
+            else
+            {
+                if (!"home".Equals(Controllername, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    //userInfo.Modules.Any(m => m.Url.Contains(Controllername));
+                    //AutoFacConfig.Container.Resolve<IModuleElementServices>
+                    //ModuleElements
+                }
+            }
         }
 
         protected IOrderedQueryable<T> Sort<T, S>(IQueryable<T> resource, Expression<Func<T, S>> orderbyLamada, OrderType orderType)
