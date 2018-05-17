@@ -1,12 +1,15 @@
-﻿using AutoMapper;
+﻿using Autofac.Extras.DynamicProxy;
+using AutoMapper;
 using Cl.AuthorityManagement.Common;
 using Cl.AuthorityManagement.Common.Conversion;
 using Cl.AuthorityManagement.Common.Encryption;
+using Cl.AuthorityManagement.Common.Logger;
 using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
 using Cl.AuthorityManagement.Library.Mvc;
 using Cl.AuthorityManagement.Model;
+using Cl.AuthorityManagement.Model.Logger;
 using Cl.AuthorityManagement.Model.Mvc;
 using Cl.AuthorityManagement.Util;
 using System;
@@ -61,7 +64,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
             {
                 tempUsers = tempUsers.Where(u => u.UserName == userName.Trim());
             }
-            if(startTime > new DateTime(1970, 1, 1))
+            if(startTime > new DateTime(1970, 1, 1) && startTime != endTime)
             {
                 tempUsers = tempUsers.Where(u => u.AddTime > startTime);
             }
@@ -93,6 +96,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 {
                     u.Id,
                     u.UserName,
+                    u.Name,
                     u.PhoneNumber,
                     u.Password,
                     u.AddTime,
@@ -120,6 +124,12 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 user.Password = Md5Encryption.Encrypt(Md5Encryption.Encrypt(user.Password, Md5EncryptionType.Strong));
                 UserInfoServices.AddEntity(user);
 
+                LoggerHelper.Operate(new OperateLog
+                {
+                    CreateUser_Id = UserInfo.Id,
+                    OperateType = (int)OperateType.Add,
+                    Remark = $"{UserInfo.Name}添加了一个用户{userEdit.Name}"
+                });
                 return Json(new Result<int>
                 {
                     State = 1,

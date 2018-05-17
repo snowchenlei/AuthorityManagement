@@ -80,7 +80,7 @@
         @*<div id="toolbar"></div>*@
         <div class="bs-bars pull-left">
             <div id="toolbar" class="btn-group">
-                @Html.Action("MenuHeader", "Home", new { area = "Manager", moduleId = ViewBag.ModuleId })
+                @Html.Action("MenuHeader", "Home", new { moduleId = ViewBag.ModuleId })
                 <select style="margin-right: 10px;border-radius: 4px;" id="sel_exportoption">
                     <option value="basic">导出本页</option>
                     <option value="all">导出所有</option>

@@ -1,8 +1,13 @@
 ﻿using Cl.AuthorityManagement.Common;
+using Cl.AuthorityManagement.Common.Conversion;
+using Cl.AuthorityManagement.Common.Encryption;
+using Cl.AuthorityManagement.Common.Http;
 using Cl.AuthorityManagement.Entity;
+using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
 using Cl.AuthorityManagement.Model;
 using Cl.AuthorityManagement.Model.Mvc;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +19,41 @@ namespace Cl.AuthorityManagement.Web.Controllers
     public class AccountController : Controller
     {
         private readonly IUserInfoServices UserInfoServices = null;
+        private readonly ILoginInfoServices LoginInfoServices = null;
         public AccountController(
-            IUserInfoServices userInfoServices)
+            IUserInfoServices userInfoServices,
+            ILoginInfoServices loginInfoServices)
         {
             UserInfoServices = userInfoServices;
+            LoginInfoServices = loginInfoServices;
         }
 
         // GET: Account
         public ActionResult Login()
         {
-            return View();
+            try
+            {
+                string userInfo = CookieHelper.GetCookieValue("user");
+                if (!String.IsNullOrEmpty(userInfo))
+                {
+                    JObject jobj = JObject.Parse(userInfo);
+                    string userName = jobj["UserName"]?.ToString(),
+                        password = jobj["Password"]?.ToString();
+                    UserInfo user = UserInfoServices
+                        .LoadFirst(entity => entity.UserName == userName
+                            && entity.Password == password);
+                    if (user != null)
+                    {
+                        SetUser(user);
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
+                return View();
+            }
+            catch (Exception ex)
+            {
+                return View();
+            }
         }
 
         /// <summary>
@@ -46,18 +76,66 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 ModelState.AddModelError("VerifyCode", "验证码错误");
                 return View();
             }
-            UserInfo userInfo = UserInfoServices.LoadFirst(
-                entity => entity.UserName == login.UserName
-                && entity.Password == login.Password);
+
+            login.Password = Md5Encryption.Encrypt(Md5Encryption.Encrypt(login.Password, Md5EncryptionType.Strong));
+            UserInfo userInfo = UserInfoServices
+                .LoadFirst(entity => entity.UserName == login.UserName
+                    && entity.Password == login.Password);
 
             if (userInfo == null)
             {
                 ModelState.AddModelError("Password", "用户名与密码不匹配");
                 return View();
             }
-            Session["LoginUser"] = userInfo;            
+            if (userInfo.IsCanUse == false)
+            {
+                ModelState.AddModelError("", "当前用户不可用");
+                return View();
+            }
+            SetUser(userInfo, login.RememberMe);       
             return RedirectToAction("Index", "Home");
         }
+
+        /// <summary>
+        /// 登出
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            CookieHelper.ClearCookie("user");
+            Session["LoginUser"] = null;
+            return Json(new Result
+            {
+                State = 1,
+                Message = "登出成功"
+            });
+        }
+
+        private void SetUser(UserInfo userInfo, bool rememberMe = false)
+        {
+            if (rememberMe)
+            {
+                string cookieValue = Serialization.SerializeObject(new
+                {
+                    UserName = userInfo.UserName,
+                    Password = userInfo.Password
+                });
+                CookieHelper.SetCookie("user", cookieValue);
+            }
+            Session["LoginUser"] = userInfo;
+            UAParserUserAgent userAgent = new UAParserUserAgent(HttpContext);
+            LoginInfoServices.AddEntity(new LoginInfo
+            {
+                IP = IPHelper.GetRealIP(),
+                Device = userAgent.Device.ToString(),
+                OS = userAgent.OS.ToString(),
+                UserAgent = userAgent.UserAgent.ToString(),
+                AddTime = DateTime.Now,
+                UserInfo = userInfo
+            });
+        }
+
         /// <summary>
         /// 获取验证码
         /// </summary>

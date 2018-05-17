@@ -12,9 +12,11 @@ namespace Cl.AuthorityManagement.Model.Mvc
     {
         public int? Id { get; set; }
 
-        /// <summary>
-        /// 用户名
-        /// </summary>
+        [Required]
+        [StringLength(50)]
+        [Display(Name = "名称")]
+        public string Name { get; set; }
+
         [Required]
         [StringLength(50)]
         [Display(Name = "用户名")]

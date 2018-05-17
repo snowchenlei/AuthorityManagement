@@ -2,13 +2,15 @@
 
 @{
     Layout = null;
+    string action = ViewBag.Action ?? "Edit";
+    string operateName = ViewBag.Operate ?? "修改";
 }
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h4 class="modal-title" id="modelTitle">添加角色</h4>
+    <h4 class="modal-title" id="modelTitle">@ViewBag.Operate 角色</h4>
 </div>
 
-@using (Ajax.BeginForm("Edit", "Role", new AjaxOptions() { HttpMethod = "post", OnFailure = "saveFailure", OnSuccess = "saveSuccess" }, new { @id = "modelForm" }))
+@using (Ajax.BeginForm((string)ViewBag.Action, "Role", new AjaxOptions() { HttpMethod = "post", OnFailure = "saveFailure", OnSuccess = "saveSuccess" }, new { @id = "modelForm" }))
 {
     @Html.AntiForgeryToken()
     <div class="modal-body form-horizontal" id="modify">

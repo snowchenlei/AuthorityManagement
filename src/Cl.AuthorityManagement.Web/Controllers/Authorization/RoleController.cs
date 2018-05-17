@@ -51,7 +51,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
             {
                 tempRoles = tempRoles.Where(r => r.Name.Contains(roleName.Trim()));
             }
-            if (startTime > new DateTime(1970, 1, 1))
+            if (startTime > new DateTime(1970, 1, 1) && startTime != endTime)
             {
                 tempRoles = tempRoles.Where(r => r.AddTime > startTime);
             }

@@ -1,6 +1,8 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using Cl.AuthorityManagement.Web.Controllers;
 using System.Configuration;
 using System.Linq;
 using System.Reflection;
@@ -23,6 +25,11 @@ namespace Cl.AuthorityManagement.Web.App_Start
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             //注册mvc容器的实现
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
+
+            //Aop
+            //builder.RegisterType<UserController>().EnableClassInterceptors();
+            //builder.Register(c => new CallLogger());
+
             var container = builder.Build();
             Container = container;
 

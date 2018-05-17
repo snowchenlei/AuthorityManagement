@@ -1,0 +1,160 @@
+ 【时间】:2018-05-17 17:27:29,385
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:29:20,556
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:29:38,277
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:30:13,956
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:30:18,207
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:31:23,516
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:32:30,092
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:33:01,747
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:33:07,373
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:33:21,077
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:34:27,597
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:35:13,728
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:35:45,357
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:36:18,030
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:42:49,168
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:44:55,025
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:47:14,440
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:48:59,015
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:54:38,419
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:56:07,434
+ 【级别】:INFO
+ 【类名】:LogOperate
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:系统管理员添加了一个用户为用户分配角色
+ 【日志详细】：                
+----------------------footer--------------------------

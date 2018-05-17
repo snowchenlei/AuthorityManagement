@@ -6,9 +6,9 @@
 
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h4 class="modal-title" id="modelTitle">操作</h4>
+    <h4 class="modal-title" id="modelTitle">@ViewBag.Operate 模块</h4>
 </div>
-@using (Ajax.BeginForm("Edit", "Module", new AjaxOptions() { HttpMethod = "post", OnFailure = "saveFailure", OnSuccess = "saveSuccess" }, new { @id = "modelForm" }))
+@using (Ajax.BeginForm((string)ViewBag.Action, "Module", new AjaxOptions() { HttpMethod = "post", OnFailure = "saveFailure", OnSuccess = "saveSuccess" }, new { @id = "modelForm" }))
 {
     @Html.AntiForgeryToken()
     
@@ -43,15 +43,21 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IconName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                @*<div class="input-group">
+                    @Html.EditorFor(model => model.IconName, new { htmlAttributes = new { @class = "form-control", @data_bind = "value:IconName", @placeholder = @Html.DisplayNameFor(model => model.IconName) } })
+                    <button class="btn btn-default" id="btnIcon" role="iconpicker"></button>
+                    <span class="input-group-addon" onclick="A()">
+                        <i class="glyphicon glyphicon-picture"></i>
+                    </span>
+                </div>*@
                 @Html.EditorFor(model => model.IconName, new { htmlAttributes = new { @class = "form-control", @data_bind = "value:IconName", @placeholder = @Html.DisplayNameFor(model => model.IconName) } })
                 @Html.ValidationMessageFor(model => model.IconName, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.ParentId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <select class="form-control" id="ParentId" name="ParentId" data-bind="options:modules,
+                <select id="ParentId" name="ParentId" data-bind="options:modules,
                             optionsText:'text',
                             optionsValue:'id',
                             value:operate.EditModel.ParentId">
@@ -64,4 +70,13 @@
         <button type="submit" class="btn btn-success">保存</button>
         <input type="hidden" id="page" name="page" />
     </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#btnIcon').iconpicker();
+            $('#btnIcon').on('change', function (e) {
+                $('#IconName').val(e.icon);
+            });
+        });
+        $.validator.unobtrusive.parse('form');
+    </script>
 }

@@ -15,7 +15,7 @@ namespace Cl.AuthorityManagement.Data.Migrations
             AutomaticMigrationsEnabled = true;
             //指示迁移时是否接收数据值丢失
             AutomaticMigrationDataLossAllowed = true;
-            ContextKey = "Qm.CardManagement.Data.AuthorityManagementContext";
+            ContextKey = "Cl.AuthorityManagement.Data.AuthorityManagementContext";
         }
 
         protected override void Seed(AuthorityManagementContext context)

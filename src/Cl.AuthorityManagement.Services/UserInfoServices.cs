@@ -89,7 +89,12 @@ namespace Cl.AuthorityManagement.Services
             {
                 throw new ArgumentNullException("用户不能为空");
             }
-            user.UserInfoModuleElements.Clear();
+            //非多对多不可用clear，需要手动删除
+            UserInfoModuleElement[] userElements = user.UserInfoModuleElements.ToArray();
+            foreach (var userInfoModuleElement in userElements)
+            {
+                UserInfoModuleElementRepository.DeleteEntity(userInfoModuleElement);
+            }
             Module module = ModuleRepository
                 .LoadFirst(m => m.Id == moduleId);
             ModuleElement[] elements = ModuleElementRepository
@@ -114,13 +119,13 @@ namespace Cl.AuthorityManagement.Services
         /// <returns>是否成功</returns>
         public bool Delete(int userId)
         {
-            var userElements = UserInfoModuleElementRepository.LoadEntities(s => s.UserInfo.Id == userId);
+            var userElements = UserInfoModuleElementRepository
+                .LoadEntities(s => s.UserInfo.Id == userId)
+                .ToArray();
             foreach (var item in userElements)
             {
                 UserInfoModuleElementRepository.DeleteEntity(item);
             }
-            CurrentDBSession.SaveChanges();
-
             UserInfo user = UserInfoRepository.LoadFirst(u => u.Id == userId);
             CurrentRepository.DeleteEntity(user);
             return CurrentDBSession.SaveChanges();

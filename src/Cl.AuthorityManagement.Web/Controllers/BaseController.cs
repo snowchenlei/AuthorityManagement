@@ -52,7 +52,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 Authorization(ref filterContext);
             }
         }
-
+        
         protected virtual void Authorization(ref ActionExecutingContext filterContext)
         {
             //默认不处理

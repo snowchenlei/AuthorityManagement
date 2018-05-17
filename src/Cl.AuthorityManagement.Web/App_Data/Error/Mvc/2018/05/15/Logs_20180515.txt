@@ -1,0 +1,525 @@
+ 【时间】:2018-05-15 09:57:55,881
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = User, Action = ModuleElements, IP = ::1, Head = Connection=keep-alive&Content-Length=44&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"userId":1007,"elementId":"3,5,","moduleId":1005}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Length=44&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"userId":1007,"elementId":"3,5,","moduleId":1005}】请求【User】的【ModuleElements】产生异常：【集合已修改；可能无法执行枚举操作。】内部错误【】 }
+ 【日志详细】：System.InvalidOperationException: 集合已修改；可能无法执行枚举操作。
+   在 System.Collections.Generic.HashSet`1.Enumerator.MoveNext()
+   在 Cl.AuthorityManagement.Services.UserInfoServices.SetUserModuleElements(UserInfo user, Int32[] elementIds, Int32 moduleId) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Services\UserInfoServices.cs:行号 93
+   在 Cl.AuthorityManagement.Web.Controllers.UserController.ModuleElements(Int32 userId, String elementId, Int32 moduleId) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\Authorization\UserController.cs:行号 407
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:18:19,649
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Role】的【Index】产生异常：【以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。】内部错误【】 }
+ 【日志详细】：System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。
+   在 System.Web.WebPages.WebPageBase.VerifyRenderedBodyOrSections()
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:18:19,839
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Role】的【Index】产生异常：【以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。】内部错误【】 }
+ 【日志详细】：System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。
+   在 System.Web.WebPages.WebPageBase.VerifyRenderedBodyOrSections()
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:20:01,082
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Role】的【Index】产生异常：【以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。】内部错误【】 }
+ 【日志详细】：System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。
+   在 System.Web.WebPages.WebPageBase.VerifyRenderedBodyOrSections()
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:20:01,443
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Role】的【Index】产生异常：【以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。】内部错误【】 }
+ 【日志详细】：System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。
+   在 System.Web.WebPages.WebPageBase.VerifyRenderedBodyOrSections()
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:20:09,549
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Role】的【Index】产生异常：【E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Views\Role\Index.cshtml(53): error CS0103: The name 'pageInfo' does not exist in the current context】内部错误【】 }
+ 【日志详细】：System.Web.HttpCompileException (0x80004005): E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Views\Role\Index.cshtml(53): error CS0103: The name 'pageInfo' does not exist in the current context
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Compilation.BuildManager.GetBuildResultFromCacheInternal(String cacheKey, Boolean keyFromVPP, VirtualPath virtualPath, Int64 hashCode, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultFromCacheInternal(VirtualPath virtualPath, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:20:10,366
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Role】的【Index】产生异常：【E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Views\Role\Index.cshtml(53): error CS0103: The name 'pageInfo' does not exist in the current context】内部错误【】 }
+ 【日志详细】：System.Web.HttpCompileException (0x80004005): E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Views\Role\Index.cshtml(53): error CS0103: The name 'pageInfo' does not exist in the current context
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Compilation.BuildManager.GetBuildResultFromCacheInternal(String cacheKey, Boolean keyFromVPP, VirtualPath virtualPath, Int64 hashCode, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultFromCacheInternal(VirtualPath virtualPath, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:20:40,923
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Role】的【Index】产生异常：【以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。】内部错误【】 }
+ 【日志详细】：System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。
+   在 System.Web.WebPages.WebPageBase.VerifyRenderedBodyOrSections()
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:20:41,979
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Role】的【Index】产生异常：【以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。】内部错误【】 }
+ 【日志详细】：System.Web.HttpException (0x80004005): 以下各节已定义，但尚未为布局页“~/Views/Shared/_Layout.cshtml”呈现:“Scripts”。
+   在 System.Web.WebPages.WebPageBase.VerifyRenderedBodyOrSections()
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:22:06,888
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Role】的【Index】产生异常：【值不能为 null。
+参数名: key】内部错误【】 }
+ 【日志详细】：System.ArgumentNullException: 值不能为 null。
+参数名: key
+   在 System.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   在 System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   在 ASP._Page_Views_Shared__LayoutPageTable_cshtml.Execute() 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Views\Shared\_LayoutPageTable.cshtml:行号 5
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:22:07,091
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Role】的【Index】产生异常：【值不能为 null。
+参数名: key】内部错误【】 }
+ 【日志详细】：System.ArgumentNullException: 值不能为 null。
+参数名: key
+   在 System.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   在 System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   在 ASP._Page_Views_Shared__LayoutPageTable_cshtml.Execute() 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Views\Shared\_LayoutPageTable.cshtml:行号 5
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:28:31,856
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Elements, IP = ::1, Head = Connection=keep-alive&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest, HttpMethod = GET, RequestMessage = {"roleId":null,"moduleId":1005}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest】头使用【GET】携带【{"roleId":null,"moduleId":1005}】请求【Role】的【Elements】产生异常：【对于“Cl.AuthorityManagement.Web.Controllers.RoleController”中方法“System.String Elements(Int32, Int32)”的不可以为 null 的类型“System.Int32”的参数“roleId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters】内部错误【】 }
+ 【日志详细】：System.ArgumentException: 对于“Cl.AuthorityManagement.Web.Controllers.RoleController”中方法“System.String Elements(Int32, Int32)”的不可以为 null 的类型“System.Int32”的参数“roleId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:53:07,357
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Elements, IP = ::1, Head = Connection=keep-alive&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest, HttpMethod = GET, RequestMessage = {"roleId":null,"moduleId":1005}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest】头使用【GET】携带【{"roleId":null,"moduleId":1005}】请求【Role】的【Elements】产生异常：【对于“Cl.AuthorityManagement.Web.Controllers.RoleController”中方法“System.String Elements(Int32, Int32)”的不可以为 null 的类型“System.Int32”的参数“roleId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters】内部错误【】 }
+ 【日志详细】：System.ArgumentException: 对于“Cl.AuthorityManagement.Web.Controllers.RoleController”中方法“System.String Elements(Int32, Int32)”的不可以为 null 的类型“System.Int32”的参数“roleId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:55:59,088
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Elements, IP = ::1, Head = Connection=keep-alive&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest, HttpMethod = GET, RequestMessage = {"roleId":null,"moduleId":1005}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest】头使用【GET】携带【{"roleId":null,"moduleId":1005}】请求【Role】的【Elements】产生异常：【对于“Cl.AuthorityManagement.Web.Controllers.RoleController”中方法“System.String Elements(Int32, Int32)”的不可以为 null 的类型“System.Int32”的参数“roleId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters】内部错误【】 }
+ 【日志详细】：System.ArgumentException: 对于“Cl.AuthorityManagement.Web.Controllers.RoleController”中方法“System.String Elements(Int32, Int32)”的不可以为 null 的类型“System.Int32”的参数“roleId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:56:57,931
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Elements, IP = ::1, Head = Connection=keep-alive&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest, HttpMethod = GET, RequestMessage = {"roleId":null,"moduleId":1005}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest】头使用【GET】携带【{"roleId":null,"moduleId":1005}】请求【Role】的【Elements】产生异常：【对于“Cl.AuthorityManagement.Web.Controllers.RoleController”中方法“System.String Elements(Int32, Int32)”的不可以为 null 的类型“System.Int32”的参数“roleId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters】内部错误【】 }
+ 【日志详细】：System.ArgumentException: 对于“Cl.AuthorityManagement.Web.Controllers.RoleController”中方法“System.String Elements(Int32, Int32)”的不可以为 null 的类型“System.Int32”的参数“roleId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:59:45,564
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Content-Length=38&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {}, ApplicationType = 2, InnerException = 在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。
+   在 System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   在 System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.<>c__DisplayClass4.<Wrap>b__3()
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)
+
+
+, Description =  客户端【::1】以【Connection=keep-alive&Content-Length=38&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{}】请求【Role】的【Index】产生异常：【在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。】内部错误【】 }
+ 【日志详细】：System.Web.HttpException (0x80004005): 在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。
+   在 System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   在 System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.<>c__DisplayClass4.<Wrap>b__3()
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 10:59:57,770
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Content-Length=38&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {}, ApplicationType = 2, InnerException = 在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。
+   在 System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   在 System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.<>c__DisplayClass4.<Wrap>b__3()
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)
+
+
+, Description =  客户端【::1】以【Connection=keep-alive&Content-Length=38&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{}】请求【Role】的【Index】产生异常：【在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。】内部错误【】 }
+ 【日志详细】：System.Web.HttpException (0x80004005): 在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。
+   在 System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   在 System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.<>c__DisplayClass4.<Wrap>b__3()
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 11:00:49,101
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Content-Length=38&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {}, ApplicationType = 2, InnerException = 在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。
+   在 System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   在 System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.<>c__DisplayClass4.<Wrap>b__3()
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)
+
+
+, Description =  客户端【::1】以【Connection=keep-alive&Content-Length=38&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{}】请求【Role】的【Index】产生异常：【在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。】内部错误【】 }
+ 【日志详细】：System.Web.HttpException (0x80004005): 在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。
+   在 System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   在 System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.<>c__DisplayClass4.<Wrap>b__3()
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 11:04:30,300
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = Index, IP = ::1, Head = Connection=keep-alive&Content-Length=38&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {}, ApplicationType = 2, InnerException = 在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。
+   在 System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   在 System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.<>c__DisplayClass4.<Wrap>b__3()
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)
+
+
+, Description =  客户端【::1】以【Connection=keep-alive&Content-Length=38&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{}】请求【Role】的【Index】产生异常：【在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。】内部错误【】 }
+ 【日志详细】：System.Web.HttpException (0x80004005): 在控制器“Cl.AuthorityManagement.Web.Controllers.HomeController”上未找到公共操作方法“MenuHeader”。
+   在 System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   在 System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.<>c__DisplayClass4.<Wrap>b__3()
+   在 System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-15 11:14:52,627
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Role, Action = ModuleElements, IP = ::1, Head = Connection=keep-alive&Content-Length=38&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"roleId":null,"elementId":"3,5,","moduleId":1005}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Length=38&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN&Host=localhost:57711&Referer=http://localhost:57711/Role/Index?moduleId=3&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"roleId":null,"elementId":"3,5,","moduleId":1005}】请求【Role】的【ModuleElements】产生异常：【对于“Cl.AuthorityManagement.Web.Controllers.RoleController”中方法“System.Web.Mvc.ActionResult ModuleElements(Int32, System.String, Int32)”的不可以为 null 的类型“System.Int32”的参数“roleId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters】内部错误【】 }
+ 【日志详细】：System.ArgumentException: 对于“Cl.AuthorityManagement.Web.Controllers.RoleController”中方法“System.Web.Mvc.ActionResult ModuleElements(Int32, System.String, Int32)”的不可以为 null 的类型“System.Int32”的参数“roleId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------

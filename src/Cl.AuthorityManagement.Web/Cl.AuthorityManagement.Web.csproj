@@ -53,6 +53,9 @@
     <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac.Extras.DynamicProxy, Version=4.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Extras.DynamicProxy.4.4.0\lib\net45\Autofac.Extras.DynamicProxy.dll</HintPath>
+    </Reference>
     <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
@@ -61,6 +64,15 @@
     </Reference>
     <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -129,6 +141,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config\RegexConfig.xml" />
     <Content Include="Content\ace\css\ace-ie.min.css" />
     <Content Include="Content\ace\css\ace-part2.min.css" />
     <Content Include="Content\ace\css\ace-rtl.min.css" />
@@ -271,6 +284,12 @@
     <Content Include="Content\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
     <Content Include="Content\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
     <Content Include="Content\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="Content\bootstrap-iconpicker\css\bootstrap-iconpicker.css" />
+    <Content Include="Content\bootstrap-iconpicker\css\bootstrap-iconpicker.min.css" />
+    <Content Include="Content\bootstrap-iconpicker\js\bootstrap-iconpicker-iconset-all.js" />
+    <Content Include="Content\bootstrap-iconpicker\js\bootstrap-iconpicker-iconset-all.min.js" />
+    <Content Include="Content\bootstrap-iconpicker\js\bootstrap-iconpicker.js" />
+    <Content Include="Content\bootstrap-iconpicker\js\bootstrap-iconpicker.min.js" />
     <Content Include="Content\bootstrap-table\bootstrap-table-locale-all.js" />
     <Content Include="Content\bootstrap-table\bootstrap-table-locale-all.min.js" />
     <Content Include="Content\bootstrap-table\bootstrap-table.css" />
@@ -289,6 +308,8 @@
     <Content Include="Content\customer\dataInit.js" />
     <Content Include="Content\customer\frame-common.js" />
     <Content Include="Content\customer\knockout.bootstraptable.js" />
+    <Content Include="Content\customer\showInfo.js" />
+    <Content Include="Content\customer\table-column-formater.css" />
     <Content Include="Content\customer\timeBucket.js" />
     <Content Include="Content\Font-Awesome-3.2.1\css\font-awesome-ie7.css" />
     <Content Include="Content\Font-Awesome-3.2.1\css\font-awesome-ie7.min.css" />
@@ -328,11 +349,18 @@
     <Content Include="Content\Font-Awesome-3.2.1\scss\_mixins.scss" />
     <Content Include="Content\Font-Awesome-3.2.1\scss\_path.scss" />
     <Content Include="Content\Font-Awesome-3.2.1\scss\_variables.scss" />
+    <Content Include="Config\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Content\jquery-validate\jquery.validate-vsdoc.js" />
     <Content Include="Content\jquery-validate\jquery.validate.js" />
     <Content Include="Content\jquery-validate\jquery.validate.min.js" />
     <Content Include="Content\jquery-validate\jquery.validate.unobtrusive.js" />
     <Content Include="Content\jquery-validate\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\jquery\jquery-3.3.1.js" />
+    <Content Include="Content\jquery\jquery-3.3.1.min.js" />
+    <Content Include="Content\jsonView\jquery.jsonview.css" />
+    <Content Include="Content\jsonView\jquery.jsonview.js" />
     <Content Include="Content\knockout\extensions\knockout.mapping-latest.debug.js" />
     <Content Include="Content\knockout\extensions\knockout.mapping-latest.js" />
     <Content Include="Content\knockout\knockout-3.4.2.js" />
@@ -403,6 +431,9 @@
     <Content Include="Content\ace\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\zTree\css\awesomeStyle\awesome.less" />
     <Content Include="Content\zTree\css\awesomeStyle\fa.less" />
+    <Content Include="HttpError\401.html" />
+    <Content Include="HttpError\404.html" />
+    <Content Include="HttpError\500.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\toastr\css\toastr.less" />
@@ -418,25 +449,43 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\ErrorInfo\index.js" />
+    <Content Include="Views\Home\index.css" />
     <Content Include="Views\Home\index.js" />
+    <Content Include="Views\LoginInfo\index.js" />
+    <Content Include="Views\ModuleElement\index.js" />
+    <Content Include="Views\Module\index.js" />
+    <Content Include="Views\MonitorInfo\index.js" />
+    <Content Include="Views\RequestInfo\index.js" />
+    <Content Include="Views\Role\index.js" />
+    <Content Include="Views\User\elements.js" />
+    <Content Include="Views\User\index.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutoFacConfig.cs" />
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\CallLogger.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\WebApi\Controllers\CacheController.cs" />
+    <Compile Include="Areas\WebApi\Controllers\Third\IPController.cs" />
+    <Compile Include="Areas\WebApi\WebApiAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Authorization\ModuleController.cs" />
     <Compile Include="Controllers\Authorization\ModuleElementController.cs" />
-    <Compile Include="Controllers\Authorization\PermissionController.cs" />
     <Compile Include="Controllers\Authorization\RoleController.cs" />
     <Compile Include="Controllers\Authorization\UserController.cs" />
+    <Compile Include="Controllers\Log\ErrorInfoController.cs" />
+    <Compile Include="Controllers\Log\LoginInfoController.cs" />
+    <Compile Include="Controllers\Log\MonitorInfoController.cs" />
+    <Compile Include="Controllers\Log\RequestInfoController.cs" />
+    <Compile Include="Controllers\Resource\IPController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -473,6 +522,12 @@
     <Content Include="Views\User\ModuleElements.cshtml" />
     <Content Include="Views\Shared\_LayoutCheckElement.cshtml" />
     <Content Include="Views\Role\ModuleElements.cshtml" />
+    <Content Include="Views\Shared\_LayoutPageTable.cshtml" />
+    <Content Include="Views\ErrorInfo\Index.cshtml" />
+    <Content Include="Views\IP\Index.cshtml" />
+    <Content Include="Views\LoginInfo\Index.cshtml" />
+    <Content Include="Views\MonitorInfo\Index.cshtml" />
+    <Content Include="Views\RequestInfo\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -482,9 +537,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\WebApi\Models\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Authorization\" />
-    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Cache\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -493,6 +548,10 @@
     <ProjectReference Include="..\Cl.AuthorityManagement.Common\Cl.AuthorityManagement.Common.csproj">
       <Project>{9C182205-0574-4EA5-9529-065627CAD2D2}</Project>
       <Name>Cl.AuthorityManagement.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cl.AuthorityManagement.Data\Cl.AuthorityManagement.Data.csproj">
+      <Project>{5AAD37D5-560B-4B87-8562-CE89C6ADC3D5}</Project>
+      <Name>Cl.AuthorityManagement.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cl.AuthorityManagement.Entity\Cl.AuthorityManagement.Entity.csproj">
       <Project>{EF9F88B3-8359-4E68-820F-BFC2F8F8A9C3}</Project>

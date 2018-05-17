@@ -30,8 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,12 +47,24 @@
     <Compile Include="LoadHtml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource.cs" />
+    <Compile Include="Resource\IPResult.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cl.AuthorityManagement.Common\Cl.AuthorityManagement.Common.csproj">
+      <Project>{9C182205-0574-4EA5-9529-065627CAD2D2}</Project>
+      <Name>Cl.AuthorityManagement.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cl.AuthorityManagement.Entity\Cl.AuthorityManagement.Entity.csproj">
+      <Project>{EF9F88B3-8359-4E68-820F-BFC2F8F8A9C3}</Project>
+      <Name>Cl.AuthorityManagement.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cl.AuthorityManagement.Model\Cl.AuthorityManagement.Model.csproj">
       <Project>{70EBD75E-11FC-424C-8293-8E3E426E4976}</Project>
       <Name>Cl.AuthorityManagement.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

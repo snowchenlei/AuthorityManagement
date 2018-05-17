@@ -1,0 +1,222 @@
+ 【时间】:2018-05-17 12:16:43,342
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Home, Action = Welcome, IP = ::1, Head = Connection=Keep-Alive&Accept=text/html, application/xhtml+xml, image/jxr, */*&Accept-Encoding=gzip, deflate&Accept-Language=zh-Hans-CN,zh-Hans;q=0.5&Cookie=loc=ip=127.0.0.1&regionid=-1&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=Keep-Alive&Accept=text/html, application/xhtml+xml, image/jxr, */*&Accept-Encoding=gzip, deflate&Accept-Language=zh-Hans-CN,zh-Hans;q=0.5&Cookie=loc=ip=127.0.0.1&regionid=-1&Host=localhost:57711&Referer=http://localhost:57711/Home/Index&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299】头使用【GET】携带【{}】请求【Home】的【Welcome】产生异常：【呵呵】内部错误【】 }
+ 【日志详细】：System.Exception: 呵呵
+   在 Cl.AuthorityManagement.Web.Controllers.HomeController.Welcome() 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\HomeController.cs:行号 88
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 12:16:51,574
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Home, Action = Welcome, IP = ::1, Head = Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Home】的【Welcome】产生异常：【呵呵】内部错误【】 }
+ 【日志详细】：System.Exception: 呵呵
+   在 Cl.AuthorityManagement.Web.Controllers.HomeController.Welcome() 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\HomeController.cs:行号 88
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 12:17:44,951
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Home, Action = Navs, IP = ::1, Head = Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=application/json, text/javascript, */*; q=0.01&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=application/json, text/javascript, */*; q=0.01&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest】头使用【GET】携带【{}】请求【Home】的【Navs】产生异常：【呵呵】内部错误【】 }
+ 【日志详细】：System.Exception: 呵呵
+   在 Cl.AuthorityManagement.Web.Controllers.HomeController.Navs() 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\HomeController.cs:行号 99
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 12:22:39,181
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Home, Action = Navs, IP = ::1, Head = Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=application/json, text/javascript, */*; q=0.01&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=application/json, text/javascript, */*; q=0.01&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest】头使用【GET】携带【{}】请求【Home】的【Navs】产生异常：【呵呵】内部错误【】 }
+ 【日志详细】：System.Exception: 呵呵
+   在 Cl.AuthorityManagement.Web.Controllers.HomeController.Navs() 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\HomeController.cs:行号 99
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 16:47:20,631
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第65行
+ 【日志内容】:{ Controller = User, Action = Add, IP = ::1, Head = Connection=keep-alive&Content-Length=284&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"userEdit":{"Id":null,"Name":"w(?Д?)w","UserName":"15225522332","Password":"241","PhoneNumber":"1588569856a","IsCanUse":false}}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Length=284&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"userEdit":{"Id":null,"Name":"w(?Д?)w","UserName":"15225522332","Password":"241","PhoneNumber":"1588569856a","IsCanUse":false}}】请求【User】的【Add】产生异常：【未将对象引用设置到对象的实例。】内部错误【】 }
+ 【日志详细】：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Cl.AuthorityManagement.Web.Controllers.UserController.Add(UserEdit userEdit) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\Authorization\UserController.cs:行号 132
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 16:47:36,847
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第65行
+ 【日志内容】:{ Controller = User, Action = Add, IP = ::1, Head = Connection=keep-alive&Content-Length=284&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"userEdit":{"Id":null,"Name":"w(?Д?)w","UserName":"15225522332","Password":"241","PhoneNumber":"1588569856a","IsCanUse":false}}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Length=284&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"userEdit":{"Id":null,"Name":"w(?Д?)w","UserName":"15225522332","Password":"241","PhoneNumber":"1588569856a","IsCanUse":false}}】请求【User】的【Add】产生异常：【未将对象引用设置到对象的实例。】内部错误【】 }
+ 【日志详细】：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Cl.AuthorityManagement.Web.Controllers.UserController.Add(UserEdit userEdit) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\Authorization\UserController.cs:行号 132
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:25:39,626
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第65行
+ 【日志内容】:{ Controller = User, Action = Add, IP = ::1, Head = Connection=keep-alive&Content-Length=330&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"userEdit":{"Id":null,"Name":"为用户分配角色","UserName":"测试w","Password":"243124","PhoneNumber":"15885698561","IsCanUse":false}}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Length=330&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"userEdit":{"Id":null,"Name":"为用户分配角色","UserName":"测试w","Password":"243124","PhoneNumber":"15885698561","IsCanUse":false}}】请求【User】的【Add】产生异常：【未将对象引用设置到对象的实例。】内部错误【】 }
+ 【日志详细】：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Cl.AuthorityManagement.Web.Controllers.UserController.Add(UserEdit userEdit) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\Authorization\UserController.cs:行号 132
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:27:56,060
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第65行
+ 【日志内容】:{ Controller = User, Action = Add, IP = ::1, Head = Connection=keep-alive&Content-Length=330&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"userEdit":{"Id":null,"Name":"为用户分配角色","UserName":"测试w","Password":"243124","PhoneNumber":"15885698561","IsCanUse":false}}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Length=330&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"userEdit":{"Id":null,"Name":"为用户分配角色","UserName":"测试w","Password":"243124","PhoneNumber":"15885698561","IsCanUse":false}}】请求【User】的【Add】产生异常：【未将对象引用设置到对象的实例。】内部错误【】 }
+ 【日志详细】：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Cl.AuthorityManagement.Web.Controllers.UserController.Add(UserEdit userEdit) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\Authorization\UserController.cs:行号 132
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:40:06,863
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第65行
+ 【日志内容】:{ Controller = User, Action = Add, IP = ::1, Head = Connection=keep-alive&Content-Length=330&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"userEdit":{"Id":null,"Name":"为用户分配角色","UserName":"测试w","Password":"243124","PhoneNumber":"15885698561","IsCanUse":false}}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Length=330&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"userEdit":{"Id":null,"Name":"为用户分配角色","UserName":"测试w","Password":"243124","PhoneNumber":"15885698561","IsCanUse":false}}】请求【User】的【Add】产生异常：【未将对象引用设置到对象的实例。】内部错误【】 }
+ 【日志详细】：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Cl.AuthorityManagement.Web.Controllers.UserController.Add(UserEdit userEdit)
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 18:10:04,921
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第65行
+ 【日志内容】:{ Controller = User, Action = Add, IP = ::1, Head = Connection=keep-alive&Content-Length=330&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"userEdit":{"Id":null,"Name":"为用户分配角色","UserName":"测试w","Password":"243124","PhoneNumber":"15885698561","IsCanUse":false}}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Length=330&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=ASP.NET_SessionId=vyb1qmxfin1njfgvzdrqbtoj; __RequestVerificationToken=wF2Knn62lHCcqcsQHe6OtTpAsL3GL5LpK1srfbhKO8p29RASmFwYKwp-PR1ZItrj9eEnMZwR_9ztcnnQmm9d6y9ekCUvEPhfn8NO1H63kZA1; user=%7b%22UserName%22%3a%22admin%22%2c%22Password%22%3a%22511B0D5F341BDDBD9A5348923B48D14C%22%7d&Host=localhost:57711&Referer=http://localhost:57711/User/Index?moduleId=2&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"userEdit":{"Id":null,"Name":"为用户分配角色","UserName":"测试w","Password":"243124","PhoneNumber":"15885698561","IsCanUse":false}}】请求【User】的【Add】产生异常：【未将对象引用设置到对象的实例。】内部错误【】 }
+ 【日志详细】：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Cl.AuthorityManagement.Web.Controllers.UserController.Add(UserEdit userEdit) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\Authorization\UserController.cs:行号 132
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------

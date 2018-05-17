@@ -13,7 +13,9 @@ namespace Cl.AuthorityManagement.Web.App_Start
         {
             filters.Add(new HandleErrorAttribute());
             //自定义异常过滤器
-            filters.Add(new CustomExceptionAttribute());
+            filters.Add(new CustomerExceptionAttribute());
+            filters.Add(new CustomerActionAttribute());
+            filters.Add(new CustomerResultAttribute());
             //filters.Add(new CustomerAuthorizeAttribute());
         }
     }

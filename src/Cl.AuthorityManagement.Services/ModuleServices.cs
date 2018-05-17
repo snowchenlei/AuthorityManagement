@@ -12,11 +12,17 @@ namespace Cl.AuthorityManagement.Services
     public partial class ModuleServices:BaseServices<Module>, IModuleServices
     {
         private readonly IModuleElementRepository ModuleElementRepository = null;
+        private readonly IRoleModuleElementRepository RoleModuleElementRepository = null;
+        private readonly IUserInfoModuleElementRepository UserInfoModuleElementRepository = null;
         public ModuleServices(
             IBaseRepository<Module> baseRepository,
-            IModuleElementRepository moduleElementRepository):base(baseRepository)
+            IModuleElementRepository moduleElementRepository,
+            IRoleModuleElementRepository roleModuleElementRepository,
+            IUserInfoModuleElementRepository userInfoModuleElementRepository) :base(baseRepository)
         {
             ModuleElementRepository = moduleElementRepository;
+            RoleModuleElementRepository = roleModuleElementRepository;
+            UserInfoModuleElementRepository = userInfoModuleElementRepository;
         }
 
         /// <summary>
@@ -87,6 +93,34 @@ namespace Cl.AuthorityManagement.Services
                 return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// 删除指定模块
+        /// </summary>
+        /// <param name="module">要删除的模块</param>
+        /// <returns>是否成功</returns>
+        public bool DelectModule(Module module)
+        {
+            RoleModuleElement[] roleElements = RoleModuleElementRepository
+                .LoadEntities(e => e.Module.Id == module.Id)
+                .ToArray();
+            UserInfoModuleElement[] userElements = UserInfoModuleElementRepository
+                .LoadEntities(e => e.Module.Id == module.Id)
+                .ToArray();
+            foreach (RoleModuleElement item in roleElements)
+            {
+                RoleModuleElementRepository.DeleteEntity(item);
+            }
+            foreach (UserInfoModuleElement item in userElements)
+            {
+                UserInfoModuleElementRepository.DeleteEntity(item);
+            }
+            module.ModuleElements.Clear();
+            module.Roles.Clear();
+            module.UserInfos.Clear();
+            CurrentRepository.DeleteEntity(module);
+            return CurrentDBSession.SaveChanges();
         }
     }
 }
