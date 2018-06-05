@@ -44,21 +44,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Log\ErrorInfo.cs" />
     <Compile Include="Authorization\Module\BaseModuleElement.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="Authorization\Module\Module.cs" />
     <Compile Include="Authorization\Module\ModuleElement.cs" />
     <Compile Include="Authorization\Permission.cs" />
+    <Compile Include="Log\LoginInfo.cs" />
+    <Compile Include="Log\MonitorInfo.cs" />
+    <Compile Include="Log\OperateInfo.cs" />
+    <Compile Include="Log\RequestInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Authorization\Role\Role.cs" />
     <Compile Include="Authorization\Role\RoleModuleElement.cs" />
     <Compile Include="Authorization\User\UserInfo.cs" />
     <Compile Include="Authorization\User\UserInfoModuleElement.cs" />
+    <Compile Include="Resource\Area.cs" />
+    <Compile Include="Resource\IPInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Cl.AuthorityManagement.Enum\Cl.AuthorityManagement.Enum.csproj">
+      <Project>{58790FEC-B410-4D29-AD6B-316D807BB59C}</Project>
+      <Name>Cl.AuthorityManagement.Enum</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

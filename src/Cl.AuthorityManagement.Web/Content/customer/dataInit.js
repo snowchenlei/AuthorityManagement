@@ -3,14 +3,14 @@ var table = {
     init: function (columns, detailView, height) {
         //绑定table的viewmodel
 		this.myViewModel = new ko.bootstrapTableViewModel({
-			url: url,         //请求后台的URL（*）
+            url: absoluteUrl + '/Load',         //请求后台的URL（*）
 			method: 'get',                      //请求方式（*）
 			toolbar: '#toolbar',                //工具按钮用哪个容器
 			striped: true,                      //是否显示行间隔色
 			cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,                   //是否显示分页（*）
             sortable: true,                     //是否启用排序
-            sortOrder: "asc",                   //排序方式
+            sortOrder: "desc",                   //排序方式
             //导出
             showExport: true,                   //是否显示导出按钮  
             exportDataType: 'basic',     //basic', 'all', 'selected'.
@@ -169,6 +169,11 @@ var operate = {
         }
         return true;
     }
+}
+//修改模态窗信息
+function setData(data, id) {
+    $('#modifyContent').html(data);
+    $('#hidElementId').val(id);
 }
 
 // #region 页面操作

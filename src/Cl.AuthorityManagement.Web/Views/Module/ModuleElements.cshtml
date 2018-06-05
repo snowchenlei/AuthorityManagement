@@ -4,7 +4,7 @@
     PageInfo pageInfo = Resource.PageInfos["ModuleSetElement"];
 
     ViewBag.Title = pageInfo.Title;
-    Layout = "~/Views/Shared/_LayoutCheckElement.cshtml";
+    Layout = pageInfo.Layout;
 }
 @Html.Raw(ViewBag.Html)
 

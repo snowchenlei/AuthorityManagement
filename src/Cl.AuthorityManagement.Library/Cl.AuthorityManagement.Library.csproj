@@ -68,8 +68,9 @@
   <ItemGroup>
     <Compile Include="Mvc\AjaxOnlyAttribute.cs" />
     <Compile Include="Mvc\AuthenticateAttribute.cs" />
+    <Compile Include="Mvc\CustomerActionAttribute.cs" />
     <Compile Include="Mvc\CustomerResultAttribute.cs" />
-    <Compile Include="Mvc\CustomExceptionAttribute.cs" />
+    <Compile Include="Mvc\CustomerExceptionAttribute.cs" />
     <Compile Include="Mvc\JsonNetResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +78,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cl.AuthorityManagement.Common\Cl.AuthorityManagement.Common.csproj">
+      <Project>{9C182205-0574-4EA5-9529-065627CAD2D2}</Project>
+      <Name>Cl.AuthorityManagement.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cl.AuthorityManagement.Model\Cl.AuthorityManagement.Model.csproj">
+      <Project>{70EBD75E-11FC-424C-8293-8E3E426E4976}</Project>
+      <Name>Cl.AuthorityManagement.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cl.AuthorityManagement.Util\Cl.AuthorityManagement.Util.csproj">
       <Project>{1601CAAB-EB72-41AA-B833-F7AB20AF82EB}</Project>
       <Name>Cl.AuthorityManagement.Util</Name>

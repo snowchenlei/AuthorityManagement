@@ -17,6 +17,11 @@ namespace Cl.AuthorityManagement.Library.Mvc
                 filterContext.Controller.ViewBag.Action = "Add";
                 filterContext.Controller.ViewBag.Operate = "添加";
             }
+            else if (action.Equals("Edit", StringComparison.InvariantCultureIgnoreCase))
+            {
+                filterContext.Controller.ViewBag.Action = "Edit";
+                filterContext.Controller.ViewBag.Operate = "修改";
+            }
         }
 
         public void OnResultExecuted(ResultExecutedContext filterContext)

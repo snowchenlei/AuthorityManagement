@@ -28,6 +28,7 @@
         <link href="~/Content/ace/css/ace-part2.min.css" rel="stylesheet" />
     <![endif]-->
     <link href="~/Content/ace/css/ace-rtl.min.css" rel="stylesheet" />
+
     <!--[if lte IE 9]>
         <link href="~/Content/ace/css/ace-ie.min.css" rel="stylesheet" />
     <![endif]-->
@@ -36,7 +37,27 @@
         <script src="~/Content/ace/js/html5shiv.min.js"></script>
         <script src="~/Content/ace/js/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+        .div-init {
+            border: 1px solid #D5D5D5;
+        }
 
+            .div-init:hover {
+                border-color: #b5b5b5;
+            }
+
+            .div-init div {
+                padding: 0px;
+            }
+
+            .div-init img {
+                padding: 0px;
+            }
+
+        .focus {
+            border-color: #EDA968;
+        }
+    </style>
 </head>
 
 <body class="login-layout">
@@ -70,48 +91,45 @@
                                         @using (Html.BeginForm())
                                         {
                                             @Html.AntiForgeryToken()
-                                        <fieldset>
-                                            <label class="block clearfix">
-                                                <span class="block input-icon input-icon-right">
-                                                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.UserName) } })
-                                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                                                    <i class="ace-icon fa fa-user"></i>
-                                                </span>
-                                            </label>
-
-                                            <label class="block clearfix">
-                                                <span class="block input-icon input-icon-right">
-                                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Password) } })
-                                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                                                    <i class="ace-icon fa fa-lock"></i>
-                                                </span>
-                                            </label>
-                                            <label class="block clearfix">
-                                                <span class="block input-icon input-icon-right">
-                                                    @Html.EditorFor(model => model.VerifyCode, new { htmlAttributes = new { @class = "form-control col-md-4", @placeholder = @Html.DisplayNameFor(model => model.VerifyCode) } })
-                                                    <img id="imgCode" alt="验证码" style="margin-left: 5px;" src="/Account/GetVerifyCodeImage" data-src="/Account/GetVerifyCodeImage?_t=" />
-                                                    <br />
-                                                    @Html.ValidationMessageFor(model => model.VerifyCode, "", new { @class = "text-danger" })
-                                                    <i class="ace-icon fa fa-lock"></i>
-                                                </span>
-                                            </label>
-
-                                            <div class="space"></div>
-
-                                            <div class="clearfix">
-                                                <label class="inline">
-                                                    <input type="checkbox" class="ace" />
-                                                    <span class="lbl"> 记住我</span>
+                                            <fieldset>
+                                                <label class="block clearfix">
+                                                    <span class="block input-icon input-icon-right">
+                                                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.UserName) } })
+                                                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                                        <i class="ace-icon fa fa-user"></i>
+                                                    </span>
                                                 </label>
 
-                                                <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
-                                                    <i class="ace-icon fa fa-key"></i>
-                                                    <span class="bigger-110">登陆</span>
-                                                </button>
-                                            </div>
+                                                <label class="block clearfix">
+                                                    <span class="block input-icon input-icon-right">
+                                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Password) } })
+                                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                        <i class="ace-icon fa fa-lock"></i>
+                                                    </span>
+                                                </label>
+                                                <div class="container-fluid">
+                                                    <div class="row div-init">
+                                                        <div class="col-md-8">@Html.EditorFor(model => model.VerifyCode, new { htmlAttributes = new { @class = "form-control", @style = "border: 0px;", @placeholder = @Html.DisplayNameFor(model => model.VerifyCode) } })</div>
+                                                        <div class="col-md-4"><img id="imgCode" class="col-md-12" style="height: 34px;" alt="验证码" src="/Account/GetVerifyCodeImage" data-src="/Account/GetVerifyCodeImage?_t=" /></div>
+                                                    </div>
+                                                </div>
 
-                                            <div class="space-4"></div>
-                                        </fieldset>
+                                                <div class="space"></div>
+
+                                                <div class="clearfix">
+                                                    <label class="inline">
+                                                        <input id="RememberMe" name="RememberMe" class="ace" type="checkbox" data-val="true" value="true" />
+                                                        <span class="lbl"> 记住我</span>
+                                                    </label>
+
+                                                    <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                                                        <i class="ace-icon fa fa-key"></i>
+                                                        <span class="bigger-110">登陆</span>
+                                                    </button>
+                                                </div>
+
+                                                <div class="space-4"></div>
+                                            </fieldset>
                                         }
 
                                         <div class="social-or-login center">
@@ -273,31 +291,9 @@
     <script type="text/javascript">
         if ('ontouchstart' in document.documentElement) document.write("<script src='~/Content/ace/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
     </script>
+
     <!-- inline scripts related to this page -->
     <script type="text/javascript">
-        function requestFullScreen(element) {
-            // 判断各种浏览器，找到正确的方法
-            //必须按钮点击，全屏后会直接退出
-            var requestMethod = element.requestFullScreen || //W3C
-                element.webkitRequestFullScreen || //Chrome等
-                element.mozRequestFullScreen || //FireFox
-                element.msRequestFullScreen; //IE11
-            debugger
-            if (requestMethod) {
-                requestMethod.call(element);
-            }
-            else if (typeof window.ActiveXObject !== "undefined") {//for Internet Explorer
-                var wscript = new ActiveXObject("WScript.Shell");
-                if (wscript !== null) {
-                    wscript.SendKeys("{F11}");
-                }
-            }
-        }
-        //requestFullScreen(document.documentElement);
-        //document.documentElement.requestFullScreen()
-        // 启动全屏!
-        //launchFullScreen(); // 整个网页
-
         jQuery(function ($) {
             $(document).on('click', '.toolbar a[data-target]', function (e) {
                 e.preventDefault();

@@ -54,3 +54,37 @@ function DateAdd(type, value) {
     }
     return date;
 }
+
+var ipRegex = /^((25[0-5]|2[0-4]\d|[1]{1}\d{1}\d{1}|[1-9]{1}\d{1}|\d{1})($|(?!\.$)\.)){4}$/;
+
+// #region Cookie
+//获取cookie值  
+function getCookie(name) {
+    var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+    if (arr != null) return unescape(arr[2]);
+    return null;
+} 
+// #endregion
+
+
+// 设置jQuery Ajax全局的参数  
+$.ajaxSetup({
+    error: function (jqXHR, textStatus, errorThrown) {
+        switch (jqXHR.status) {
+            case (500):
+                toastr.error("服务器系统内部错误");
+                break;
+            case (401):
+                toastr.error("未登录");
+                break;
+            case (403):
+                toastr.error("无权限执行此操作");
+                break;
+            case (408):
+                toastr.error("请求超时");
+                break;
+            default:
+                toastr.error("未知错误");
+        }
+    }
+});

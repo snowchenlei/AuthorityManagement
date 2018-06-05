@@ -1,4 +1,6 @@
-﻿using Cl.AuthorityManagement.Util;
+﻿using Cl.AuthorityManagement.Common.Http;
+using Cl.AuthorityManagement.Model.Logger;
+using Cl.AuthorityManagement.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,17 +14,41 @@ namespace Cl.AuthorityManagement.Library.Mvc
     /// <summary>
     /// Mvc异常处理
     /// </summary>
-    public class CustomExceptionAttribute : FilterAttribute, IExceptionFilter
+    public class CustomerExceptionAttribute : FilterAttribute, IExceptionFilter
     {
         public void OnException(ExceptionContext filterContext)
         {
             Exception exception = filterContext.Exception;
+            //异常是否处理
             if (filterContext.ExceptionHandled == true)
             {
                 return;
             }
+
+            MonitorLog MonLog = null;
+            if (filterContext.Controller.ViewData.ContainsKey("_thisWebApiOnActionMonitorLog_"))
+            {
+                MonLog = filterContext.Controller.ViewData["_thisWebApiOnActionMonitorLog_"] as MonitorLog;
+            }
+            else
+            {
+                HttpRequestBase request = filterContext.HttpContext.Request;
+                //获取Action 参数
+                MonLog = new MonitorLog()
+                {
+                    HttpRequestHeaders = request.Headers.ToString(),
+                    HttpMethod = request.HttpMethod,
+                    IP = IPHelper.GetRealIP(),
+                    ExecuteEndTime = DateTime.Now,
+                    ActionName = filterContext.RouteData.Values["action"] as string,
+                    ControllerName = filterContext.RouteData.Values["controller"] as string,
+                    ResponseData = exception.Message
+                    //ActionParams = request.Params.
+                };
+            }
+
             //加入队列
-            Resource.MvcErrorQueue.Enqueue(exception);
+            Resource.MvcErrorQueue.Enqueue(new KeyValuePair<Exception, object>(exception, MonLog));
             HttpException httpException = new HttpException(null, exception);
 
             /*

@@ -25,6 +25,11 @@ namespace Cl.AuthorityManagement.Model.Mvc
         [Display(Name = "名称")]
         public string Name { get; set; }
 
+        [Required]
+        [StringLength(50)]
+        [Display(Name = "方法")]
+        public string Action { get; set; }
+
         /// <summary>
 	    /// 类型
 	    /// </summary>

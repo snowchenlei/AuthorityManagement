@@ -42,7 +42,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
             {
                 tempElements = tempElements.Where(u => u.Name.Contains(name.Trim()));
             }            
-            if (startTime > new DateTime(1970, 1, 1))
+            if (startTime > new DateTime(1970, 1, 1) && startTime != endTime)
             {
                 tempElements = tempElements.Where(u => u.AddTime > startTime);
             }
@@ -85,6 +85,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                     u.Type,
                     u.Sort,
                     u.Name,
+                    u.Action,
                     u.AddTime
                 })
             }, JsonRequestBehavior.AllowGet);

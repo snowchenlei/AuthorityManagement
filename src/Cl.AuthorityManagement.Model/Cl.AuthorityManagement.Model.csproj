@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logger\MonitorLog.cs" />
+    <Compile Include="Logger\OperateLog.cs" />
     <Compile Include="Mvc\ModuleEdit.cs" />
     <Compile Include="Mvc\ModuleElementEdit.cs" />
     <Compile Include="Mvc\PageInfo.cs" />
@@ -49,6 +51,7 @@
     <Compile Include="Mvc\Select2Model.cs" />
     <Compile Include="Mvc\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\IPDetails.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="Mvc\UserEdit.cs" />
   </ItemGroup>

@@ -32,5 +32,12 @@ namespace Cl.AuthorityManagement.IServices
         /// <param name="user">登陆用户信息</param>
         /// <returns>是否拥有</returns>
         bool IsHaveModule(string controllerName, UserInfo user);
+
+        /// <summary>
+        /// 删除指定模块
+        /// </summary>
+        /// <param name="module">要删除的模块</param>
+        /// <returns>是否成功</returns>
+        bool DelectModule(Module module);
     }
 }

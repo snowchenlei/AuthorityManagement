@@ -70,7 +70,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
             {
                 tempModules = tempModules.Where(u => u.Parent.Id == parentId);
             }
-            if (startTime > new DateTime(1970, 1, 1))
+            if (startTime > new DateTime(1970, 1, 1) && startTime != endTime)
             {
                 tempModules = tempModules.Where(u => u.AddTime > startTime);
             }
@@ -249,12 +249,22 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 if (!ModuleServices
                     .IsExists(m => m.Parent.Id == module.Id))
                 {
-                    ModuleServices.DeleteEntity(module);
-                    return Json(new Result
+                    if (ModuleServices.DelectModule(module))
                     {
-                        State = 1,
-                        Message = "删除成功"
-                    });
+                        return Json(new Result
+                        {
+                            State = 1,
+                            Message = "删除成功"
+                        });
+                    }
+                    else
+                    {
+                        return Json(new Result
+                        {
+                            State = 0,
+                            Message = "删除失败"
+                        });
+                    }
                 }
                 else
                 {

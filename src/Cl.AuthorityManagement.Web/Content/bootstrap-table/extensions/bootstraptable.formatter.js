@@ -34,5 +34,7 @@ function textFormatter(value, row, index) {
 function ipFormatter(value, row, index) {
     if (ipRegex.test(value)) {
         return '<a href="#" class="wi" onclick=showLocation("' + value + '") title=\'' + value + '\'>' + value + '</a>';
+    } else {
+        return value;
     }
 }

@@ -4,21 +4,23 @@
     PageInfo pageInfo = Resource.PageInfos["RoleSetElement"];
 
     ViewBag.Title = pageInfo.Title;
-    Layout = "~/Views/Shared/_LayoutCheckElement.cshtml";
+    Layout = pageInfo.Layout;
 }
 <ul class="ztree col-md-5" style="margin-top: 0px;" id="moduleTree"></ul>
 <div class="col-md-7" id="elements">
 
 </div>
+<script src="~/Views/User/elements.js"></script>
 <script type="text/javascript">
+    key = 'roleId';
     var treeJson = @Html.Raw(ViewBag.ModuleTree);
-    var moduleId;
+    /*
     $(function () {
         tree.init();
         $('#moduleTree').parent('.modal-body').height('360px');
     });
     function CallSave(firstId, secondId) {
-        $.post(@Html.Raw(pageInfo.Url), { 'roleId': firstId, 'elementId': secondId, 'moduleId': moduleId }, function (data) {
+        $.post(, { 'roleId': firstId, 'elementId': secondId, 'moduleId': moduleId }, function (data) {
                 if (data.State == 1) {
                     toastr.success(data.Message);
                     $('#close_edit').click();
@@ -56,8 +58,8 @@
         }
         moduleId = treeNode.id;
         var hidElementId = $('#hidElementId').val();
-        $.get('/Role/Elements', { "roleId": hidElementId, "moduleId": moduleId }, function (data) {
+        $.get(absoluteUrl + '/Elements', { "roleId": hidElementId, "moduleId": moduleId }, function (data) {
             $('#elements').html(data);
         });
-    }
+    }*/
 </script>

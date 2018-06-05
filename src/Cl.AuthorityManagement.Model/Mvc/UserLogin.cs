@@ -33,5 +33,8 @@ namespace Cl.AuthorityManagement.Model.Mvc
         [Display(Name = "验证码")]
         [Required(ErrorMessage = "请输入{0}")]
         public string VerifyCode { get; set; }
+
+        [Display(Name = "记住我")]
+        public bool RememberMe { get; set; }
     }
 }

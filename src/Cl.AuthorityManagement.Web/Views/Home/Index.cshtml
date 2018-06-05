@@ -28,7 +28,7 @@
 
         <!-- ace styles -->
         <link rel="stylesheet" href="~/Content/ace/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
-        
+
         <!--[if lte IE 9]>
             <link rel="stylesheet" href="~/Content/ace/css/ace-part2.min.css" class="ace-main-stylesheet" />
         <![endif]-->
@@ -38,81 +38,8 @@
     <!--[if lte IE 9]>
       <link rel="stylesheet" href="~/Content/ace/css/ace-ie.min.css" />
     <![endif]-->
+    <link href="~/Views/Home/index.css" rel="stylesheet" />
     <style type="text/css">
-        body {
-            font-family: sans-serif;
-        }
-
-        #ace-settings-container {
-            margin-top: 50px;
-        }
-
-        .nav-bar {
-            padding-left: 20px;
-            /*float: left;*/
-            width: calc(100% - 30px);
-        }
-
-        .nav-dropdown {
-            width: 30px;
-            line-height: 35px;
-            border-bottom: 1px solid #ddd;
-            text-align: center;
-        }
-
-        .nav-tabs > li > a {
-            margin-right: 2px;
-        }
-
-        .con-tabs > li {
-            width: 7.5em;
-        }
-
-            .con-tabs > li > a {
-                position: relative;
-                padding-right: 28px;
-                overflow: hidden;
-                text-align: center;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-
-                .con-tabs > li > a > i:hover {
-                    color: #fff;
-                    background-color: red;
-                    border-radius: 50%;
-                    -moz-border-radius: 50%;
-                    -webkit-border-radius: 50%;
-                }
-
-        .wb-close-mini {
-            cursor: pointer;
-            position: absolute;
-            top: 9px;
-            right: 12px;
-        }
-
-        .nav-tabs > li.active > a,
-        .nav-tabs > li.active > a:focus,
-        .nav-tabs > li.active > a:hover {
-            margin-top: 0px;
-            margin-right: 2px;
-            border-top: 1px solid rgb(197, 208, 220);
-        }
-
-        .nav-list > li a > .arrow {
-            display: block;
-            width: 14px !important;
-            height: 14px;
-            line-height: 14px;
-            text-shadow: none;
-            font-size: 12px;
-            position: absolute;
-            right: 10px;
-            top: 12px;
-            padding: 0;
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -223,7 +150,7 @@
                             <li class="divider"></li>
 
                             <li>
-                                <a href="/Manager/Account/Login" onclick="logout()">
+                                <a href="javascript: void(0);" onclick="logout()">
                                     <i class="glyphicon glyphicon-log-out"></i>
                                     退出
                                 </a>

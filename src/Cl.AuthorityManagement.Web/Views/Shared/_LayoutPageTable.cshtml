@@ -1,0 +1,150 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Bundles/frame/css")
+    @*<link href="~/Content/Font-Awesome-3.2.1/css/font-awesome.min.css" rel="stylesheet" />*@
+    <!-- bootstrap & fontawesome -->
+    @*<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">*@
+    @*<link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- page specific plugin styles -->
+        <!--<link rel="stylesheet" href="/Content/ace/css/jquery-ui.min.css" />-->
+        <link href="~/Content/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+        <!--<link href="~/Content/TableExport-3.3.13/css/tableexport.min.css" rel="stylesheet" />-->
+        <link href="~/Content/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap-iconpicker/css/bootstrap-iconpicker.min.css" rel="stylesheet" />
+        <link href="~/Content/select2/css/select2.min.css" rel="stylesheet" />
+        <link href="~/Content/toastr/css/toastr.min.css" rel="stylesheet" />
+
+        <link href="~/Content/zTree/css/metroStyle/metroStyle.css" rel="stylesheet" />
+        <!--<link href="~/Content/zTree/css/demo.css" rel="stylesheet" />-->
+
+        <link href="~/Content/customerMain.css" rel="stylesheet" />
+        <link href="~/Content/customer/loader.css" rel="stylesheet" />*@
+    @RenderSection("style", required: false)
+    <style type="text/css">
+        .btn, .dropdown-colorpicker a {
+            cursor: pointer;
+        }
+
+        .breadcrumb, .breadcrumb > li > a, .btn {
+            display: inline-block;
+        }
+
+        #searchTitle {
+            -webkit-transition: all 2s ease;
+            -moz-transition: all 2s ease;
+            -o-transition: all 2s ease;
+            transition: all 2s ease;
+        }
+
+        #searchPanel .form-group:last-child {
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <!--页面加载end-->
+    <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="modifyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <input type="hidden" id="operateType" />
+            <div class="modal-content" id="modifyContent">
+            </div>
+        </div>
+    </div>
+    <div class="panel-body" style="padding-bottom:0px;">
+        @*<div id="loader-wrapper">
+                <div id="loader"></div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+                <div class="load_title">正在加载LoveFeel站点<br><span>V1.0</span></div>
+            </div>*@
+        @RenderBody()
+        @*<div id="toolbar"></div>*@
+        <div class="bs-bars pull-left">
+            <div id="toolbar" class="btn-group">
+                @Html.Action("MenuHeader", "Home", new { moduleId = ViewBag.ModuleId })
+                @*<select style="margin-right: 10px;border-radius: 4px;" id="sel_exportoption">
+                        <option value="basic">导出本页</option>
+                        <option value="all">导出所有</option>
+                        <option value="selected">导出选中项</option>
+                    </select>*@
+            </div>
+        </div>
+        <table id="tb-body" data-bind="bootstrapTable :$root" data-filter-control="true"></table>
+    </div>
+
+    <script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='/Content/ace/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+    @Scripts.Render("~/Bundles/frame/js")
+    @RenderSection("scripts", false)
+    <script type="text/javascript">
+         absoluteUrl = '@ViewBag.AbsoluteUrl';
+         title = '@ViewBag.Title';
+    </script>
+    <!-- jquery -->
+    @*<script src="~/Content/jquery/jquery-3.3.1.min.js"></script>
+        <!-- jquery-validate -->
+        <script src="~/Content/jquery-validate/jquery.validate.min.js"></script>
+        <script src="~/Content/jquery-validate/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/Content/jquery-validate/jquery.unobtrusive-ajax.min.js"></script>
+        <!-- bootstrap -->
+        <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+        <!-- bootstrap-datetimepicker -->
+        <script src="~/Content/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="~/Content/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+        <!-- bootstrap-iconpicker -->
+        <script src="~/Content/bootstrap-iconpicker/js/bootstrap-iconpicker-iconset-all.min.js"></script>
+        <script src="~/Content/bootstrap-iconpicker/js/bootstrap-iconpicker.min.js"></script>
+        <!-- bootstrap-table -->
+        <script src="~/Content/bootstrap-table/bootstrap-table.js"></script>
+        <script src="~/Content/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+        <script src="~/Content/bootstrap-table/extensions/bootstrap-table-filter-control.min.js"></script>
+        <!-- 导出 -->
+        <script src="~/Content/bootstrap-table/extensions/bootstrap-table-export.js"></script>
+        <script src="~/Content/tableExport.jquery.plugin/libs/FileSaver/FileSaver.min.js"></script>*@
+    @*<!-- Excel 2007+ XML Format -->
+        <script src="~/Content/tableExport.jquery.plugin/libs/js-xlsx/xlsx.core.min.js"></script>
+        <!-- PDF -->
+        <script src="~/Content/tableExport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
+        <script src="~/Content/tableExport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+        <!-- PNG -->
+        <script src="~/Content/tableExport.jquery.plugin/libs/html2canvas/html2canvas.min.js"></script>*@<!-- Excel 2007+ XML Format -->
+    @*<script src="~/Content/tableExport.jquery.plugin/libs/js-xlsx/xlsx.core.min.js"></script>
+        <!-- PDF -->
+        <script src="~/Content/tableExport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
+        <script src="~/Content/tableExport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+        <!-- PNG -->
+        <script src="~/Content/tableExport.jquery.plugin/libs/html2canvas/html2canvas.min.js"></script>
+        <script src="~/Content/tableExport.jquery.plugin/tableExport.min.js"></script>
+
+        <!-- 弹框 -->
+        <script src="~/Content/toastr/js/toastr.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>-->
+        <script src="~/Content/bootbox/bootbox.min.js"></script>
+        <!-- select2 -->
+        <!--<script src="~/Content/select2/js/select2.full.min.js"></script>-->
+        <script src="~/Content/select2/js/select2.full.js"></script>
+        <script src="~/Content/select2/js/i18n/zh-CN.js"></script>
+        <!-- zTree -->
+        <script src="~/Content/zTree/js/jquery.ztree.all.min.js"></script>
+        <!-- knockout -->
+        <script src="~/Content/knockout/knockout-3.4.2.js"></script>
+        <script src="~/Content/knockout/extensions/knockout.mapping-latest.js"></script>
+
+        <!-- 自定义 -->
+        <script src="~/Content/customer/dataInit.js"></script>
+        <script src="~/Content/customer/common.js"></script>
+        <script src="~/Content/customer/frame-common.js"></script>
+        <script src="~/Content/bootstrap-table/extensions/bootstraptable.formatter.js"></script>
+        <script src="~/Content/customer/knockout.bootstraptable.js"></script>*@
+
+</body>
+</html>

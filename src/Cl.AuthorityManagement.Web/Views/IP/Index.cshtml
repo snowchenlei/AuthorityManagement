@@ -1,0 +1,58 @@
+﻿@model Cl.AuthorityManagement.Model.IPDetails
+@{
+    Layout = null;
+}
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="modelTitle">归属地</h4>
+</div>
+<div class="modal-body form-horizontal" id="modify">
+    @if (Model == null)
+    {
+    <p><b><span style="color: red; font-size: 24px;">不支持的IP:@Html.DisplayNameFor(model => model.IP)</span></b></p>
+    }
+    else
+    {
+        <div>
+            <p><span>您当前的IP为：</span></p>
+            <p style="text-align: center;"><b><span style="color: red; font-size: 24px; font-family: 'Times New Roman';">@Html.DisplayFor(model => model.IP)</span></b></p>
+            <p>该IP的详细信息为：</p>
+        </div>
+        <div>
+            <table class="table table-bordered table-striped table-hover table-responsive">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.IP)</th>
+                        @*<th>@Html.DisplayNameFor(model => model.Country)</th>
+                        <th>@Html.DisplayNameFor(model => model.Area)</th>*@
+                        <th>国家/区域</th>
+                        <th>@Html.DisplayNameFor(model => model.Region)</th>
+                        <th>@Html.DisplayNameFor(model => model.City)</th>
+                        <th>@Html.DisplayNameFor(model => model.County)</th>
+                        <th>@Html.DisplayNameFor(model => model.Isp)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="color: red;">@Html.DisplayFor(model => model.IP)</td>
+                        @if (String.IsNullOrEmpty(Model.Country))
+        {
+                <td>@Html.DisplayFor(model => model.Area)</td>
+}
+else
+{
+                <td>@Html.DisplayFor(model => model.Country)</td>
+}
+                        <td>@Html.DisplayFor(model => model.Region)</td>
+                        <td>@Html.DisplayFor(model => model.City)</td>
+                        <td>@Html.DisplayFor(model => model.County)</td>
+                        <td>@Html.DisplayFor(model => model.Isp)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+<div class="modal-footer">
+    <button type="button" id="close_edit" class="btn btn-primary" data-dismiss="modal">关闭</button>
+</div>

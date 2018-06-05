@@ -11,9 +11,6 @@ namespace Cl.AuthorityManagement.IRepository
     public partial interface IRoleRepository:IBaseRepository<Role>
     {
     }
-    public partial interface IPermissionRepository:IBaseRepository<Permission>
-    {
-    }
     public partial interface IUserInfoRepository:IBaseRepository<UserInfo>
     {
     }
@@ -21,6 +18,27 @@ namespace Cl.AuthorityManagement.IRepository
     {
     }
     public partial interface IRoleModuleElementRepository:IBaseRepository<RoleModuleElement>
+    {
+    }
+    public partial interface IRequestInfoRepository:IBaseRepository<RequestInfo>
+    {
+    }
+    public partial interface IMonitorInfoRepository:IBaseRepository<MonitorInfo>
+    {
+    }
+    public partial interface IErrorInfoRepository:IBaseRepository<ErrorInfo>
+    {
+    }
+    public partial interface ILoginInfoRepository:IBaseRepository<LoginInfo>
+    {
+    }
+    public partial interface IOperateInfoRepository:IBaseRepository<OperateInfo>
+    {
+    }
+    public partial interface IAreaRepository:IBaseRepository<Area>
+    {
+    }
+    public partial interface IIPInfoRepository:IBaseRepository<IPInfo>
     {
     }
 }

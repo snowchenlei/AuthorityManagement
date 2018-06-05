@@ -1,0 +1,558 @@
+ 【时间】:2018-05-16 09:52:05,874
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 1 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第67行
+ 【日志内容】:One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+
+ 【日志详细】：System.Data.Entity.ModelConfiguration.ModelValidationException: One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+
+   在 System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   在 System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   在 System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   在 System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   在 Cl.AuthorityManagement.Web.Global.Application_Start(Object sender, EventArgs e) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Global.asax.cs:行号 42
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 09:52:12,646
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = RequestInfo, Action = Index, IP = ::1, Head = Connection=Keep-Alive&Accept=text%2fhtml%2c+application%2fxhtml%2bxml%2c+image%2fjxr%2c+*%2f*&Accept-Encoding=gzip%2c+deflate&Accept-Language=zh-Hans-CN%2czh-Hans%3bq%3d0.5&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1&Host=localhost%3a57711&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+Win64%3b+x64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f58.0.3029.110+Safari%2f537.36+Edge%2f16.16299, HttpMethod = GET, RequestMessage = , ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=Keep-Alive&Accept=text%2fhtml%2c+application%2fxhtml%2bxml%2c+image%2fjxr%2c+*%2f*&Accept-Encoding=gzip%2c+deflate&Accept-Language=zh-Hans-CN%2czh-Hans%3bq%3d0.5&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1&Host=localhost%3a57711&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+Win64%3b+x64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f58.0.3029.110+Safari%2f537.36+Edge%2f16.16299】头使用【GET】携带【】请求【RequestInfo】的【Index】产生异常：【One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+】内部错误【】 }
+ 【日志详细】：System.Data.Entity.ModelConfiguration.ModelValidationException: One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+
+   在 System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   在 System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   在 System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 Cl.AuthorityManagement.Repository.BaseRepository`1.LoadFirst(Expression`1 whereLamada, Boolean isAsNoTracking) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Repository\BaseRepository.cs:行号 95
+   在 Cl.AuthorityManagement.Services.BaseServices`1.LoadFirst(Expression`1 whereLamada) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Services\BaseServices.cs:行号 85
+   在 Cl.AuthorityManagement.Web.Controllers.BaseController.OnActionExecuting(ActionExecutingContext filterContext) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\BaseController.cs:行号 42
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__31(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 09:52:14,047
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Module, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text%2fhtml%2capplication%2fxhtml%2bxml%2capplication%2fxml%3bq%3d0.9%2cimage%2fwebp%2cimage%2fapng%2c*%2f*%3bq%3d0.8&Accept-Encoding=gzip%2c+deflate%2c+br&Accept-Language=zh-CN%2czh%3bq%3d0.9&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1%3b+Abp.Localization.CultureName%3dzh-CN&Host=localhost%3a57711&Referer=http%3a%2f%2flocalhost%3a57711%2fHome%2fIndex&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+WOW64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f65.0.3325.181+Safari%2f537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = , ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text%2fhtml%2capplication%2fxhtml%2bxml%2capplication%2fxml%3bq%3d0.9%2cimage%2fwebp%2cimage%2fapng%2c*%2f*%3bq%3d0.8&Accept-Encoding=gzip%2c+deflate%2c+br&Accept-Language=zh-CN%2czh%3bq%3d0.9&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1%3b+Abp.Localization.CultureName%3dzh-CN&Host=localhost%3a57711&Referer=http%3a%2f%2flocalhost%3a57711%2fHome%2fIndex&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+WOW64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f65.0.3325.181+Safari%2f537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【】请求【Module】的【Index】产生异常：【One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+】内部错误【】 }
+ 【日志详细】：System.Data.Entity.ModelConfiguration.ModelValidationException: One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+
+   在 System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   在 System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   在 System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 Cl.AuthorityManagement.Repository.BaseRepository`1.LoadFirst(Expression`1 whereLamada, Boolean isAsNoTracking) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Repository\BaseRepository.cs:行号 95
+   在 Cl.AuthorityManagement.Services.BaseServices`1.LoadFirst(Expression`1 whereLamada) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Services\BaseServices.cs:行号 85
+   在 Cl.AuthorityManagement.Web.Controllers.BaseController.OnActionExecuting(ActionExecutingContext filterContext) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\BaseController.cs:行号 42
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__31(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:01:53,126
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Module, Action = Index, IP = ::1, Head = Connection=keep-alive&Accept=text%2fhtml%2capplication%2fxhtml%2bxml%2capplication%2fxml%3bq%3d0.9%2cimage%2fwebp%2cimage%2fapng%2c*%2f*%3bq%3d0.8&Accept-Encoding=gzip%2c+deflate%2c+br&Accept-Language=zh-CN%2czh%3bq%3d0.9&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1%3b+Abp.Localization.CultureName%3dzh-CN%3b+__RequestVerificationToken%3dCvibdGARSAv1ClltaDltZIgtcSe5MNgAzTqzcl34ghqq1DNq7i5lJV_mqn339u80c76A9jph8qrvJf6RGeQdRZOI45jnrby7spX2wkica_w1&Host=localhost%3a57711&Referer=http%3a%2f%2flocalhost%3a57711%2fHome%2fIndex&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+WOW64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f65.0.3325.181+Safari%2f537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = , ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text%2fhtml%2capplication%2fxhtml%2bxml%2capplication%2fxml%3bq%3d0.9%2cimage%2fwebp%2cimage%2fapng%2c*%2f*%3bq%3d0.8&Accept-Encoding=gzip%2c+deflate%2c+br&Accept-Language=zh-CN%2czh%3bq%3d0.9&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1%3b+Abp.Localization.CultureName%3dzh-CN%3b+__RequestVerificationToken%3dCvibdGARSAv1ClltaDltZIgtcSe5MNgAzTqzcl34ghqq1DNq7i5lJV_mqn339u80c76A9jph8qrvJf6RGeQdRZOI45jnrby7spX2wkica_w1&Host=localhost%3a57711&Referer=http%3a%2f%2flocalhost%3a57711%2fHome%2fIndex&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+WOW64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f65.0.3325.181+Safari%2f537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【】请求【Module】的【Index】产生异常：【One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+】内部错误【】 }
+ 【日志详细】：System.Data.Entity.ModelConfiguration.ModelValidationException: One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+
+   在 System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   在 System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   在 System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 Cl.AuthorityManagement.Repository.BaseRepository`1.LoadFirst(Expression`1 whereLamada, Boolean isAsNoTracking) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Repository\BaseRepository.cs:行号 95
+   在 Cl.AuthorityManagement.Services.BaseServices`1.LoadFirst(Expression`1 whereLamada) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Services\BaseServices.cs:行号 85
+   在 Cl.AuthorityManagement.Web.Controllers.BaseController.OnActionExecuting(ActionExecutingContext filterContext) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\BaseController.cs:行号 42
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__31(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:02:10,726
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Home, Action = Index, IP = ::1, Head = Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=text%2fhtml%2capplication%2fxhtml%2bxml%2capplication%2fxml%3bq%3d0.9%2cimage%2fwebp%2cimage%2fapng%2c*%2f*%3bq%3d0.8&Accept-Encoding=gzip%2c+deflate%2c+br&Accept-Language=zh-CN%2czh%3bq%3d0.9&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1%3b+Abp.Localization.CultureName%3dzh-CN%3b+__RequestVerificationToken%3dCvibdGARSAv1ClltaDltZIgtcSe5MNgAzTqzcl34ghqq1DNq7i5lJV_mqn339u80c76A9jph8qrvJf6RGeQdRZOI45jnrby7spX2wkica_w1&Host=localhost%3a57711&Referer=http%3a%2f%2flocalhost%3a57711%2fHome%2fIndex&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+WOW64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f65.0.3325.181+Safari%2f537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = , ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=text%2fhtml%2capplication%2fxhtml%2bxml%2capplication%2fxml%3bq%3d0.9%2cimage%2fwebp%2cimage%2fapng%2c*%2f*%3bq%3d0.8&Accept-Encoding=gzip%2c+deflate%2c+br&Accept-Language=zh-CN%2czh%3bq%3d0.9&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1%3b+Abp.Localization.CultureName%3dzh-CN%3b+__RequestVerificationToken%3dCvibdGARSAv1ClltaDltZIgtcSe5MNgAzTqzcl34ghqq1DNq7i5lJV_mqn339u80c76A9jph8qrvJf6RGeQdRZOI45jnrby7spX2wkica_w1&Host=localhost%3a57711&Referer=http%3a%2f%2flocalhost%3a57711%2fHome%2fIndex&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+WOW64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f65.0.3325.181+Safari%2f537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【】请求【Home】的【Index】产生异常：【One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+】内部错误【】 }
+ 【日志详细】：System.Data.Entity.ModelConfiguration.ModelValidationException: One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+
+   在 System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   在 System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   在 System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 Cl.AuthorityManagement.Repository.BaseRepository`1.LoadFirst(Expression`1 whereLamada, Boolean isAsNoTracking) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Repository\BaseRepository.cs:行号 95
+   在 Cl.AuthorityManagement.Services.BaseServices`1.LoadFirst(Expression`1 whereLamada) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Services\BaseServices.cs:行号 85
+   在 Cl.AuthorityManagement.Web.Controllers.BaseController.OnActionExecuting(ActionExecutingContext filterContext) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\BaseController.cs:行号 42
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__31(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:04:35,222
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Home, Action = Index, IP = ::1, Head = Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=text%2fhtml%2capplication%2fxhtml%2bxml%2capplication%2fxml%3bq%3d0.9%2cimage%2fwebp%2cimage%2fapng%2c*%2f*%3bq%3d0.8&Accept-Encoding=gzip%2c+deflate%2c+br&Accept-Language=zh-CN%2czh%3bq%3d0.9&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1%3b+Abp.Localization.CultureName%3dzh-CN%3b+__RequestVerificationToken%3dCvibdGARSAv1ClltaDltZIgtcSe5MNgAzTqzcl34ghqq1DNq7i5lJV_mqn339u80c76A9jph8qrvJf6RGeQdRZOI45jnrby7spX2wkica_w1&Host=localhost%3a57711&Referer=http%3a%2f%2flocalhost%3a57711%2fHome%2fIndex&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+WOW64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f65.0.3325.181+Safari%2f537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = , ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=text%2fhtml%2capplication%2fxhtml%2bxml%2capplication%2fxml%3bq%3d0.9%2cimage%2fwebp%2cimage%2fapng%2c*%2f*%3bq%3d0.8&Accept-Encoding=gzip%2c+deflate%2c+br&Accept-Language=zh-CN%2czh%3bq%3d0.9&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1%3b+Abp.Localization.CultureName%3dzh-CN%3b+__RequestVerificationToken%3dCvibdGARSAv1ClltaDltZIgtcSe5MNgAzTqzcl34ghqq1DNq7i5lJV_mqn339u80c76A9jph8qrvJf6RGeQdRZOI45jnrby7spX2wkica_w1&Host=localhost%3a57711&Referer=http%3a%2f%2flocalhost%3a57711%2fHome%2fIndex&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+WOW64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f65.0.3325.181+Safari%2f537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【】请求【Home】的【Index】产生异常：【One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+】内部错误【】 }
+ 【日志详细】：System.Data.Entity.ModelConfiguration.ModelValidationException: One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+
+   在 System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   在 System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   在 System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 Cl.AuthorityManagement.Repository.BaseRepository`1.LoadFirst(Expression`1 whereLamada, Boolean isAsNoTracking) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Repository\BaseRepository.cs:行号 95
+   在 Cl.AuthorityManagement.Services.BaseServices`1.LoadFirst(Expression`1 whereLamada) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Services\BaseServices.cs:行号 85
+   在 Cl.AuthorityManagement.Web.Controllers.BaseController.OnActionExecuting(ActionExecutingContext filterContext) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\BaseController.cs:行号 42
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__31(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:04:38,442
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Home, Action = Index, IP = ::1, Head = Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=text%2fhtml%2capplication%2fxhtml%2bxml%2capplication%2fxml%3bq%3d0.9%2cimage%2fwebp%2cimage%2fapng%2c*%2f*%3bq%3d0.8&Accept-Encoding=gzip%2c+deflate%2c+br&Accept-Language=zh-CN%2czh%3bq%3d0.9&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1%3b+Abp.Localization.CultureName%3dzh-CN%3b+__RequestVerificationToken%3dCvibdGARSAv1ClltaDltZIgtcSe5MNgAzTqzcl34ghqq1DNq7i5lJV_mqn339u80c76A9jph8qrvJf6RGeQdRZOI45jnrby7spX2wkica_w1&Host=localhost%3a57711&Referer=http%3a%2f%2flocalhost%3a57711%2fHome%2fIndex&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+WOW64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f65.0.3325.181+Safari%2f537.36&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = , ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Cache-Control=no-cache&Connection=keep-alive&Pragma=no-cache&Accept=text%2fhtml%2capplication%2fxhtml%2bxml%2capplication%2fxml%3bq%3d0.9%2cimage%2fwebp%2cimage%2fapng%2c*%2f*%3bq%3d0.8&Accept-Encoding=gzip%2c+deflate%2c+br&Accept-Language=zh-CN%2czh%3bq%3d0.9&Cookie=loc%3dip%3d127.0.0.1%26regionid%3d-1%3b+Abp.Localization.CultureName%3dzh-CN%3b+__RequestVerificationToken%3dCvibdGARSAv1ClltaDltZIgtcSe5MNgAzTqzcl34ghqq1DNq7i5lJV_mqn339u80c76A9jph8qrvJf6RGeQdRZOI45jnrby7spX2wkica_w1&Host=localhost%3a57711&Referer=http%3a%2f%2flocalhost%3a57711%2fHome%2fIndex&User-Agent=Mozilla%2f5.0+(Windows+NT+10.0%3b+WOW64)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f65.0.3325.181+Safari%2f537.36&Upgrade-Insecure-Requests=1】头使用【GET】携带【】请求【Home】的【Index】产生异常：【One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+】内部错误【】 }
+ 【日志详细】：System.Data.Entity.ModelConfiguration.ModelValidationException: One or more validation errors were detected during model generation:
+
+Cl.AuthorityManagement.Data.Area: : EntityType 'Area' has no key defined. Define the key for this EntityType.
+Area: EntityType: EntitySet 'Area' is based on type 'Area' that has no keys defined.
+
+   在 System.Data.Entity.Core.Metadata.Edm.EdmModel.Validate()
+   在 System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   在 System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 Cl.AuthorityManagement.Repository.BaseRepository`1.LoadFirst(Expression`1 whereLamada, Boolean isAsNoTracking) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Repository\BaseRepository.cs:行号 95
+   在 Cl.AuthorityManagement.Services.BaseServices`1.LoadFirst(Expression`1 whereLamada) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Services\BaseServices.cs:行号 85
+   在 Cl.AuthorityManagement.Web.Controllers.BaseController.OnActionExecuting(ActionExecutingContext filterContext) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\BaseController.cs:行号 42
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__31(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:51:48,504
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = MonitorInfo, Action = Load, IP = ::1, Head = Connection=keep-alive&Content-Type=application/json&Accept=application/json, text/javascript, */*; q=0.01&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/MonitorInfo/Index?moduleId=1008&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest, HttpMethod = GET, RequestMessage = {"pageIndex":1,"pageSize":10,"sort":null,"order":1,"controllerName":null,"actionName":null,"requestMessage":"","responseMessage":"","httpMethod":null,"application":-1}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Type=application/json&Accept=application/json, text/javascript, */*; q=0.01&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/MonitorInfo/Index?moduleId=1008&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&X-Requested-With=XMLHttpRequest】头使用【GET】携带【{"pageIndex":1,"pageSize":10,"sort":null,"order":1,"controllerName":null,"actionName":null,"requestMessage":"","responseMessage":"","httpMethod":null,"application":-1}】请求【MonitorInfo】的【Load】产生异常：【出错；额】内部错误【】 }
+ 【日志详细】：System.Exception: 出错；额
+   在 Cl.AuthorityManagement.Web.Controllers.Log.MonitorInfoController.Load(Int32 pageIndex, Int32 pageSize, String sort, OrderType order, String controllerName, String actionName, String requestMessage, String responseMessage, String httpMethod, Int32 application) 位置 E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Web\Controllers\Log\MonitorInfoController.cs:行号 39
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 13:59:10,792
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Module, Action = Delete, IP = ::1, Head = Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"id":1005}, ApplicationType = 2, InnerException = The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.RoleModuleElement_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.RoleModuleElement", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+
+
+, Description =  客户端【::1】以【Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"id":1005}】请求【Module】的【Delete】产生异常：【The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.RoleModuleElement_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.RoleModuleElement", column 'Module_Id'.
+The statement has been terminated.】内部错误【】 }
+ 【日志详细】：System.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.RoleModuleElement_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.RoleModuleElement", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+ClientConnectionId:f8a05e23-d467-4a2d-ad47-aa885c9cfdee
+Error Number:547,State:0,Class:16
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:49,285
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Module, Action = Delete, IP = ::1, Head = Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"id":1005}, ApplicationType = 2, InnerException = The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.ModuleElementModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleElementModule", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+
+
+, Description =  客户端【::1】以【Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"id":1005}】请求【Module】的【Delete】产生异常：【The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.ModuleElementModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleElementModule", column 'Module_Id'.
+The statement has been terminated.】内部错误【】 }
+ 【日志详细】：System.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.ModuleElementModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleElementModule", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+ClientConnectionId:035a9766-d375-429d-abdb-19539b76a76b
+Error Number:547,State:0,Class:16
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:44:21,789
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Module, Action = Delete, IP = ::1, Head = Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"id":1005}, ApplicationType = 2, InnerException = The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.ModuleElementModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleElementModule", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+
+
+, Description =  客户端【::1】以【Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"id":1005}】请求【Module】的【Delete】产生异常：【The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.ModuleElementModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleElementModule", column 'Module_Id'.
+The statement has been terminated.】内部错误【】 }
+ 【日志详细】：System.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.ModuleElementModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleElementModule", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+ClientConnectionId:6caa26a3-9d4b-4cf8-b918-a85dfdc4fe2b
+Error Number:547,State:0,Class:16
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:46:29,277
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Module, Action = Delete, IP = ::1, Head = Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"id":1005}, ApplicationType = 2, InnerException = The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.ModuleElementModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleElementModule", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+
+
+, Description =  客户端【::1】以【Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"id":1005}】请求【Module】的【Delete】产生异常：【The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.ModuleElementModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleElementModule", column 'Module_Id'.
+The statement has been terminated.】内部错误【】 }
+ 【日志详细】：System.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.ModuleElementModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleElementModule", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+ClientConnectionId:6caa26a3-9d4b-4cf8-b918-a85dfdc4fe2b
+Error Number:547,State:0,Class:16
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:14:25,861
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Module, Action = Delete, IP = ::1, Head = Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"id":1012}, ApplicationType = 2, InnerException = The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.RoleModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.RoleModule", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+
+
+, Description =  客户端【::1】以【Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"id":1012}】请求【Module】的【Delete】产生异常：【The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.RoleModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.RoleModule", column 'Module_Id'.
+The statement has been terminated.】内部错误【】 }
+ 【日志详细】：System.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.RoleModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.RoleModule", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+ClientConnectionId:de0090c3-8233-4316-88e7-152f363f9bb8
+Error Number:547,State:0,Class:16
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:15:37,505
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Module, Action = Delete, IP = ::1, Head = Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"id":1012}, ApplicationType = 2, InnerException = The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.RoleModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.RoleModule", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+
+
+, Description =  客户端【::1】以【Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"id":1012}】请求【Module】的【Delete】产生异常：【The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.RoleModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.RoleModule", column 'Module_Id'.
+The statement has been terminated.】内部错误【】 }
+ 【日志详细】：System.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.RoleModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.RoleModule", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+ClientConnectionId:de0090c3-8233-4316-88e7-152f363f9bb8
+Error Number:547,State:0,Class:16
+                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:16:26,645
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第63行
+ 【日志内容】:{ Controller = Module, Action = Delete, IP = ::1, Head = Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"id":1012}, ApplicationType = 2, InnerException = The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.UserInfoModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleUserInfo", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+
+
+, Description =  客户端【::1】以【Connection=keep-alive&Content-Length=7&Content-Type=application/x-www-form-urlencoded; charset=UTF-8&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=loc=ip=127.0.0.1&regionid=-1; Abp.Localization.CultureName=zh-CN; __RequestVerificationToken=sHBqkhapbA9eh_d1VhU4fN9keSY_nmwNFaUj4jzWVIrzwinsPST1oAOxzo_a2og69jNArBO2WMtdnwNQsq0DaYVBMqrPLrQtp7C9eNli_Es1&Host=localhost:57711&Referer=http://localhost:57711/Module/Index?moduleId=1002&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"id":1012}】请求【Module】的【Delete】产生异常：【The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.UserInfoModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleUserInfo", column 'Module_Id'.
+The statement has been terminated.】内部错误【】 }
+ 【日志详细】：System.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_dbo.UserInfoModule_dbo.Module_Module_Id". The conflict occurred in database "auth", table "dbo.ModuleUserInfo", column 'Module_Id'.
+The statement has been terminated.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+ClientConnectionId:de0090c3-8233-4316-88e7-152f363f9bb8
+Error Number:547,State:0,Class:16
+                
+----------------------footer--------------------------

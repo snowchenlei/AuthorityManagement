@@ -1,0 +1,2184 @@
+ 【时间】:2018-05-16 10:05:50,885
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:05:55,355
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:05:56,574
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:07:11,165
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:07:11,165
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:07:14,241
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:07:14,241
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:07:17,292
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:07:20,530
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:07:23,137
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:07:42,389
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:07:42,415
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:08:16,081
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:08:28,514
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:08:28,544
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:08:33,098
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:08:42,033
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:08:42,355
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:08:42,779
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:08:47,218
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:09:47,810
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:09:47,819
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:09:48,184
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:09:53,806
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:09:55,413
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:10:17,844
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:10:17,873
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:10:59,445
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:11:18,053
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:11:18,076
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 16 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:11:30,252
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:11:43,397
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:11:43,421
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:12:20,024
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:12:20,068
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 16 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:12:33,345
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:13:19,106
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:13:19,125
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 16 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:13:21,269
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 16 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:14:49,877
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 18 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:14:50,619
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 18 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:14:51,014
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 17 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:14:51,610
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:20:32,745
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:20:33,353
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:20:35,120
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 16 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:21:56,128
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 16 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:21:56,418
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 21 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:21:56,774
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:21:58,714
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 21 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:26:33,235
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:26:37,234
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 25 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:26:38,498
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 24 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:26:48,433
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 24 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:26:48,433
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:26:50,761
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 24 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:26:50,761
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:26:53,280
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 24 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:30:09,759
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 16 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:30:10,757
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 19 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:30:11,134
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:31:39,068
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:31:40,487
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 21 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:31:40,833
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 21 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:33:28,852
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:33:33,151
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 16 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:33:34,187
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 17 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:42:55,721
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 13 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:42:57,498
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 13 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:42:59,913
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 19 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:45:42,160
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:45:45,756
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:45:46,902
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 13 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:46:40,590
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:46:41,643
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:46:41,964
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:47:19,814
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:47:23,604
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:47:24,622
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 13 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:49:16,357
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:49:16,358
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:49:19,588
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:49:19,588
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:49:23,254
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:50:36,219
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:50:36,984
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:50:37,925
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:50:41,159
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:51:43,041
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 25 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:51:43,041
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 21 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:51:45,946
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 25 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:51:45,946
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 21 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:51:53,092
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:51:53,946
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 7 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:51:54,331
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 25 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:53:14,044
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:53:16,813
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:53:18,486
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:53:24,170
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:53:26,125
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:53:26,495
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:53:29,225
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:04,337
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:04,725
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:05,055
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:09,817
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 21 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:10,351
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 21 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:10,724
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:13,361
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:13,519
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:14,014
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 23 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:14,014
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:14,306
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:16,717
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 16 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:29,919
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 21 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:32,094
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:34,310
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 16 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:37,976
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 20 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:54:46,823
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 21 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:56:34,614
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:58:08,115
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 21 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:58:27,817
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:58:27,828
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 10:58:28,206
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:00:04,231
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:00:04,243
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:00:04,751
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:00:14,992
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 8 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:00:21,436
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:01:53,299
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:01:56,116
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:02:00,332
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:02:21,402
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:02:23,364
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 6 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:02:23,733
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:03:00,543
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 3 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:03:00,545
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:03:00,555
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 3 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:03:00,555
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:03:01,496
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:03:04,837
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 6 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:03:07,426
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:03:09,826
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:03:11,668
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:04:27,341
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 6 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:04:27,765
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 6 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:04:28,263
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 13 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:08:05,397
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:08:35,722
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:08:36,261
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:10:49,116
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:11:04,102
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:11:06,974
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:11:11,599
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 19 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:12:44,147
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 17 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:42:19,850
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 22 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 11:53:31,762
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 31 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:01:43,040
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:01:43,040
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:01:55,214
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:04:57,840
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:05:35,022
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:07:41,322
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:08:15,167
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:08:19,751
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 13 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:10:06,679
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:12:19,099
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:12:21,247
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:12:22,036
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:12:23,971
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:12:31,872
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 13 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:15:42,088
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 28 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:15:45,763
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:16:06,742
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:16:34,137
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 35 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:16:34,860
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 19 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:16:35,600
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:17:01,766
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:17:01,767
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 34 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:17:01,872
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:17:01,872
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 34 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:17:04,007
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:17:58,665
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 35 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:17:59,631
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:18:00,449
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 28 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:18:26,977
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:18:27,377
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 18 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:18:27,680
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 35 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:18:31,295
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:18:44,083
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 26 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:18:44,422
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 15 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:18:44,864
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 18 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:18:49,437
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 18 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:21:29,622
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 15 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:21:30,973
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 15 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 12:21:32,272
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 15 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 13:58:50,301
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 13:58:54,365
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 13:58:55,245
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 13:58:55,610
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 13:59:02,213
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 13:59:18,026
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 13:59:18,052
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 9 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 13:59:18,543
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 13:59:42,846
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:11,551
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 47 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:15,816
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 47 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:16,923
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 46 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:30,660
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 44 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:32,836
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 44 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:34,519
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 46 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:41,384
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 46 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:54,622
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 44 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:54,623
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 43 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:55,106
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 43 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:55,146
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 44 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:25:55,490
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 43 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:42:48,883
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:42:48,883
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:42:54,834
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 14 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:42:55,829
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:43:27,646
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:43:27,762
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:43:31,917
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:43:31,917
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 11 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:43:37,019
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:52:44,026
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:53:57,025
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 12 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:04,264
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:36,915
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:36,959
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 45 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:40,398
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:45,735
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:45,735
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:46,940
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 45 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:46,988
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 42 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:47,960
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:47,960
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:48,352
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:49,748
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 42 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:49,759
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 45 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:54:50,239
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:01,264
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:04,658
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 42 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:04,697
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:08,972
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:14,443
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:14,468
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 45 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:29,103
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:33,026
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:35,439
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:35,464
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 45 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:39,907
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:45,107
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 32 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:45,137
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:48,518
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:55:51,740
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:56:00,904
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:56:00,926
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 45 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:56:04,618
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 45 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:56:06,527
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:56:20,750
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:56:20,761
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 27 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 14:56:21,487
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 45 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:16:59,316
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:17:04,476
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:17:39,558
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:17:39,593
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:17:44,448
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 36 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:19:16,082
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:19:16,099
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:19:16,517
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 40 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-16 15:19:18,648
+ 【级别】:INFO
+ 【类名】:LogMvcMonitor
+ 【线程ID】: 41 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第115行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------

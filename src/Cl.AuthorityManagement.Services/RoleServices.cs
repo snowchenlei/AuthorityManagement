@@ -55,7 +55,12 @@ namespace Cl.AuthorityManagement.Services
             {
                 throw new ArgumentNullException("角色不能为空");
             }
-            role.RoleModuleElements.Clear();
+            //非多对多不可用clear，需要手动删除
+            RoleModuleElement[] roleElements = role.RoleModuleElements.ToArray();
+            foreach (RoleModuleElement item in roleElements)
+            {
+                RoleModuleElementRepository.DeleteEntity(item);
+            }
             Module module = ModuleRepository
                 .LoadFirst(m => m.Id == moduleId);
             ModuleElement[] elements = ModuleElementRepository

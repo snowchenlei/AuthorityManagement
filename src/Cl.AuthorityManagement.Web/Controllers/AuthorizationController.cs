@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Cl.AuthorityManagement.Common;
 using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;

@@ -1,0 +1,32 @@
+ 【时间】:2018-05-17 16:42:35,320
+ 【级别】:INFO
+ 【类名】:LogApiMonitor
+ 【线程ID】: 15 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 16:47:13,915
+ 【级别】:INFO
+ 【类名】:LogApiMonitor
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 16:47:33,287
+ 【级别】:INFO
+ 【类名】:LogApiMonitor
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------
+ 【时间】:2018-05-17 17:17:57,348
+ 【级别】:INFO
+ 【类名】:LogApiMonitor
+ 【线程ID】: 10 
+ 【文件地址】:E:\git\AuthorityManagement\src\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第166行
+ 【日志内容】:
+ 【日志详细】：                
+----------------------footer--------------------------

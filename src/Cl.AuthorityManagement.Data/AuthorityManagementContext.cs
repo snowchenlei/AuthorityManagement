@@ -19,6 +19,7 @@ namespace Cl.AuthorityManagement.Data
                 new MigrateDatabaseToLatestVersion<AuthorityManagementContext, Configuration>());
         }
 
+        //权限管理
         public virtual IDbSet<Module> Module { get; set; }
         public virtual IDbSet<ModuleElement> ModuleElement { get; set; }
         public virtual IDbSet<Role> Role { get; set; }
@@ -26,6 +27,17 @@ namespace Cl.AuthorityManagement.Data
         public virtual IDbSet<UserInfo> UserInfo { get; set; }
         public virtual IDbSet<UserInfoModuleElement> UserInfoModuleElement { get; set; }
         public virtual IDbSet<RoleModuleElement> RoleModuleElement { get; set; }
+        
+        //日志记录
+        public virtual DbSet<RequestInfo> RequestInfo { get; set; }
+        public virtual DbSet<MonitorInfo> MonitorInfo { get; set; }
+        public virtual DbSet<ErrorInfo> ErrorInfo { get; set; }
+        public virtual DbSet<LoginInfo> LoginInfo { get; set; }
+        public virtual DbSet<OperateInfo> OperateInfo { get; set; }
+
+        //资源表
+        public virtual DbSet<Area> Area { get; set; }
+        public virtual DbSet<IPInfo> IPInfo { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
