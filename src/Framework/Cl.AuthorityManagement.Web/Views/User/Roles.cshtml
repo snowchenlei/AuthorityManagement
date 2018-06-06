@@ -1,0 +1,23 @@
+﻿@using Cl.AuthorityManagement.Util;
+@using Cl.AuthorityManagement.Model.Mvc;
+@{
+    PageInfo pageInfo = Resource.PageInfos["UserSetRole"];
+
+    ViewBag.Title = pageInfo.Title;
+    Layout = pageInfo.Layout;
+}
+@Html.Raw(ViewBag.Html)
+
+<script type="text/javascript">
+    function CallSave(firstId, secondId) {
+        $.post(@Html.Raw(pageInfo.Url), { 'firstId': firstId, 'secondId': secondId }, function (data) {
+            if (data.State == 1) {
+                toastr.success(data.Message);
+                $('#close_edit').click();
+                table.myViewModel.refresh();
+            } else {
+                toastr.error(data.Message);
+            }
+        });
+    }
+</script>

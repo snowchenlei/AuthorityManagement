@@ -1,0 +1,17 @@
+﻿@using Cl.AuthorityManagement.Util;
+@using Cl.AuthorityManagement.Model.Mvc;
+@{
+    PageInfo pageInfo = Resource.PageInfos["UserSetElement"];
+
+    ViewBag.Title = pageInfo.Title;
+    Layout = pageInfo.Layout;
+}
+<ul class="ztree col-md-5" style="margin-top: 0px;" id="moduleTree"></ul>
+<div class="col-md-7" id="elements">
+
+</div>
+<script src="~/Views/User/elements.js"></script>
+<script type="text/javascript">
+    key = 'userId';
+    var treeJson = @Html.Raw(ViewBag.ModuleTree);
+</script>

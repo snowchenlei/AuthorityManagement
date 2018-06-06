@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Cl.AuthorityManagement.Entity.ModuleElement>
+@if (Model.Any())
+{
+    @foreach (var element in Model)
+    {
+    <button id='@element.DomId' class='btn btn-sm @element.Class' data-action='@element.Action' @element.Attr>
+        @if (!string.IsNullOrEmpty(element.Icon))
+        {
+            <i class='glyphicon @element.Icon' style='margin-right: 5px;'></i>
+        }
+        @element.Name
+    </button>
+   }
+}

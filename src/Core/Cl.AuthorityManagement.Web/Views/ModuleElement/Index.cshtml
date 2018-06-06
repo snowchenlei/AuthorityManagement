@@ -1,0 +1,52 @@
+﻿@using Cl.AuthorityManagement.Util;
+@using Cl.AuthorityManagement.Model.Mvc;
+@{
+    PageInfo pageInfo = Resource.PageInfos["ModuleElement"];
+
+    ViewBag.Title = pageInfo.Title;
+    ViewBag.AbsoluteUrl = pageInfo.AbsoluteUrl;
+    Layout = pageInfo.Layout;
+}
+
+<!--搜索-->
+<div class="panel-group" id="accordion">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <span style="font-size:16px;">查询条件</span>
+            <span class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#searchPanel" style="float: right;">
+                    <i id="searchTitle" class="glyphicon glyphicon-menu-up"></i>
+                </a>
+            </span>
+        </div>
+        <div id="searchPanel" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <form id="formSearch" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-1" for="txt_search_name">元素名称</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" id="txt_search_name">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-md-2 control-label" style="float: left;">添加时间</label>
+                            <div id="startTime" class="input-group date form_datetime col-md-5" style="float: left;">
+                                <input class="form-control" id="txt_search_startTime" size="16" type="text" value="" readonly>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-th" style="display: none;"></span><span class="glyphicon glyphicon-minus"></span></span>
+                            </div>
+                            <div id="endTime" class="input-group date form_datetime col-md-5" style="float: left;">
+                                <input class="form-control" id="txt_search_endTime" size="16" type="text" value="" readonly>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/customer/timeBucket.js"></script>
+    <script src="~/js/moduleElement/index.js"></script>
+}

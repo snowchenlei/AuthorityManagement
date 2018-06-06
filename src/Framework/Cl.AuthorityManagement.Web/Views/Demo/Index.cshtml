@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <link href="~/Content/unlock/less/unlock.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/unlock/js/unlock.js"></script>
+</head>
+<body>
+    <div id="foo" style="width: 300px; height: 60px;"></div>
+    <div id="foo1" style="width: 300px; height: 34px;margin-top: 30px;"></div>
+    <script type="text/javascript">
+        $('#foo').slideToUnlock({
+            text: '滑动解锁',
+            succText: '解锁成功',
+            succFunc: function () {
+                alert('恭喜解锁成功');
+            }
+        });
+        $('#foo1').slideToUnlock({
+            text: '滑动解锁',
+            succText: '解锁成功',
+            succFunc: function () {
+                alert('恭喜解锁成功');
+            }
+        });
+    </script>
+</body>
+</html>
