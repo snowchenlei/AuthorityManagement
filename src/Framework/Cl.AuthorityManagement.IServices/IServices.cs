@@ -41,4 +41,7 @@ namespace Cl.AuthorityManagement.IServices
 	public partial interface IIPInfoServices:IBaseServices<IPInfo>
 	{
 	}
+	public partial interface IPushServices:IBaseServices<Push>
+	{
+	}
 }

@@ -1,0 +1,54 @@
+ 【时间】:2018-06-11 20:24:16,466
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第65行
+ 【日志内容】:{ Controller = Push, Action = Push, IP = ::1, Head = Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Host=localhost:57711&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5221.400 QQBrowser/10.0.1125.400&Upgrade-Insecure-Requests=1, HttpMethod = GET, RequestMessage = {}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Host=localhost:57711&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5221.400 QQBrowser/10.0.1125.400&Upgrade-Insecure-Requests=1】头使用【GET】携带【{}】请求【Push】的【Push】产生异常：【F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Web\Views\Push\Push.cshtml(21): error CS0411: The type arguments for method 'DisplayNameExtensions.DisplayNameFor<TModel, TValue>(HtmlHelper<TModel>, Expression<Func<TModel, TValue>>)' cannot be inferred from the usage. Try specifying the type arguments explicitly.】内部错误【】 }
+ 【日志详细】：System.Web.HttpCompileException (0x80004005): F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Web\Views\Push\Push.cshtml(21): error CS0411: The type arguments for method 'DisplayNameExtensions.DisplayNameFor<TModel, TValue>(HtmlHelper<TModel>, Expression<Func<TModel, TValue>>)' cannot be inferred from the usage. Try specifying the type arguments explicitly.
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-06-11 20:25:19,909
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 8 
+ 【文件地址】:F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第65行
+ 【日志内容】:{ Controller = Push, Action = Push, IP = ::1, Head = Connection=keep-alive&Content-Length=0&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Host=localhost:57711&Referer=http://localhost:57711/Push/index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5221.400 QQBrowser/10.0.1125.400&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"model":{"Message":null}}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Length=0&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Host=localhost:57711&Referer=http://localhost:57711/Push/index&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5221.400 QQBrowser/10.0.1125.400&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"model":{"Message":null}}】请求【Push】的【Push】产生异常：【F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Web\Views\Push\Push.cshtml(21): error CS0411: The type arguments for method 'DisplayNameExtensions.DisplayNameFor<TModel, TValue>(HtmlHelper<TModel>, Expression<Func<TModel, TValue>>)' cannot be inferred from the usage. Try specifying the type arguments explicitly.】内部错误【】 }
+ 【日志详细】：System.Web.HttpCompileException (0x80004005): F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Web\Views\Push\Push.cshtml(21): error CS0411: The type arguments for method 'DisplayNameExtensions.DisplayNameFor<TModel, TValue>(HtmlHelper<TModel>, Expression<Func<TModel, TValue>>)' cannot be inferred from the usage. Try specifying the type arguments explicitly.
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------

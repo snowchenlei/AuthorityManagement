@@ -47,6 +47,7 @@
     <Compile Include="Mvc\ModuleElementEdit.cs" />
     <Compile Include="Mvc\PageInfo.cs" />
     <Compile Include="Mvc\PermissionEdit.cs" />
+    <Compile Include="Mvc\PushModel.cs" />
     <Compile Include="Mvc\RoleEdit.cs" />
     <Compile Include="Mvc\Select2Model.cs" />
     <Compile Include="Mvc\UserLogin.cs" />

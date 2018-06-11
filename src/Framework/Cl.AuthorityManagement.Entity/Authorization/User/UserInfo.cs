@@ -48,5 +48,7 @@ namespace Cl.AuthorityManagement.Entity
         public virtual ICollection<Module> Modules { get; set; }
         [JsonIgnore]
         public virtual ICollection<UserInfoModuleElement> UserInfoModuleElements { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<Push> Push { get; set; }
     }
 }

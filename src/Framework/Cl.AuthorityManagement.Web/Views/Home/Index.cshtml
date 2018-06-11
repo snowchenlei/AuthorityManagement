@@ -329,6 +329,11 @@
         </a>
     </div><!-- /.main-container -->
     @Scripts.Render("~/Bundles/home/js")
+    <!--引用SignalR库. -->
+    <script src="~/Scripts/jquery.signalR-2.2.3.min.js"></script>
+    <!--引用自动生成的SignalR 集线器(Hub)脚本.在运行的时候在浏览器的Source下可看到 -->
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Content/customer/signalR_customer.js"></script>
 </body>
 </html>
 

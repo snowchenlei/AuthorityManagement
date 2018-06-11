@@ -39,6 +39,8 @@ namespace Cl.AuthorityManagement.Data
         public virtual DbSet<Area> Area { get; set; }
         public virtual DbSet<IPInfo> IPInfo { get; set; }
 
+        public virtual DbSet<Push> Push { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //表名不用复数形式

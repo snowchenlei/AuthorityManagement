@@ -60,6 +60,7 @@
     <Compile Include="Authorization\Role\RoleModuleElement.cs" />
     <Compile Include="Authorization\User\UserInfo.cs" />
     <Compile Include="Authorization\User\UserInfoModuleElement.cs" />
+    <Compile Include="Push.cs" />
     <Compile Include="Resource\Area.cs" />
     <Compile Include="Resource\IPInfo.cs" />
   </ItemGroup>

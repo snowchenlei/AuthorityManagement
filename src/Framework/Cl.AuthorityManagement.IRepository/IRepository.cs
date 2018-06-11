@@ -41,4 +41,7 @@ namespace Cl.AuthorityManagement.IRepository
     public partial interface IIPInfoRepository:IBaseRepository<IPInfo>
     {
     }
+    public partial interface IPushRepository:IBaseRepository<Push>
+    {
+    }
 }

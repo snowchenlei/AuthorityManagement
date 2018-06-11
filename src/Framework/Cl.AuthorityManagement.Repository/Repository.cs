@@ -41,4 +41,7 @@ namespace Cl.AuthorityManagement.Repository
     public partial class IPInfoRepository:BaseRepository<IPInfo>, IIPInfoRepository
     {
     }
+    public partial class PushRepository:BaseRepository<Push>, IPushRepository
+    {
+    }
 }

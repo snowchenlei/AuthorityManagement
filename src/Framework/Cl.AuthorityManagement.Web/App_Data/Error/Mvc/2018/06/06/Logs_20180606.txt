@@ -1,0 +1,104 @@
+ 【时间】:2018-06-06 21:35:31,340
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 1 
+ 【文件地址】:F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第69行
+ 【日志内容】:Cannot open database "auth" requested by the login. The login failed.
+Login failed for user 'DESKTOP-7H10CG8\gbdvj'.
+ 【日志详细】：System.Data.SqlClient.SqlException (0x80131904): Cannot open database "auth" requested by the login. The login failed.
+Login failed for user 'DESKTOP-7H10CG8\gbdvj'.
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Open>b__36(DbConnection t, DbConnectionInterceptionContext c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   在 System.Data.Entity.Migrations.DbMigrator.ExecuteStatementsInternal(IEnumerable`1 migrationStatements, DbConnection connection)
+   在 System.Data.Entity.Migrations.DbMigrator.<>c__DisplayClass32.<ExecuteStatements>b__30()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass1.<Execute>b__0()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Action operation)
+   在 System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements, DbTransaction existingTransaction)
+   在 System.Data.Entity.Migrations.DbMigrator.ExecuteStatements(IEnumerable`1 migrationStatements)
+   在 System.Data.Entity.Migrations.DbMigrator.ExecuteOperations(String migrationId, VersionedModel targetModel, IEnumerable`1 operations, IEnumerable`1 systemOperations, Boolean downgrading, Boolean auto)
+   在 System.Data.Entity.Migrations.DbMigrator.AutoMigrate(String migrationId, VersionedModel sourceModel, VersionedModel targetModel, Boolean downgrading)
+   在 System.Data.Entity.Migrations.DbMigrator.Upgrade(IEnumerable`1 pendingMigrations, String targetMigrationId, String lastMigrationId)
+   在 System.Data.Entity.Migrations.DbMigrator.UpdateInternal(String targetMigration)
+   在 System.Data.Entity.Migrations.DbMigrator.<>c__DisplayClasse.<Update>b__d()
+   在 System.Data.Entity.Migrations.DbMigrator.EnsureDatabaseExists(Action mustSucceedToKeepDatabase)
+   在 System.Data.Entity.Migrations.DbMigrator.Update(String targetMigration)
+   在 System.Data.Entity.MigrateDatabaseToLatestVersion`2.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.<>c__DisplayClassf`1.<CreateInitializationAction>b__e()
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   在 System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   在 Cl.AuthorityManagement.Web.Global.Application_Start(Object sender, EventArgs e) 位置 F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Web\Global.asax.cs:行号 42
+ClientConnectionId:582bcae2-06d5-4028-8f49-20a58ea4eefc
+Error Number:4060,State:1,Class:11
+                
+----------------------footer--------------------------
+ 【时间】:2018-06-06 22:20:36,459
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 10 
+ 【文件地址】:F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第65行
+ 【日志内容】:{ Controller = Push, Action = Push, IP = ::1, Head = Connection=keep-alive&Content-Length=0&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=__RequestVerificationToken=YeG0q_Ya0ywcNAqaICS5SnMMuuVl904gH1mwJwI-FMnIyymwEFIl8YohpMAkm4DxC0E99_Dev8Gm8yDDgyIQuTM1tyJB7ZgaDuBM0Assp_w1&Host=localhost:57711&Referer=http://localhost:57711/Push/Index?moduleId=1013&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5221.400 QQBrowser/10.0.1125.400&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"model":{"Message":null}}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Length=0&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=__RequestVerificationToken=YeG0q_Ya0ywcNAqaICS5SnMMuuVl904gH1mwJwI-FMnIyymwEFIl8YohpMAkm4DxC0E99_Dev8Gm8yDDgyIQuTM1tyJB7ZgaDuBM0Assp_w1&Host=localhost:57711&Referer=http://localhost:57711/Push/Index?moduleId=1013&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5221.400 QQBrowser/10.0.1125.400&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"model":{"Message":null}}】请求【Push】的【Push】产生异常：【F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Web\Views\Push\Push.cshtml(21): error CS0411: The type arguments for method 'DisplayNameExtensions.DisplayNameFor<TModel, TValue>(HtmlHelper<TModel>, Expression<Func<TModel, TValue>>)' cannot be inferred from the usage. Try specifying the type arguments explicitly.】内部错误【】 }
+ 【日志详细】：System.Web.HttpCompileException (0x80004005): F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Web\Views\Push\Push.cshtml(21): error CS0411: The type arguments for method 'DisplayNameExtensions.DisplayNameFor<TModel, TValue>(HtmlHelper<TModel>, Expression<Func<TModel, TValue>>)' cannot be inferred from the usage. Try specifying the type arguments explicitly.
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------
+ 【时间】:2018-06-06 22:21:56,495
+ 【级别】:ERROR
+ 【类名】:LogMvcError
+ 【线程ID】: 10 
+ 【文件地址】:F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Common\Logger\LoggerHelper.cs 第65行
+ 【日志内容】:{ Controller = Push, Action = Push, IP = ::1, Head = Connection=keep-alive&Content-Length=0&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=__RequestVerificationToken=YeG0q_Ya0ywcNAqaICS5SnMMuuVl904gH1mwJwI-FMnIyymwEFIl8YohpMAkm4DxC0E99_Dev8Gm8yDDgyIQuTM1tyJB7ZgaDuBM0Assp_w1&Host=localhost:57711&Referer=http://localhost:57711/Push/Index?moduleId=1013&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5221.400 QQBrowser/10.0.1125.400&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest, HttpMethod = POST, RequestMessage = {"model":{"Message":null}}, ApplicationType = 2, InnerException = , Description =  客户端【::1】以【Connection=keep-alive&Content-Length=0&Accept=*/*&Accept-Encoding=gzip, deflate, br&Accept-Language=zh-CN,zh;q=0.9&Cookie=__RequestVerificationToken=YeG0q_Ya0ywcNAqaICS5SnMMuuVl904gH1mwJwI-FMnIyymwEFIl8YohpMAkm4DxC0E99_Dev8Gm8yDDgyIQuTM1tyJB7ZgaDuBM0Assp_w1&Host=localhost:57711&Referer=http://localhost:57711/Push/Index?moduleId=1013&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5221.400 QQBrowser/10.0.1125.400&Origin=http://localhost:57711&X-Requested-With=XMLHttpRequest】头使用【POST】携带【{"model":{"Message":null}}】请求【Push】的【Push】产生异常：【F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Web\Views\Push\Push.cshtml(21): error CS0411: The type arguments for method 'DisplayNameExtensions.DisplayNameFor<TModel, TValue>(HtmlHelper<TModel>, Expression<Func<TModel, TValue>>)' cannot be inferred from the usage. Try specifying the type arguments explicitly.】内部错误【】 }
+ 【日志详细】：System.Web.HttpCompileException (0x80004005): F:\git\AuthorityManagement\src\Framework\Cl.AuthorityManagement.Web\Views\Push\Push.cshtml(21): error CS0411: The type arguments for method 'DisplayNameExtensions.DisplayNameFor<TModel, TValue>(HtmlHelper<TModel>, Expression<Func<TModel, TValue>>)' cannot be inferred from the usage. Try specifying the type arguments explicitly.
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+                
+----------------------footer--------------------------

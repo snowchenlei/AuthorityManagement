@@ -84,4 +84,10 @@ namespace Cl.AuthorityManagement.Services
         {
         }
 	}
+	public partial class PushServices: BaseServices<Push>, IPushServices
+    {
+		public PushServices(IBaseRepository<Push> baseRepository) : base(baseRepository)
+        {
+        }
+	}
 }

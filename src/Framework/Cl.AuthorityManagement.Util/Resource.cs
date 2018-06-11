@@ -132,8 +132,15 @@ namespace Cl.AuthorityManagement.Util
                         Url = "/OperateInfo/Index",
                         AbsoluteUrl = "/OperateInfo/",
                         Layout = "~/Views/Shared/_LayoutPageTable.cshtml"
-                    }
+                    },
                     #endregion
+                    ["Push"] = new PageInfo
+                    {
+                        Title = "推送管理",
+                        Url = "/Push/Index",
+                        AbsoluteUrl = "/Push/",
+                        Layout = "~/Views/Shared/_LayoutPageTable.cshtml"
+                    }
                 };
             }
         }
