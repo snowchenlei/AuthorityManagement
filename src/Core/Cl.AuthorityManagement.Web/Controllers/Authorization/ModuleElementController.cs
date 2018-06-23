@@ -15,10 +15,13 @@ namespace Cl.AuthorityManagement.Web.Controllers
 {
     public class ModuleElementController : AuthorizationController
     {
+        private readonly IMapper Mapper = null;
         private readonly IModuleElementServices ModuleElementServices = null;
         public ModuleElementController(
+            IMapper mapper,
             IModuleElementServices moduleElementServices)
         {
+            Mapper = mapper;
             ModuleElementServices = moduleElementServices;
         }
 
@@ -74,7 +77,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 total = totalCount,
                 rows = roles.Select(u => new
                 {
-                    u.ID,
+                    Id = u.ID,
                     u.DomId,
                     u.Attr,
                     u.Class,
@@ -142,7 +145,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
             if (ModelState.IsValid)
             {
                 ModuleElement moduleElement = ModuleElementServices
-                    .LoadFirst(r => r.ID == moduleElementEdit.Id.Value);
+                    .LoadFirst(r => r.ID == moduleElementEdit.ID.Value);
                 if (moduleElement == null)
                 {
                     return Json(new Result

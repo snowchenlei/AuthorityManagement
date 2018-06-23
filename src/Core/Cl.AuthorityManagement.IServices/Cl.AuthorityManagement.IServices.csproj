@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Cl.AuthorityManagement.Entity\Cl.AuthorityManagement.Entity.csproj" />
     <ProjectReference Include="..\Cl.AuthorityManagement.IRepository\Cl.AuthorityManagement.IRepository.csproj" />
+    <ProjectReference Include="..\Cl.AuthorityManagement.Model\Cl.AuthorityManagement.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>

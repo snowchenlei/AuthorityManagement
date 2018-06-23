@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Loader;
 
-namespace Cl.AuthorityManagement.Web
+namespace Cl.AuthorityManagement.Web.Configuration
 {
     public class DefaultModule: Autofac.Module
     {

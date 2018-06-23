@@ -9,6 +9,7 @@ using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
 using Cl.AuthorityManagement.Model;
 using Cl.AuthorityManagement.Model.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
@@ -35,6 +36,8 @@ namespace Cl.AuthorityManagement.Web.Controllers
         // GET: Account
         public ActionResult Login()
         {
+            HttpContext.Session.Set("LoginUser", UserInfoServices.LoadFirst(u => u.UserName == "admin"));
+            return Redirect("/Home/Index");
             try
             {
                 string userInfo = "";//CookieHelper.GetCookieValue("user");
@@ -59,13 +62,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 return View();
             }
         }
-
-        [HttpGet]
-        public ActionResult Test()
-        {
-            return View();
-        }
-
+        
         /// <summary>
         /// 用户登陆
         /// </summary>

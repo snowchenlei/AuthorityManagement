@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
 using Cl.AuthorityManagement.Data;
 using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.Library.Mvc;
+using Cl.AuthorityManagement.Web.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -46,9 +48,12 @@ namespace Cl.AuthorityManagement.Web
             }, ServiceLifetime.Scoped);
             #endregion
 
+            services.AddAutoMapper();
+
             services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(CustomerExceptionAttribute));
+                options.Filters.Add(typeof(CustomerResultAttribute));
                 #region 输出缓存配置
                 options.CacheProfiles.Add("Default",
                     new CacheProfile()
@@ -81,7 +86,7 @@ namespace Cl.AuthorityManagement.Web
             services.AddSession(options =>
             {
                 // 设置超时时间
-                options.IdleTimeout = TimeSpan.FromDays(10);
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
                 options.Cookie.HttpOnly = true;
             });
 

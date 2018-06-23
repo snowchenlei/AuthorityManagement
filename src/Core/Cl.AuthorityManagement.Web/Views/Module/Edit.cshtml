@@ -14,7 +14,7 @@
 
     <div class="modal-body form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id, new { @data_bind = "value:Id" })
+        @Html.HiddenFor(model => model.ID, new { @data_bind = "value:Id" })
 
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -43,24 +43,17 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IconName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*<div class="input-group">
-                        @Html.EditorFor(model => model.IconName, new { htmlAttributes = new { @class = "form-control", @data_bind = "value:IconName", @placeholder = @Html.DisplayNameFor(model => model.IconName) } })
-                        <button class="btn btn-default" id="btnIcon" role="iconpicker"></button>
-                        <span class="input-group-addon" onclick="A()">
-                            <i class="glyphicon glyphicon-picture"></i>
-                        </span>
-                    </div>*@
                 @Html.EditorFor(model => model.IconName, new { htmlAttributes = new { @class = "form-control", @data_bind = "value:IconName", @placeholder = @Html.DisplayNameFor(model => model.IconName) } })
                 @Html.ValidationMessageFor(model => model.IconName, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.ParentId, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ParentID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <select id="ParentId" name="ParentId" data-bind="options:modules,
+                <select id="ParentId" name="ParentID" data-bind="options:modules,
                             optionsText:'text',
                             optionsValue:'id',
-                            value:operate.EditModel.ParentId"></select>
+                            value:operate.EditModel.ParentID"></select>
             </div>
         </div>
     </div>
@@ -71,11 +64,11 @@
     </div>
 </form>
 <script type="text/javascript">
-    $(function () {
-        $('#btnIcon').iconpicker();
-        $('#btnIcon').on('change', function (e) {
-            $('#IconName').val(e.icon);
-        });
-    });
+    //$(function () {
+    //    $('#btnIcon').iconpicker();
+    //    $('#btnIcon').on('change', function (e) {
+    //        $('#IconName').val(e.icon);
+    //    });
+    //});
     $.validator.unobtrusive.parse('form');
 </script>

@@ -2,6 +2,7 @@
 using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.IRepository;
 using Cl.AuthorityManagement.IServices;
+using Cl.AuthorityManagement.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,76 +13,189 @@ namespace Cl.AuthorityManagement.Services
 {
     public partial class RoleServices:BaseServices<Role>,IRoleServices
     {
-        public readonly IModuleRepository ModuleRepository = null;
+        private readonly IModuleRepository ModuleRepository = null;
+        private readonly IRoleModuleRepository RoleModuleRepository = null;
         private readonly IRoleModuleElementRepository RoleModuleElementRepository = null;
         private readonly IModuleElementRepository ModuleElementRepository = null;
         public RoleServices(
             AuthorityManagementContext context,
             IBaseRepository<Role> baseRepository,
             IModuleRepository moduleServices,
+            IRoleModuleRepository roleModuleRepository,
             IRoleModuleElementRepository roleModuleElementRepository,
             IModuleElementRepository moduleElementRepository) : base(context, baseRepository)
         {
             ModuleRepository = moduleServices;
+            RoleModuleRepository = roleModuleRepository;
             RoleModuleElementRepository = roleModuleElementRepository;
             ModuleElementRepository = moduleElementRepository;
         }
 
-        public bool SetRoleModule(Role role, int[] moduleIds)
+        /// <summary>
+        /// 获取模块列表
+        /// </summary>
+        /// <param name="roleID">角色ID</param>
+        /// <returns>角色模块列表</returns>
+        public CheckReturn LoadModules(int roleID)
         {
-            if (role == null)
+            if (!CurrentRepository.IsExists(u => u.ID == roleID))
             {
-                throw new ArgumentNullException("角色不能为空");
-            }
-            role.RoleModules.Clear();
-            Module[] modules = ModuleRepository
-                .LoadEntities(r => moduleIds.Contains(r.ID))
-                .ToArray();
-            foreach (Module module in modules)
-            {
-                role.RoleModules.Add(new RoleModule
+                return new CheckReturn
                 {
-                    Module = module,
-                    Role = role
-                });
+                    Message = "角色不存在",
+                    Flag = false
+                };
             }
-            return CurrentContext.SaveChanges()>0;
+            var modules = ModuleRepository.LoadEntities(c => true, true)
+                   .Select(r => new
+                   {
+                       ID = r.ID,
+                       Name = r.Name
+                   }).ToDictionary(key => key.ID, value => value.Name);
+            int[] ids = RoleModuleRepository.LoadEntities(r => r.RoleID == roleID)
+                .Select(r => r.ModuleID)
+                .ToArray();
+            return new CheckReturn
+            {
+                Flag = true,
+                Message = "获取成功",
+                dics = modules,
+                IDs = ids
+            };
         }
 
         /// <summary>
-        /// 设置角色模块元素
+        /// 加载角色模块
         /// </summary>
-        /// <param name="role">角色</param>
-        /// <param name="elementIds">元素id集合</param>
-        /// <param name="moduleId">模块id</param>
-        /// <returns>是否成功</returns>
-        public bool SetRoleModuleElements(Role role, int[] elementIds, int moduleId)
+        /// <param name="roleID">角色ID</param>
+        /// <returns>角色模块</returns>
+        public List<Module> LoadRoleModule(int roleID)
         {
-            if (role == null)
+            return ModuleRepository
+                .LoadRoleModule(roleID);
+        }
+
+        /// <summary>
+        /// 获取模块元素列表
+        /// </summary>
+        /// <param name="roleID">角色ID</param>
+        /// <param name="moduleID">模块ID</param>
+        /// <returns>角色模块元素列表</returns>
+        public CheckReturn LoadModuleElements(int roleID, int moduleID)
+        {
+            if (!CurrentRepository.IsExists(u => u.ID == roleID))
             {
-                throw new ArgumentNullException("角色不能为空");
-            }
-            //非多对多不可用clear，需要手动删除
-            RoleModuleElement[] roleElements = role.RoleModuleElements.ToArray();
-            foreach (RoleModuleElement item in roleElements)
-            {
-                RoleModuleElementRepository.DeleteEntity(item);
-            }
-            Module module = ModuleRepository
-                .LoadFirst(m => m.ID == moduleId);
-            ModuleElement[] elements = ModuleElementRepository
-                .LoadEntities(m => elementIds.Contains(m.ID))
-                .ToArray();
-            foreach (ModuleElement element in elements)
-            {
-                role.RoleModuleElements.Add(new RoleModuleElement
+                return new CheckReturn
                 {
-                    Module = module,
-                    ModuleElement = element,
-                    Role = role
+                    Message = "角色不存在",
+                    Flag = false
+                };
+            }
+            var modules = ModuleElementRepository.LoadModuleElement(moduleID)
+                   .Select(r => new
+                   {
+                       ID = r.ID,
+                       Name = r.Name
+                   }).ToDictionary(key => key.ID, value => value.Name);
+            int[] ids = RoleModuleElementRepository.LoadEntities(r => r.RoleID == roleID && r.ModuleID == moduleID)
+                .Select(r => r.ModuleElementID)
+                .ToArray();
+            return new CheckReturn
+            {
+                Flag = true,
+                Message = "获取成功",
+                dics = modules,
+                IDs = ids
+            };
+        }
+
+        /// <summary>
+        /// 设置用户模块
+        /// </summary>
+        /// <param name="roleID">用户ID</param>
+        /// <param name="moduleIDs">选中模块Id集合</param>
+        /// <returns>结果描述</returns>
+        public ReturnDescription SetRoleModule(int roleID, int[] moduleIDs)
+        {
+            if (!CurrentRepository.IsExists(u => u.ID == roleID))
+            {
+                return new ReturnDescription
+                {
+                    Flag = false,
+                    Message = "角色不存在"
+                };
+            }
+            RoleModuleRepository.RemoveAll(roleID);
+            CurrentContext.SaveChanges();
+            foreach (int moduleID in moduleIDs)
+            {
+                RoleModuleRepository.AddEntity(new RoleModule
+                {
+                    RoleID = roleID,
+                    ModuleID = moduleID
                 });
             }
-            return CurrentContext.SaveChanges()>0;
+            if (CurrentContext.SaveChanges() > 0)
+            {
+                return new ReturnDescription
+                {
+                    Flag = true,
+                    Message = "设置成功"
+                };
+            }
+            else
+            {
+                return new ReturnDescription
+                {
+                    Flag = false,
+                    Message = "设置失败"
+                };
+            }
+        }
+
+        /// <summary>
+        /// 设置用户模块
+        /// </summary>
+        /// <param name="roleID">用户ID</param>
+        /// <param name="moduleElementIDs">选中模块Id集合</param>
+        /// <returns>结果描述</returns>
+        public ReturnDescription SetRoleModuleElements(int roleID, int[] moduleElementIDs, int moduleID)
+        {
+            if (!CurrentRepository.IsExists(u => u.ID == roleID))
+            {
+                return new ReturnDescription
+                {
+                    Flag = false,
+                    Message = "角色不存在"
+                };
+            }
+
+            RoleModuleElementRepository.RemoveAll(roleID, moduleID);
+            foreach (int elementID in moduleElementIDs)
+            {
+                RoleModuleElementRepository.AddEntity(new RoleModuleElement
+                {
+                    RoleID = roleID,
+                    ModuleID = moduleID,
+                    ModuleElementID = elementID
+                });
+            }
+            if (CurrentContext.SaveChanges() > 0)
+            {
+                return new ReturnDescription
+                {
+                    Flag = true,
+                    Message = "设置成功"
+                };
+            }
+            else
+            {
+                return new ReturnDescription
+                {
+                    Flag = false,
+                    Message = "设置失败"
+                };
+            }
         }
 
         /// <summary>

@@ -38,7 +38,7 @@ function operateInit() {
     operate.setRoleModules();
     operate.setRoleElements();
     operate.EditModel = {
-        Id: ko.observable(),
+        //Id: ko.observable(),
         Name: ko.observable(),
         Sort: ko.observable()
     };
@@ -70,7 +70,7 @@ operate.setRoleElements = function () {
 //获取空绑定
 function getEmptyModel() {
     return {
-        Id: ko.observable(),
+        //Id: ko.observable(),
         Name: ko.observable(),
         Sort: ko.observable()
     };

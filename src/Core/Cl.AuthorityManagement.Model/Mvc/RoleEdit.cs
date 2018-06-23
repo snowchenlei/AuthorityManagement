@@ -9,7 +9,7 @@ namespace Cl.AuthorityManagement.Model.Mvc
 {
     public class RoleEdit
     {
-        public int? Id { get; set; }
+        public int? ID { get; set; }
 
         [StringLength(50)]
         [Required]

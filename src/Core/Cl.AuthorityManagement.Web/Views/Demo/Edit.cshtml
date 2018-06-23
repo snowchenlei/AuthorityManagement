@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+@model Cl.AuthorityManagement.Model.Mvc.ModuleEdit
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="modelTitle">添加 模块</h4>
+</div>
+<form action="/Demo/Add" id="modelForm" method="post" enctype="multipart/form-data"
+      data-ajax="true" data-ajax-success="saveSuccess" data-ajax-failure="saveFailure">
+    @Html.AntiForgeryToken()
+
+    <div class="modal-body form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID, new { @data_bind = "value:ID" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @data_bind = "value:Name", @placeholder = @Html.DisplayNameFor(model => model.Name) } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Url, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control", @data_bind = "value:Url", @placeholder = @Html.DisplayNameFor(model => model.Url) } })
+                @Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sort, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Sort, new { htmlAttributes = new { @class = "form-control", @data_bind = "value:Sort", @placeholder = @Html.DisplayNameFor(model => model.Sort) } })
+                @Html.ValidationMessageFor(model => model.Sort, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IconName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IconName, new { htmlAttributes = new { @class = "form-control", @data_bind = "value:IconName", @placeholder = @Html.DisplayNameFor(model => model.IconName) } })
+                @Html.ValidationMessageFor(model => model.IconName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ParentID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select id="ParentId" name="ParentID" data-bind="options:modules,
+                            optionsText:'text',
+                            optionsValue:'id',
+                            value:operate.EditModel.ParentID"></select>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" id="close_edit" class="btn btn-primary" data-dismiss="modal">关闭</button>
+        <button type="submit" class="btn btn-success">保存</button>
+        <input type="hidden" id="page" name="page" />
+    </div>
+</form>
+<script type="text/javascript">
+    $(function () {
+        $('#btnIcon').iconpicker();
+        $('#btnIcon').on('change', function (e) {
+            $('#IconName').val(e.icon);
+        });
+    });
+    $.validator.unobtrusive.parse('form');
+</script>

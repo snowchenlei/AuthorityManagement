@@ -20,12 +20,15 @@ namespace Cl.AuthorityManagement.Web.Controllers
     /// </summary>
     public class ModuleController : AuthorizationController
     {
+        private readonly IMapper Mapper = null;
         private readonly IModuleServices ModuleServices = null;
         private readonly IModuleElementServices ModuleElementServices = null;
         public ModuleController(
+            IMapper mapper,
             IModuleServices moduleServices,
             IModuleElementServices moduleElementServices)
         {
+            Mapper = mapper;
             ModuleServices = moduleServices;
             ModuleElementServices = moduleElementServices;
         }
@@ -103,12 +106,12 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 total = totalCount,
                 rows = modules.Select(m => new
                 {
-                    m.ID,
+                    Id = m.ID,
                     m.Name,
                     m.Url,
                     m.IconName,
                     m.Sort,
-                    ParentId = m.Parent == null ? 0 : m.Parent.ID,
+                    ParentID = m.Parent == null ? 0 : m.Parent.ID,
                     ParentName = m.Parent == null ? String.Empty : m.Parent.Name,
                     m.AddTime
                 })
@@ -130,18 +133,18 @@ namespace Cl.AuthorityManagement.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                Module parent = null;
-                if (moduleEdit.ParentId.HasValue && moduleEdit.ParentId.Value > 0)
-                {
-                    parent = ModuleServices
-                        .LoadFirst(m => m.ID == moduleEdit.ParentId);
-                }
                 Module module = Mapper.Map<Module>(moduleEdit);
-                module.AddTime = DateTime.Now;
-                if (parent != null)
+                //Module parent = null;
+                if (moduleEdit.ParentID.HasValue && moduleEdit.ParentID.Value > 0)
                 {
-                    module.Parent = parent;
+                    module.Parent = ModuleServices
+                        .LoadFirst(m => m.ID == moduleEdit.ParentID);
                 }
+                module.AddTime = DateTime.Now;
+                //if (parent != null)
+                //{
+                //    module.Parent = parent;
+                //}
                 ModuleServices.AddEntity(module);
 
                 return Json(new Result<int>
@@ -179,13 +182,13 @@ namespace Cl.AuthorityManagement.Web.Controllers
             if (ModelState.IsValid)
             {
                 Module parent = null;
-                if (moduleEdit.ParentId.HasValue)
+                if (moduleEdit.ParentID.HasValue)
                 {
                     parent = ModuleServices
-                        .LoadFirst(m => m.ID == moduleEdit.ParentId);
+                        .LoadFirst(m => m.ID == moduleEdit.ParentID);
                 }
                 Module module = ModuleServices
-                        .LoadFirst(u => u.ID == moduleEdit.Id.Value);
+                        .LoadFirst(u => u.ID == moduleEdit.ID.Value);
                 if (module == null)
                 {
                     return Json(new Result
@@ -288,21 +291,13 @@ namespace Cl.AuthorityManagement.Web.Controllers
         [HttpGet]
         [AjaxOnly]
         [Authenticate]
-        public ActionResult ModuleElements(int moduleId)
+        public ActionResult ModuleElements(int moduleID)
         {
-            Module module = ModuleServices
-                .LoadFirst(m => m.ID == moduleId);
-            if (module != null)
+            CheckReturn check = ModuleServices
+                 .LoadElements(moduleID);
+            if (check.Flag)
             {
-                var moduleElements = ModuleElementServices.LoadEntities(c => true)
-                   .Select(r => new
-                   {
-                       Id = r.ID,
-                       Name = r.Name
-                   }).ToDictionary(key => key.Id, value => value.Name);
-                int[] ids = ModuleElementServices.LoadModuleElement(module.ID).Select(r => r.ID).ToArray();
-
-                ViewBag.Html = LoadHtml.GetElements(moduleElements, ids);
+                ViewBag.Html = LoadHtml.GetElements(check.dics, check.IDs);
                 return PartialView();
             }
             else
@@ -310,34 +305,25 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 return Json(new
                 {
                     State = 0,
-                    Message = "模块不存在"
+                    Message = check.Message
                 });
             }
         }
 
         [HttpPost]
         [Authenticate]
-        public ActionResult ModuleElements(int firstId, string secondId)
+        public ActionResult ModuleElements(int firstID, string secondID)
         {
-            string[] tempIds = secondId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            int[] elementIds = Array.ConvertAll(tempIds, s => Convert.ToInt32(s));
+            string[] tempIDs = secondID.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] elementIDs = Array.ConvertAll(tempIDs, s => Convert.ToInt32(s));
 
-            Module module = ModuleServices
-                .LoadFirst(r => r.ID == firstId);
-            if (module == null)
-            {
-                return Json(new Result
-                {
-                    State = 0,
-                    Message = "设置元素的模块不存在"
-                });
-            }
-            if (ModuleServices.SetModuleElements(module, elementIds))
+            ReturnDescription description = ModuleServices.SetModuleElements(firstID, elementIDs);
+            if (description.Flag)
             {
                 return Json(new Result
                 {
                     State = 1,
-                    Message = "设置元素成功"
+                    Message = description.Message
                 });
             }
             else
@@ -345,7 +331,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 return Json(new Result
                 {
                     State = 0,
-                    Message = "设置元素失败"
+                    Message = description.Message
                 });
             }
         }

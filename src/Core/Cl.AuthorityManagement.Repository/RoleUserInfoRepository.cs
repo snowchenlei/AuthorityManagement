@@ -27,5 +27,33 @@ namespace Cl.AuthorityManagement.Repository
                 .Where(whereLamada)
                 .ToList();
         }
+
+        /// <summary>
+        /// 加载角色ID
+        /// </summary>
+        /// <param name="userID">用户ID</param>
+        /// <returns>用户的模块ID</returns>
+        public int[] LoadRoleIDs(int userID)
+        {
+            return CurrentContext.RoleUserInfo
+                .AsNoTracking()
+                .Where(w => w.UserInfoID == userID)
+                .Select(s => s.RoleID)
+                .ToArray();
+        }
+
+        /// <summary>
+        /// 删除用户的角色
+        /// </summary>
+        /// <param name="userID">用户ID</param>
+        public void RemoveAll(int userID)
+        {
+            var roleUsers = CurrentContext.RoleUserInfo
+                .Where(m => m.UserInfoID == userID);
+
+            CurrentContext.RoleUserInfo
+                .RemoveRange(roleUsers);
+        }
+
     }
 }

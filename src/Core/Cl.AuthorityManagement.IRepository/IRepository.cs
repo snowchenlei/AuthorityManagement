@@ -2,6 +2,12 @@
 
 namespace Cl.AuthorityManagement.IRepository
 {
+    public partial interface IRoleModuleRepository : IBaseRepository<RoleModule>
+    {
+    }
+    public partial interface IModuleElementModuleRepository : IBaseRepository<ModuleElementModule>
+    {
+    }
     public partial interface IModuleUserInfoRepository : IBaseRepository<ModuleUserInfo>
     {
     }

@@ -10,7 +10,7 @@ namespace Cl.AuthorityManagement.Model.Mvc
 {
     public class UserEdit
     {
-        public int? Id { get; set; }
+        public int? ID { get; set; }
 
         [Required]
         [StringLength(50)]

@@ -1,8 +1,13 @@
-﻿var moduleId;
+﻿var moduleID;
 var key;
 $(function () {
-    tree.init();
-    $('#moduleTree').parent('.modal-body').height('360px');
+    if (treeJson == "") {
+        toastr.warning("请先设置模块后再试");
+    } else {
+        $("#modifyModal").modal();
+        tree.init();
+        $('#moduleTree').parent('.modal-body').height('360px');
+    }
 });
 var tree = {
     init: function () {
@@ -30,18 +35,18 @@ function treeNode_Click(event, treeId, treeNode) {
     if (treeNode.isParent) {
         return false;
     }
-    moduleId = treeNode.id;
+    moduleID = treeNode.id;
     var hidElementId = $('#hidElementId').val();
-    var data = { 'moduleId': moduleId };
+    var data = { 'moduleID': moduleID };
     data[key] = hidElementId;
     $.get(absoluteUrl + '/Elements', data, function (data) {
         $('#elements').html(data);
     });
 }
 //保存
-function CallSave(firstId, secondId) {
-    var data = { 'elementId': secondId, 'moduleId': moduleId };
-    data[key] = firstId;
+function CallSave(firstID, secondID) {
+    var data = { 'elementID': secondID, 'moduleID': moduleID };
+    data[key] = firstID;
     $.post(absoluteUrl + '/ModuleElements', data, function (data) {
         if (data.State == 1) {
             toastr.success(data.Message);

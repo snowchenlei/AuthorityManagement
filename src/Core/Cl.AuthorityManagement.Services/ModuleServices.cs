@@ -2,6 +2,7 @@
 using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.IRepository;
 using Cl.AuthorityManagement.IServices;
+using Cl.AuthorityManagement.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace Cl.AuthorityManagement.Services
         private readonly IModuleElementRepository ModuleElementRepository = null;
         private readonly IRoleUserInfoRepository RoleUserInfoRepository = null;
         private readonly IModuleUserInfoRepository ModuleUserInfoRepository = null;
+        private readonly IModuleElementModuleRepository ModuleElementModuleRepository = null;
         private readonly IRoleModuleElementRepository RoleModuleElementRepository = null;
         private readonly IUserInfoModuleElementRepository UserInfoModuleElementRepository = null;
         public ModuleServices(
@@ -25,17 +27,51 @@ namespace Cl.AuthorityManagement.Services
             IModuleElementRepository moduleElementRepository,
             IModuleUserInfoRepository moduleUserInfoRepository,
             IRoleUserInfoRepository roleUserInfoRepository,
+            IModuleElementModuleRepository moduleElementModuleRepository,
             IRoleModuleElementRepository roleModuleElementRepository,
             IUserInfoModuleElementRepository userInfoModuleElementRepository) :base(context, baseRepository)
         {
             ModuleRepository = moduleRepository;
             ModuleElementRepository = moduleElementRepository;
             RoleUserInfoRepository = roleUserInfoRepository;
+            ModuleElementModuleRepository = moduleElementModuleRepository;
             ModuleUserInfoRepository = moduleUserInfoRepository;
             RoleModuleElementRepository = roleModuleElementRepository;
             UserInfoModuleElementRepository = userInfoModuleElementRepository;
         }
         
+        /// <summary>
+        /// 加载元素
+        /// </summary>
+        /// <param name="moduleID">模块ID</param>
+        /// <returns>模块元素</returns>
+        public CheckReturn LoadElements(int moduleID)
+        {
+            if (!ModuleRepository.IsExists(u => u.ID == moduleID))
+            {
+                return new CheckReturn
+                {
+                    Message = "用户不存在",
+                    Flag = false
+                };
+            }
+
+            var modules = ModuleElementRepository.LoadEntities(c => true, true)
+                   .Select(r => new
+                   {
+                       ID = r.ID,
+                       Name = r.Name
+                   }).ToDictionary(key => key.ID, value => value.Name);
+            int[] ids = ModuleElementModuleRepository.LoadElementIDs(moduleID);
+            return new CheckReturn
+            {
+                Flag = true,
+                Message = "获取成功",
+                dics = modules,
+                IDs = ids
+            };
+        }
+
         /// <summary>
         /// 加载选中的模块（用户和角色）
         /// </summary>
@@ -65,29 +101,48 @@ namespace Cl.AuthorityManagement.Services
         /// <param name="module">模块</param>
         /// <param name="elementIDs">元素Id</param>
         /// <returns></returns>
-        public bool SetModuleElements(int moduleID, int[] elementIDs)
+        public ReturnDescription SetModuleElements(int moduleID, int[] elementIDs)
         {
             Module module = ModuleRepository
-                //.LoadModuleElementModules(moduleID);
                 .LoadFirst(m => m.ID == moduleID);
 
             if (module == null)
             {
-                throw new ArgumentNullException("模块不能为空");
+                return new ReturnDescription
+                {
+                    Flag = false,
+                    Message = "模块不存在"
+                };
             }
-            module.ModuleElementModules.Clear();
+            //module.ModuleElementModules.Clear();
+            ModuleElementModuleRepository.RemoveAll(moduleID);
             ModuleElement[] modules = ModuleElementRepository
                 .LoadEntities(r => elementIDs.Contains(r.ID))
                 .ToArray();
             foreach (ModuleElement element in modules)
             {
-                module.ModuleElementModules.Add(new ModuleElementModule
+                ModuleElementModuleRepository.AddEntity(new ModuleElementModule
                 {
                     Module = module,
                     ModuleElement = element
                 });
             }
-            return CurrentContext.SaveChanges() > 0;
+            if (CurrentContext.SaveChanges() > 0)
+            {
+                return new ReturnDescription
+                {
+                    Flag = true,
+                    Message = "设置成功"
+                };
+            }
+            else
+            {
+                return new ReturnDescription
+                {
+                    Flag = false,
+                    Message = "设置失败"
+                };
+            }
         }
 
         /// <summary>

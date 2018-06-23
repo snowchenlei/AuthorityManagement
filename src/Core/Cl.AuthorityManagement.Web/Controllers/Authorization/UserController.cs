@@ -20,21 +20,24 @@ namespace Cl.AuthorityManagement.Web.Controllers
 {
     public class UserController : AuthorizationController
     {
-        private readonly IUserInfoServices UserInfoServices = null;
+        private readonly IMapper Mapper = null;
         private readonly IRoleServices RoleServices = null;
         private readonly IModuleServices ModuleServices = null;
+        private readonly IUserInfoServices UserInfoServices = null;
         private readonly IModuleElementServices ModuleElementServices = null;
         private readonly IUserInfoModuleElementServices UserInfoModuleElementServices = null;
         public UserController(
-            IUserInfoServices userInfoServices,
+            IMapper mapper,
             IRoleServices roleServices,
             IModuleServices moduleServices,
+            IUserInfoServices userInfoServices,
             IModuleElementServices moduleElementServices,
             IUserInfoModuleElementServices userInfoModuleElementServices)
         {
-            UserInfoServices = userInfoServices;
+            Mapper = mapper;
             RoleServices = roleServices;
             ModuleServices = moduleServices;
+            UserInfoServices = userInfoServices;
             ModuleElementServices = moduleElementServices;
             UserInfoModuleElementServices = userInfoModuleElementServices;
         }
@@ -82,9 +85,9 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 tempUsers = Sort(tempUsers, u => u.ID, order);
             } 
             #endregion
+            int totalCount = tempUsers.Count();
             var users = UserInfoServices
                 .LoadPageEntities(pageIndex, pageSize, tempUsers);
-            int totalCount = users.Count();
 
             int pageCount = PageHelper.GetPageCount(totalCount, pageSize);
             return Json(new
@@ -92,7 +95,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 total = totalCount,
                 rows = users.Select(u => new
                 {
-                    u.ID,
+                    Id = u.ID,
                     u.UserName,
                     u.Name,
                     u.PhoneNumber,
@@ -109,6 +112,8 @@ namespace Cl.AuthorityManagement.Web.Controllers
         [ResponseCache(CacheProfileName = "Default")]
         public ActionResult Add()
         {
+            //ViewBag.Action = "Add";
+            //ViewBag.Operate = "添加";
             return PartialView("Edit");
         }
 
@@ -120,14 +125,14 @@ namespace Cl.AuthorityManagement.Web.Controllers
             {
                 UserInfo user = Mapper.Map<UserInfo>(userEdit);
                 user.Password = Md5Encryption.Encrypt(Md5Encryption.Encrypt(user.Password, Md5EncryptionType.Strong));
-                UserInfoServices.AddEntity(user);
+                user = UserInfoServices.AddEntity(user);
 
-                LoggerHelper.Operate(new OperateLog
-                {
-                    CreateUser_Id = UserInfo.ID,
-                    OperateType = (int)OperateType.Add,
-                    Remark = $"{UserInfo.Name}添加了一个用户{userEdit.Name}"
-                });
+                //LoggerHelper.Operate(new OperateLog
+                //{
+                //    CreateUser_Id = UserInfo.ID,
+                //    OperateType = (int)OperateType.Add,
+                //    Remark = $"{UserInfo.Name}添加了一个用户{userEdit.Name}"
+                //});
                 return Json(new Result<int>
                 {
                     State = 1,
@@ -168,7 +173,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
             if (ModelState.IsValid)
             {
                 UserInfo user = UserInfoServices
-                        .LoadFirst(u => u.ID == userEdit.Id.Value);
+                        .LoadFirst(u => u.ID == userEdit.ID.Value);
                 if (user == null)
                 {
                     return Json(new Result
@@ -238,21 +243,13 @@ namespace Cl.AuthorityManagement.Web.Controllers
         [HttpGet]
         [AjaxOnly]
         [Authenticate]
-        public ActionResult Roles(int userId)
+        public ActionResult Roles(int userID)
         {
-            UserInfo user = UserInfoServices
-                .LoadFirst(u => u.ID == userId);
-            if (user != null)
+            CheckReturn check = UserInfoServices
+                .LoadRoles(userID);
+            if (check.Flag)
             {
-                var roles = RoleServices.LoadEntities(c => true)
-                    .Select(r => new
-                    {
-                        Id = r.ID,
-                        Name = r.Name
-                    }).ToDictionary(key => key.Id, value => value.Name);
-                int[] ids = user.RoleUserInfos.Select(r => r.RoleID).ToArray();
-                
-                ViewBag.Html = LoadHtml.GetElements(roles, ids);
+                ViewBag.Html = LoadHtml.GetElements(check.dics, check.IDs);
                 return PartialView();
             }
             else
@@ -260,35 +257,27 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 return Json(new
                 {
                     State = 0,
-                    Message = "用户不存在"
+                    Message = check.Message
                 });
             }
         }
 
         [HttpPost]
         [Authenticate]
-        public ActionResult Roles(int firstId, string secondId)
+        public ActionResult Roles(int firstID, string secondID)
         {
-            string[] tempIds = secondId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] tempIds = secondID.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             int[] roleIds = Array.ConvertAll(tempIds, s => Convert.ToInt32(s));
 
-            UserInfo user = UserInfoServices
-                .LoadFirst(u => u.ID == firstId);
-            if (user == null)
-            {
-                return Json(new Result
-                {
-                    State = 0,
-                    Message = "设置角色的用户不存在"
-                });
-            }
+            ReturnDescription description = UserInfoServices
+                .SetUserRole(firstID, roleIds);
 
-            if (UserInfoServices.SetUserRole(user, roleIds))
+            if (description.Flag)
             {
                 return Json(new Result
                 {
                     State = 1,
-                    Message = "设置角色成功"
+                    Message = description.Message
                 });
             }
             else
@@ -296,7 +285,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 return Json(new Result
                 {
                     State = 0,
-                    Message = "设置角色失败"
+                    Message = description.Message
                 });
             }
         }
@@ -306,21 +295,13 @@ namespace Cl.AuthorityManagement.Web.Controllers
         [HttpGet]
         [AjaxOnly]
         [Authenticate]
-        public ActionResult Modules(int userId)
+        public ActionResult Modules(int userID)
         {
-            UserInfo user = UserInfoServices
-                .LoadFirst(u => u.ID == userId);
-            if (user != null)
+            CheckReturn check = UserInfoServices
+                .LoadModules(userID);
+            if (check.Flag)
             {
-                var modules = ModuleServices.LoadEntities(m => true)
-                    .Select(r => new
-                    {
-                        Id = r.ID,
-                        Name = r.Name
-                    }).ToDictionary(key => key.Id, value => value.Name);
-                int[] ids = user.ModuleUserInfos.Select(r => r.ModuleID).ToArray();
-                
-                ViewBag.Html = LoadHtml.GetElements(modules, ids);
+                ViewBag.Html = LoadHtml.GetElements(check.dics, check.IDs);
                 return PartialView();
             }
             else
@@ -328,35 +309,26 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 return Json(new
                 {
                     State = 0,
-                    Message = "用户不存在"
+                    Message = check.Message
                 });
             }
         }
 
         [HttpPost]
         [Authenticate]
-        public ActionResult Modules(int firstId, string secondId)
+        public ActionResult Modules(int firstID, string secondID)
         {
-            string[] tempIds = secondId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            int[] moduleIds = Array.ConvertAll(tempIds, s => Convert.ToInt32(s));
+            string[] tempIds = secondID.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] moduleIDs = Array.ConvertAll(tempIds, s => Convert.ToInt32(s));
 
-            UserInfo user = UserInfoServices
-                .LoadFirst(u => u.ID == firstId);
-            if (user == null)
-            {
-                return Json(new Result
-                {
-                    State = 0,
-                    Message = "设置模块的用户不存在"
-                });
-            }
-
-            if (UserInfoServices.SetUserModule(user, moduleIds))
+            ReturnDescription description = UserInfoServices
+                 .SetUserModule(firstID, moduleIDs);
+            if (description.Flag)
             {
                 return Json(new Result
                 {
                     State = 1,
-                    Message = "设置模块成功"
+                    Message = description.Message
                 });
             }
             else
@@ -364,7 +336,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 return Json(new Result
                 {
                     State = 0,
-                    Message = "设置模块失败"
+                    Message = description.Message
                 });
             }
         }
@@ -374,16 +346,9 @@ namespace Cl.AuthorityManagement.Web.Controllers
         [HttpGet]
         [AjaxOnly]
         [Authenticate]
-        public ActionResult ModuleElements(int userId)
+        public ActionResult ModuleElements(int userID)
         {
-            UserInfo user = UserInfoServices
-                .LoadFirst(u => u.ID == userId);
-            if (user != null)
-            {
-                ViewBag.ModuleTree = GetModuleTreeJson(user);
-                return PartialView();
-            }
-            else
+            if (!UserInfoServices.IsExists(u => u.ID == userID))
             {
                 return Json(new
                 {
@@ -391,32 +356,38 @@ namespace Cl.AuthorityManagement.Web.Controllers
                     Message = "用户不存在"
                 });
             }
+            List<Module> modules = UserInfoServices.LoadUserModule(userID);
+            if (modules.Count <= 0)
+            {
+                ViewBag.ModuleTree = "\"\"";
+            }
+            else
+            {
+                ViewBag.ModuleTree = Serialization.SerializeObject(modules
+                    .Select(m => new
+                    {
+                        id = m.ID,
+                        pId = m.Parent?.ID,
+                        name = m.Name
+                    }));
+            }
+            return PartialView();
         }
 
         [HttpPost]
         [Authenticate]
-        public ActionResult ModuleElements(int userId, string elementId, int moduleId)
+        public ActionResult ModuleElements(int userID, string elementID, int moduleID)
         {
-            string[] tempIds = elementId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] tempIds = elementID.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             int[] elementIds = Array.ConvertAll(tempIds, s => Convert.ToInt32(s));
 
-            UserInfo user = UserInfoServices
-                .LoadFirst(u => u.ID == userId);
-            if (user == null)
-            {
-                return Json(new Result
-                {
-                    State = 0,
-                    Message = "设置元素的用户不存在"
-                });
-            }
-
-            if (UserInfoServices.SetUserModuleElements(user, elementIds, moduleId))
+            ReturnDescription description = UserInfoServices.SetUserModuleElements(userID, elementIds, moduleID);
+            if (description.Flag)
             {
                 return Json(new Result
                 {
                     State = 1,
-                    Message = "设置元素成功"
+                    Message = description.Message
                 });
             }
             else
@@ -424,49 +395,25 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 return Json(new Result
                 {
                     State = 0,
-                    Message = "设置元素失败"
+                    Message = description.Message
                 });
             }
         }
 
-        private string GetModuleTreeJson(UserInfo user)
-        {
-            List<Module> modules = new List<Module>();
-            modules.AddRange(user.ModuleUserInfos.Select(m=>m.Module));
-            foreach (Role role in user.RoleUserInfos.Select(r=>r.Role))
-            {
-                modules.AddRange(role.RoleModules.Select(r=>r.Module));
-            }
-
-            return Serialization.SerializeObject(modules
-                .Select(m => new
-                {
-                    id = m.ID,
-                    pId = m.Parent?.ID,
-                    name = m.Name
-                }));
-        }
-
         [HttpGet]
-        public string Elements(int userId, int moduleId)
+        public string Elements(int userID, int moduleID)
         {
-            Module module = ModuleServices
-                .LoadFirst(m => m.ID == moduleId);
-
-            int[] ids = UserInfoModuleElementServices
-                .LoadEntities(e => e.Module.ID == moduleId
-                    && e.UserInfo.ID == userId)
-                .Select(e => e.ModuleElement.ID).ToArray();
-
-            var elements = module.ModuleElementModules.Select(m=>m.ModuleElement)
-                .Select(e => new
-                {
-                    Id = e.ID,
-                    Name = e.Name
-                })
-                .ToDictionary(key => key.Id, value => value.Name);
-
-            return LoadHtml.GetElements(elements, ids);
+            CheckReturn check = UserInfoServices
+                .LoadModuleElements(userID, moduleID);
+            if (check.Flag)
+            {
+                return LoadHtml.GetElements(check.dics, check.IDs);
+            }
+            else
+            {
+                return String.Empty;
+            }
+            
         }
         #endregion
     }

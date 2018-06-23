@@ -85,7 +85,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 total = totalCount,
                 rows = roles.Select(u => new
                 {
-                    u.ID,
+                    Id = u.ID,
                     u.Sort,
                     u.Name,
                     u.AddTime
@@ -146,7 +146,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
             if (ModelState.IsValid)
             {
                 Role role = RoleServices
-                    .LoadFirst(r => r.ID == roleEdit.Id.Value);
+                    .LoadFirst(r => r.ID == roleEdit.ID.Value);
                 if (role == null)
                 {
                     return Json(new Result
@@ -216,22 +216,13 @@ namespace Cl.AuthorityManagement.Web.Controllers
         [HttpGet]
         [AjaxOnly]
         [Authenticate]
-        public ActionResult Modules(int roleId)
+        public ActionResult Modules(int roleID)
         {
-            Role role = RoleServices
-                .LoadFirst(r => r.ID == roleId);
-            if(role!= null)
+            CheckReturn check = RoleServices
+                .LoadModules(roleID);
+            if (check.Flag)
             {
-                var modules = ModuleServices.LoadEntities(c => true)
-                    .Select(r => new
-                    {
-                        Id = r.ID,
-                        Name = r.Name
-                    }).ToDictionary(key => key.Id, value => value.Name);
-                //角色已拥有的模块
-                int[] ids = role.RoleModules.Select(r => r.MouleID).ToArray();
-
-                ViewBag.Html = LoadHtml.GetElements(modules, ids);
+                ViewBag.Html = LoadHtml.GetElements(check.dics, check.IDs);
                 return PartialView();
             }
             else
@@ -239,34 +230,26 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 return Json(new
                 {
                     State = 0,
-                    Message = "角色不存在"
+                    Message = check.Message
                 });
             }
         }
 
         [HttpPost]
         [Authenticate]
-        public ActionResult Modules(int firstId, string secondId)
+        public ActionResult Modules(int firstID, string secondID)
         {
-            string[] tempIds = secondId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            int[] moduleIds = Array.ConvertAll(tempIds, s => Convert.ToInt32(s));
-
-            Role role = RoleServices
-                .LoadFirst(r => r.ID == firstId);
-            if (role == null)
-            {
-                return Json(new Result
-                {
-                    State = 0,
-                    Message = "设置模块的角色不存在"
-                });
-            }
-            if (RoleServices.SetRoleModule(role, moduleIds))
+            string[] tempIDs = secondID.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] moduleIDs = Array.ConvertAll(tempIDs, s => Convert.ToInt32(s));
+            
+            ReturnDescription description = RoleServices
+                 .SetRoleModule(firstID, moduleIDs);
+            if (description.Flag)
             {
                 return Json(new Result
                 {
                     State = 1,
-                    Message = "设置模块成功"
+                    Message = description.Message
                 });
             }
             else
@@ -274,7 +257,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 return Json(new Result
                 {
                     State = 0,
-                    Message = "设置模块失败"
+                    Message = description.Message
                 });
             }
         }
@@ -284,16 +267,9 @@ namespace Cl.AuthorityManagement.Web.Controllers
         [HttpGet]
         [AjaxOnly]
         [Authenticate]
-        public ActionResult ModuleElements(int roleId)
+        public ActionResult ModuleElements(int roleID)
         {
-            Role role = RoleServices
-                .LoadFirst(r => r.ID == roleId);
-            if (role != null)
-            {
-                ViewBag.ModuleTree = GetModuleTreeJson(role);
-                return PartialView();
-            }
-            else
+            if (!RoleServices.IsExists(u => u.ID == roleID))
             {
                 return Json(new
                 {
@@ -301,32 +277,40 @@ namespace Cl.AuthorityManagement.Web.Controllers
                     Message = "角色不存在"
                 });
             }
+            List<Module> modules = RoleServices
+                .LoadRoleModule(roleID);
+            if (modules.Count <= 0)
+            {
+                ViewBag.ModuleTree = "\"\"";
+            }
+            else
+            {
+                ViewBag.ModuleTree = Serialization.SerializeObject(modules
+                    .Select(m => new
+                    {
+                        id = m.ID,
+                        pId = m.Parent?.ID,
+                        name = m.Name
+                    }));
+            }
+            return PartialView();
         }
 
         [HttpPost]
         [Authenticate]
-        public ActionResult ModuleElements(int roleId, string elementId, int moduleId)
+        public ActionResult ModuleElements(int roleID, string elementID, int moduleID)
         {
-            string[] tempIds = elementId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            int[] elementIds = Array.ConvertAll(tempIds, s => Convert.ToInt32(s));
+            string[] tempIDs = elementID.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] elementIDs = Array.ConvertAll(tempIDs, s => Convert.ToInt32(s));
 
-            Role role = RoleServices
-                .LoadFirst(r => r.ID == roleId);
-            if (role == null)
-            {
-                return Json(new Result
-                {
-                    State = 0,
-                    Message = "设置元素的角色不存在"
-                });
-            }
-
-            if (RoleServices.SetRoleModuleElements(role, elementIds, moduleId))
+            ReturnDescription description = RoleServices
+                 .SetRoleModuleElements(roleID, elementIDs, moduleID);
+            if (description.Flag)
             {
                 return Json(new Result
                 {
                     State = 1,
-                    Message = "设置元素成功"
+                    Message = description.Message
                 });
             }
             else
@@ -334,42 +318,25 @@ namespace Cl.AuthorityManagement.Web.Controllers
                 return Json(new Result
                 {
                     State = 0,
-                    Message = "设置元素失败"
+                    Message = description.Message
                 });
             }
-        }
-        
-        private string GetModuleTreeJson(Role role)
-        {
-            return Serialization.SerializeObject(role.RoleModules.Select(r=>r.Module)
-                .Select(m => new
-                {
-                    id = m.ID,
-                    pId = m.Parent?.ID,
-                    name = m.Name
-                }));
         }
 
         [HttpGet]
         [AjaxOnly]
-        public string Elements(int roleId, int moduleId)
+        public string Elements(int roleID, int moduleID)
         {
-            Module module = ModuleServices
-                .LoadFirst(m => m.ID == moduleId);
-            int[] ids = RoleModuleElementServices
-                .LoadEntities(e => e.Module.ID == moduleId
-                    && e.Role.ID == roleId)
-                .Select(e => e.ModuleElement.ID).ToArray();
-
-            var elements = module.ModuleElementModules.Select(m=>m.ModuleElement)
-                .Select(e => new
-                {
-                    Id = e.ID,
-                    Name = e.Name
-                })
-                .ToDictionary(key => key.Id, value => value.Name);
-
-            return LoadHtml.GetElements(elements, ids);
+            CheckReturn check = RoleServices
+                .LoadModuleElements(roleID, moduleID);
+            if (check.Flag)
+            {
+                return LoadHtml.GetElements(check.dics, check.IDs);
+            }
+            else
+            {
+                return String.Empty;
+            }
         }
         #endregion
     }

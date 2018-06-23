@@ -98,11 +98,11 @@ operate.setUserElements = function () {
         var arrselectedData = table.myViewModel.getSelections();
         if (!operate.check(arrselectedData)) { return; }
         loadElementsPage(arrselectedData[0].Id, this);
-        $("#modifyModal").modal().on("shown.bs.modal", function () {
-        }).on('hidden.bs.modal', function () {
-            //关闭弹出框的时候清除绑定(这个清空包括清空绑定和清空注册事件)
-            ko.cleanNode(document.getElementById("modifyModal"));
-        });
+        //$("#modifyModal").modal().on("shown.bs.modal", function () {
+        //}).on('hidden.bs.modal', function () {
+        //    //关闭弹出框的时候清除绑定(这个清空包括清空绑定和清空注册事件)
+        //    ko.cleanNode(document.getElementById("modifyModal"));
+        //});
     });
 };
 //获取空绑定
@@ -112,21 +112,21 @@ operate.setUserElements = function () {
 //加载角色设置页面
 function loadRolePage(id, obj) {
     var action = $(obj).data('action');
-    $.get(absoluteUrl + action, { 'userId': id }, function (data) {
+    $.get(absoluteUrl + action, { 'userID': id }, function (data) {
         setData(data, id);
     });
 }
 //加载模块设置页面
 function loadModulePage(id, obj) {
     var action = $(obj).data('action');
-    $.get(absoluteUrl + action, { 'userId': id }, function (data) {
+    $.get(absoluteUrl + action, { 'userID': id }, function (data) {
         setData(data, id);
     });
 }
 //加载元素设置页面
 function loadElementsPage(id, obj) {
     var action = $(obj).data('action');
-    $.get(absoluteUrl + action, { 'userId': id }, function (data) {
+    $.get(absoluteUrl + action, { 'userID': id }, function (data) {
         setData(data, id);
     });
 }

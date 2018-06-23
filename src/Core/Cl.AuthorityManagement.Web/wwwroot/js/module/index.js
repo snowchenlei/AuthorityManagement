@@ -10,7 +10,7 @@ var columns = [
     { field: 'Sort', title: '排序', sortable: true },
     { field: 'IconName', title: '图标名称', formatter: iconFormatter },
     { field: 'ParentName', title: '父模块名称' },
-    { field: 'ParentId', title: '父模块Id', visible: false },
+    { field: 'ParentID', title: '父模块Id', visible: false },
     { field: 'AddTime', title: '添加时间', sortable: true }
 ];
 $(function () {
@@ -33,20 +33,20 @@ function operateInit() {
     operate.del();
     operate.setModuleElements();
     operate.EditModel = {
-        Id: ko.observable(),
-        Name: ko.observable(),
-        Url: ko.observable(),
-        Sort: ko.observable(),
-        IconName: ko.observable(),
-        ParentName: ko.observable(),
-        ParentId: ko.observableArray()
+        Id: ko.observable()
+        ,Name: ko.observable()
+        ,Url: ko.observable()
+        ,Sort: ko.observable()
+        ,IconName: ko.observable()
+        ,ParentName: ko.observable()
+        ,ParentID: ko.observableArray()
     };
 };
 operate.setModuleElements = function () {
     $('#btnSetModuleElements').on('click', function () {
         var arrselectedData = table.myViewModel.getSelections();
         if (!operate.check(arrselectedData)) { return; }
-        loadElementPage(arrselectedData[0].ID, this);
+        loadElementPage(arrselectedData[0].Id, this);
         $("#modifyModal").modal().on("shown.bs.modal", function () {
         }).on('hidden.bs.modal', function () {
             //关闭弹出框的时候清除绑定(这个清空包括清空绑定和清空注册事件)
@@ -57,13 +57,13 @@ operate.setModuleElements = function () {
 //获取空绑定
 function getEmptyModel() {
     return {
-        Id: ko.observable(),
-        Name: ko.observable(),
-        Url: ko.observable(),
-        Sort: ko.observable(),
-        IconName: ko.observable(),
-        ParentName: ko.observable(),
-        ParentId: ko.observableArray()
+        Id: ko.observable()
+        ,Name: ko.observable()
+        ,Url: ko.observable()
+        ,Sort: ko.observable()
+        ,IconName: ko.observable()
+        ,ParentName: ko.observable()
+        ,ParentID: ko.observableArray()
     };
 }
 // #endregion

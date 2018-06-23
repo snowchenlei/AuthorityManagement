@@ -54,7 +54,7 @@ namespace Cl.AuthorityManagement.Data
             modelBuilder.Entity<RoleUserInfo>()
                 .HasKey(r => new { r.RoleID, r.UserInfoID });
             modelBuilder.Entity<RoleModule>()
-                .HasKey(r => new { r.RoleID, r.MouleID });
+                .HasKey(r => new { r.RoleID, r.ModuleID });
             modelBuilder.Entity<ModuleUserInfo>()
                 .HasKey(r => new { r.ModuleID, r.UserInfoID });
             modelBuilder.Entity<ModuleElementModule>()

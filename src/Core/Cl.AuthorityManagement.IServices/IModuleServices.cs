@@ -1,4 +1,5 @@
 ﻿using Cl.AuthorityManagement.Entity;
+using Cl.AuthorityManagement.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,11 @@ namespace Cl.AuthorityManagement.IServices
     public partial interface IModuleServices : IBaseServices<Module>
     {
         /// <summary>
-        /// 设置模块元素
+        /// 加载元素
         /// </summary>
-        /// <param name="module">模块</param>
-        /// <param name="elementIds">元素Id</param>
-        /// <returns></returns>
-        bool SetModuleElements(Module module, int[] elementIds);
-
+        /// <param name="moduleID">模块ID</param>
+        /// <returns>模块元素</returns>
+        CheckReturn LoadElements(int moduleID);
 
         /// <summary>
         /// 加载选中的模块
@@ -24,6 +23,14 @@ namespace Cl.AuthorityManagement.IServices
         /// <param name="userInfo">用户</param>
         /// <returns>选中的模块</returns>
         List<Module> LoadSelectModules(UserInfo userInfo);
+
+        /// <summary>
+        /// 设置模块元素
+        /// </summary>
+        /// <param name="module">模块</param>
+        /// <param name="elementIDs">元素Id</param>
+        /// <returns></returns>
+        ReturnDescription SetModuleElements(int moduleID, int[] elementIDs);
 
         /// <summary>
         /// 是否拥有访问模块的权限

@@ -1,37 +1,74 @@
-﻿
-@{
+﻿@{ 
     Layout = null;
 }
-
 <!DOCTYPE html>
 
 <html>
 <head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-
-    <link href="~/Content/unlock/less/unlock.css" rel="stylesheet" />
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/Content/unlock/js/unlock.js"></script>
+    <title>Demo</title>
 </head>
 <body>
-    <div id="foo" style="width: 300px; height: 60px;"></div>
-    <div id="foo1" style="width: 300px; height: 34px;margin-top: 30px;"></div>
+    <div class='wrapper'>
+    </div>
     <script type="text/javascript">
-        $('#foo').slideToUnlock({
-            text: '滑动解锁',
-            succText: '解锁成功',
-            succFunc: function () {
-                alert('恭喜解锁成功');
+        class Component {
+            constructor(props = {}) {
+                this.props = props
             }
-        });
-        $('#foo1').slideToUnlock({
-            text: '滑动解锁',
-            succText: '解锁成功',
-            succFunc: function () {
-                alert('恭喜解锁成功');
+
+            setState(state) {
+                const oldEl = this.el
+                this.state = state
+                this._renderDOM()
+                if (this.onStateChange) this.onStateChange(oldEl, this.el)
             }
-        });
+
+            _renderDOM() {
+                this.el = createDOMFromString(this.render())
+                if (this.onClick) {
+                    this.el.addEventListener('click', this.onClick.bind(this), false)
+                }
+                return this.el
+            }
+        }
+        class LikeButton extends Component {
+            constructor(props) {
+                super(props)
+                this.state = { isLiked: false }
+            }
+            onClick() {
+                this.setState({
+                    isLiked: !this.state.isLiked
+                })
+            }
+
+            render() {
+                return `
+                    <button class='like-btn' style="background-color: ${this.props.bgColor}">
+                      <span class='like-text'>${this.state.isLiked ? '取消' : '点赞'}</span>
+                      <span>👍</span>
+                    </button>
+                  `
+            }
+        }
+        // ::String => ::Document
+        const createDOMFromString = (domString) => {
+            const div = document.createElement('div')
+            div.innerHTML = domString
+            return div
+        }
+        const mount = (component, wrapper) => {
+            wrapper.appendChild(component._renderDOM())
+            component.onStateChange = (oldEl, newEl) => {
+                wrapper.insertBefore(newEl, oldEl)
+                wrapper.removeChild(oldEl)
+            }
+        }
+
+        const wrapper = document.querySelector('.wrapper')
+        mount(new LikeButton({ bgColor: 'red' }), wrapper)        
     </script>
 </body>
 </html>

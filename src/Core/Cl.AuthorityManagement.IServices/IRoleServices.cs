@@ -1,4 +1,5 @@
 ﻿using Cl.AuthorityManagement.Entity;
+using Cl.AuthorityManagement.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +11,42 @@ namespace Cl.AuthorityManagement.IServices
     public partial interface IRoleServices:IBaseServices<Role>
     {
         /// <summary>
-        /// 设置角色模块
+        /// 获取模块列表
         /// </summary>
-        /// <param name="role">角色</param>
-        /// <param name="moduleIds">模块id集合</param>
-        /// <returns>是否成功</returns>
-        bool SetRoleModule(Role role, int[] moduleIds);
+        /// <param name="roleID">角色ID</param>
+        /// <returns>角色模块列表</returns>
+        CheckReturn LoadModules(int roleID);
 
         /// <summary>
-        /// 设置角色模块元素
+        /// 加载角色模块
         /// </summary>
-        /// <param name="role">角色</param>
-        /// <param name="elementIds">元素id集合</param>
-        /// <param name="moduleId">模块id</param>
-        /// <returns>是否成功</returns>
-        bool SetRoleModuleElements(Role role, int[] elementIds, int moduleId);
+        /// <param name="roleID">角色ID</param>
+        /// <returns>角色模块</returns>
+        List<Module> LoadRoleModule(int roleID);
+
+        /// <summary>
+        /// 获取模块元素列表
+        /// </summary>
+        /// <param name="roleID">角色ID</param>
+        /// <param name="moduleID">模块ID</param>
+        /// <returns>角色模块元素列表</returns>
+        CheckReturn LoadModuleElements(int roleID, int moduleID);
+
+        /// <summary>
+        /// 设置用户模块
+        /// </summary>
+        /// <param name="roleID">用户ID</param>
+        /// <param name="moduleIDs">选中模块Id集合</param>
+        /// <returns>结果描述</returns>
+        ReturnDescription SetRoleModule(int roleID, int[] moduleIDs);
+
+        /// <summary>
+        /// 设置用户模块
+        /// </summary>
+        /// <param name="roleID">用户ID</param>
+        /// <param name="moduleElementIDs">选中模块Id集合</param>
+        /// <returns>结果描述</returns>
+        ReturnDescription SetRoleModuleElements(int roleID, int[] moduleElementIDs, int moduleID);
 
         /// <summary>
         /// 删除角色

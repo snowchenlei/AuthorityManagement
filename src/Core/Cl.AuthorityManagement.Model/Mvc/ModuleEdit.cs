@@ -9,7 +9,7 @@ namespace Cl.AuthorityManagement.Model.Mvc
 {
     public class ModuleEdit
     {
-        public int? Id { get; set; }
+        public int? ID { get; set; }
 
         /// <summary>
         /// 名称
@@ -40,6 +40,6 @@ namespace Cl.AuthorityManagement.Model.Mvc
         public string IconName { get; set; }
 
         [Display(Name = "父模块")]
-        public int? ParentId { get; set; }
+        public int? ParentID { get; set; }
     }
 }

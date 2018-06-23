@@ -3,8 +3,21 @@ using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.IRepository;
 namespace Cl.AuthorityManagement.Repository
 {
-    
-         public partial class ModuleUserInfoRepository : BaseRepository<ModuleUserInfo>, IModuleUserInfoRepository
+    public partial class RoleModuleRepository : BaseRepository<RoleModule>, IRoleModuleRepository
+    {
+        public RoleModuleRepository(AuthorityManagementContext context) : base(context)
+        {
+        }
+    }
+
+    public partial class ModuleElementModuleRepository : BaseRepository<ModuleElementModule>, IModuleElementModuleRepository
+    {
+        public ModuleElementModuleRepository(AuthorityManagementContext context) : base(context)
+        {
+        }
+    }
+
+    public partial class ModuleUserInfoRepository : BaseRepository<ModuleUserInfo>, IModuleUserInfoRepository
     {
         public ModuleUserInfoRepository(AuthorityManagementContext context) : base(context)
         {

@@ -14,7 +14,7 @@
 
     <div class="modal-body form-horizontal" id="modify">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id, new { @data_bind = "value:Id" })
+        @Html.HiddenFor(model => model.ID, new { @data_bind = "value:Id" })
 
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })

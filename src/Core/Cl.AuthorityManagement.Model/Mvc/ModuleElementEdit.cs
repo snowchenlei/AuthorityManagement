@@ -9,13 +9,13 @@ namespace Cl.AuthorityManagement.Model.Mvc
 {
     public class ModuleElementEdit
     {
-        public int? Id { get; set; }
+        public int? ID { get; set; }
         /// <summary>
 	    /// Html元素 ID
 	    /// </summary>
         [StringLength(50)]
         [Display(Name = "元素Id")]
-        public string DomId { get; set; }
+        public string DomID { get; set; }
 
         /// <summary>
 	    /// 名称

@@ -1,0 +1,36 @@
+body{
+    background: url("../img/1.jpg");
+    animation-name:myfirst;
+    /*变换时间*/
+    animation-duration:20s;
+    /*动画开始时间*/
+    animation-delay:10s;
+    /*下一周期循环播放*/
+    animation-iteration-count:infinite;
+    /*动画开始运行*/
+    animation-play-state:running;
+}
+h3{
+    text-align: center;
+}
+button{
+    margin-top: 10px;
+}
+
+@keyframes myfirst
+{
+    0%   {background:url("../img/1.jpg");}
+    34%  {background:url("../img/3.jpg");}
+    67%  {background:url("../img/4.jpg");}
+    100% {background:url("../img/1.jpg");}
+}
+/*阴影*/
+.form{
+    background: rgba(255,255,255,0.4);
+    /* width:400px; */
+    min-width: 250px;
+    max-width: 400px;
+    margin:120px auto;
+    padding: 10px 30px 20px 30px;
+    border-radius: 20px;    
+}
