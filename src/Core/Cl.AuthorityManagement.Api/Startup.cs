@@ -95,6 +95,8 @@ namespace Cl.AuthorityManagement.Api
                 options.SerializerSettings.DateFormatString = "yyyy/MM/dd HH:mm:ss";
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddDistributedMemoryCache();
+
             #region Token
             services.AddAuthentication(options =>
                 {

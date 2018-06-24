@@ -9,11 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cl.AuthorityManagement.Data\Cl.AuthorityManagement.Data.csproj" />
     <ProjectReference Include="..\Cl.AuthorityManagement.Entity\Cl.AuthorityManagement.Entity.csproj" />
     <ProjectReference Include="..\Cl.AuthorityManagement.IRepository\Cl.AuthorityManagement.IRepository.csproj" />
     <ProjectReference Include="..\Cl.AuthorityManagement.IServices\Cl.AuthorityManagement.IServices.csproj" />
-    <ProjectReference Include="..\Cl.AuthorityManagement.Model\Cl.AuthorityManagement.Model.csproj" />
-    <ProjectReference Include="..\Cl.AuthorityManagement.RepositoryFactory\Cl.AuthorityManagement.RepositoryFactory.csproj" />
   </ItemGroup>
 
   <ItemGroup>

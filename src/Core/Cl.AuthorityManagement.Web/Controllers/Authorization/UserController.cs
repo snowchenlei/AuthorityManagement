@@ -2,13 +2,11 @@
 using Cl.AuthorityManagement.Common;
 using Cl.AuthorityManagement.Common.Conversion;
 using Cl.AuthorityManagement.Common.Encryption;
-using Cl.AuthorityManagement.Common.Logger;
 using Cl.AuthorityManagement.Entity;
 using Cl.AuthorityManagement.Enum;
 using Cl.AuthorityManagement.IServices;
 using Cl.AuthorityManagement.Library.Mvc;
 using Cl.AuthorityManagement.Model;
-using Cl.AuthorityManagement.Model.Logger;
 using Cl.AuthorityManagement.Model.Mvc;
 using Cl.AuthorityManagement.Util;
 using Microsoft.AspNetCore.Mvc;

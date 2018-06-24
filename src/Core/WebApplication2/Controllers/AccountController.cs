@@ -1,15 +1,4 @@
-﻿using Cl.AuthorityManagement.Common.Conversion;
-using Cl.AuthorityManagement.Common.Encryption;
-using Cl.AuthorityManagement.Common.Http;
-using Cl.AuthorityManagement.Entity;
-using Cl.AuthorityManagement.Enum;
-using Cl.AuthorityManagement.IServices;
-using Cl.AuthorityManagement.Model;
-using Cl.AuthorityManagement.Model.Mvc;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Text;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Cl.AuthorityManagement.Web.Controllers
 {

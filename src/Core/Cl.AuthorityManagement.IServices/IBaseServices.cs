@@ -1,5 +1,4 @@
-﻿using Cl.AuthorityManagement.IRepository;
-using System;
+﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
 

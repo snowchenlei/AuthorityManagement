@@ -14,6 +14,7 @@ using Cl.AuthorityManagement.Model;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Linq;
 
@@ -25,10 +26,13 @@ namespace Cl.AuthorityManagement.Api.Controllers
     public class AccountController : ControllerBase
     {
         private readonly IUserInfoServices UserInfoServices = null;
+        private readonly IDistributedCache Cache = null;
         public AccountController(
-            IUserInfoServices userInfoServices)
+            IUserInfoServices userInfoServices,
+            IDistributedCache cache)
         {
             UserInfoServices = userInfoServices;
+            Cache = cache;
         }
 
         [HttpPost]
@@ -78,12 +82,15 @@ namespace Cl.AuthorityManagement.Api.Controllers
                     Message = "当前用户不可用"
                 });
             }
+            
+            string token = GenerateToken(username);
+            Cache.SetString(token, userInfo.UserName);
             return Ok(new Result<string>
             {
                 State = 1,
                 Message = "登陆成功",
-                Data = GenerateToken(username)
-        });
+                Data = token
+            });
         }
 
         private bool IsValidUserAndPasswordCombination(string username, string password)

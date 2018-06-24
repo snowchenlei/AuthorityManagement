@@ -325,22 +325,23 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
-    <PackageReference Include="AutoMapper" Version="7.0.0" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.0" />
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.1" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
     <PackageReference Include="BundlerMinifier.Core" Version="2.8.391" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cl.AuthorityManagement.Common\Cl.AuthorityManagement.Common.csproj" />
     <ProjectReference Include="..\Cl.AuthorityManagement.Data\Cl.AuthorityManagement.Data.csproj" />
-    <ProjectReference Include="..\Cl.AuthorityManagement.IRepository\Cl.AuthorityManagement.IRepository.csproj" />
+    <ProjectReference Include="..\Cl.AuthorityManagement.Entity\Cl.AuthorityManagement.Entity.csproj" />
+    <ProjectReference Include="..\Cl.AuthorityManagement.Enum\Cl.AuthorityManagement.Enum.csproj" />
     <ProjectReference Include="..\Cl.AuthorityManagement.IServices\Cl.AuthorityManagement.IServices.csproj" />
     <ProjectReference Include="..\Cl.AuthorityManagement.Library\Cl.AuthorityManagement.Library.csproj" />
     <ProjectReference Include="..\Cl.AuthorityManagement.Model\Cl.AuthorityManagement.Model.csproj" />
-    <ProjectReference Include="..\Cl.AuthorityManagement.Repository\Cl.AuthorityManagement.Repository.csproj" />
-    <ProjectReference Include="..\Cl.AuthorityManagement.Services\Cl.AuthorityManagement.Services.csproj" />
+    <ProjectReference Include="..\Cl.AuthorityManagement.Util\Cl.AuthorityManagement.Util.csproj" />
   </ItemGroup>
 
   <ItemGroup>

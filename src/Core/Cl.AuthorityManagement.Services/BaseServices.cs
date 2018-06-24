@@ -1,6 +1,5 @@
 ﻿using Cl.AuthorityManagement.Data;
 using Cl.AuthorityManagement.IRepository;
-using Cl.AuthorityManagement.RepositoryFactory;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;

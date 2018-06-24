@@ -33,6 +33,8 @@ namespace Cl.AuthorityManagement.Web
             //自定义注册
             AutoFacConfig.Register();
             AutoMapperConfig.Register();
+            //取消响应头显示mvc版本信息
+            MvcHandler.DisableMvcResponseHeader = true;
             
             //EF预热
             using (var dbcontext = new AuthorityManagementContext())
@@ -50,6 +52,12 @@ namespace Cl.AuthorityManagement.Web
             }
 
             OperateData();
+        }
+
+        protected void Application_PreSendRequestHeaders()
+        {
+            Response.Headers.Remove("Server");          //Remove Server Header
+            Response.Headers.Remove("X-AspNet-Version");//Remove X-AspNet-Version Header
         }
 
         public override string GetVaryByCustomString(HttpContext context, string custom)

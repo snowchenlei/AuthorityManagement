@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -7,18 +7,13 @@
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Cl.AuthorityManagement.Common\Cl.AuthorityManagement.Common.csproj" />
     <ProjectReference Include="..\Cl.AuthorityManagement.Data\Cl.AuthorityManagement.Data.csproj" />
-    <ProjectReference Include="..\Cl.AuthorityManagement.Entity\Cl.AuthorityManagement.Entity.csproj" />
-    <ProjectReference Include="..\Cl.AuthorityManagement.Enum\Cl.AuthorityManagement.Enum.csproj" />
     <ProjectReference Include="..\Cl.AuthorityManagement.IServices\Cl.AuthorityManagement.IServices.csproj" />
-    <ProjectReference Include="..\Cl.AuthorityManagement.Model\Cl.AuthorityManagement.Model.csproj" />
-    <ProjectReference Include="..\Cl.AuthorityManagement.Repository\Cl.AuthorityManagement.Repository.csproj" />
-    <ProjectReference Include="..\Cl.AuthorityManagement.Services\Cl.AuthorityManagement.Services.csproj" />
   </ItemGroup>
 
 </Project>

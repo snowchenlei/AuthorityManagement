@@ -12,8 +12,20 @@ class LoginContainer extends Component {
         if (!comment) return
         if (!comment.username) return alert('请输入用户名')
         if (!comment.password) return alert('请输入密码')
-        PostLogin(comment.username, comment.password, this.props.history)
-        //this.props.history.push('/Home')
+        PostLogin(comment.username, comment.password, ).then(response =>
+            response.json().then(json => ({ json, response }))
+        ).then(({ json, response }) => {
+            if(json.State > 0){            
+                console.log(json.Message)
+                localStorage.setItem("user", JSON.stringify(json.Data));
+                this.props.history.push('/')
+            }else{
+                console.log(json.Message)
+            }
+        }).then(
+            response => response,
+            error => error
+        )
     }
 
     render() {

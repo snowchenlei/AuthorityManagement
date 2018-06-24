@@ -1,15 +1,9 @@
-﻿using Cl.AuthorityManagement.Common.Http;
-using Cl.AuthorityManagement.Model.Logger;
-using Cl.AuthorityManagement.Util;
+﻿using Cl.AuthorityManagement.Model.Logger;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cl.AuthorityManagement.Library.Mvc
 {

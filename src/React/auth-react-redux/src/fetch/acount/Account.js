@@ -2,23 +2,12 @@ import { get } from '../get'
 import { post } from '../post'
 
 const host = 'http://localhost:44338/api/'
-export function PostLogin(username, password, history) {
-    post(host + 'account/login', {
+export function PostLogin(username, password) {
+    var result = post(host + 'account/login', {
         username: username,
         password: password
-    }).then(response =>
-        response.json().then(json => ({ json, response }))
-    ).then(({ json, response }) => {
-        if(json.State > 0){            
-            console.log(json.Message)
-            history.push('/')
-        }else{
-            console.log(json.Message)
-        }
-    }).then(
-        response => response,
-        error => error
-    )
+    })
+    return result;
 }
 
 export function GetVerifyCode(){

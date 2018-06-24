@@ -5,20 +5,12 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>E:\git\AuthorityManagement\src\Core\Cl.AuthorityManagement.Web\bin\Debug\</OutputPath>
+    <OutputPath>obj\Debug\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Cl.AuthorityManagement.Entity\Cl.AuthorityManagement.Entity.csproj" />
-    <ProjectReference Include="..\Cl.AuthorityManagement.IRepository\Cl.AuthorityManagement.IRepository.csproj" />
     <ProjectReference Include="..\Cl.AuthorityManagement.Model\Cl.AuthorityManagement.Model.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="IServices.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IServices.cs</LastGenOutput>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +23,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>IServices.tt</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="IServices.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IServices.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

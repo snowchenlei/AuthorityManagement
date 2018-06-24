@@ -1,0 +1,179 @@
+﻿using AutoMapper;
+using Cl.AuthorityManagement.Common;
+using Cl.AuthorityManagement.Entity;
+using Cl.AuthorityManagement.Enum;
+using Cl.AuthorityManagement.IServices;
+using Cl.AuthorityManagement.Model;
+using Cl.AuthorityManagement.Model.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+
+namespace Cl.AuthorityManagement.Api.Controllers.Authorization
+{
+    public class ModuleElementController : BaseApiController
+    {
+        private readonly IModuleElementServices ModuleElementServices = null;
+        public ModuleElementController(
+            IModuleElementServices moduleElementServices)
+        {
+            ModuleElementServices = moduleElementServices;
+        }
+
+        [HttpGet]
+        public IHttpActionResult Get(int id)
+        {
+            var element = ModuleElementServices
+                .LoadFirst(e => e.Id == id);
+            return Json(new
+            {
+                element.Id,
+                element.DomId,
+                element.Attr,
+                element.Class,
+                element.Icon,
+                element.Remark,
+                element.Script,
+                element.Type,
+                element.Sort,
+                element.Name,
+                element.Action,
+                element.AddTime
+            });
+        }
+
+        [HttpGet]
+        public IHttpActionResult List(int pageIndex, int pageSize, string sort,
+            OrderType order, string name, DateTime startTime, DateTime endTime)
+        {
+            PageHelper.GetPageIndex(ref pageIndex);
+            PageHelper.GetPageSize(ref pageSize);
+            IQueryable<ModuleElement> tempElements = ModuleElementServices.LoadEntities(e => true);
+
+            #region 查询
+            if (!String.IsNullOrEmpty(name))
+            {
+                tempElements = tempElements.Where(u => u.Name.Contains(name.Trim()));
+            }
+            if (startTime > new DateTime(1970, 1, 1) && startTime != endTime)
+            {
+                tempElements = tempElements.Where(u => u.AddTime > startTime);
+            }
+            if (endTime > startTime)
+            {
+                tempElements = tempElements.Where(u => u.AddTime < endTime);
+            }
+            #endregion
+
+            #region 排序
+            if ("AddTime".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
+            {
+                tempElements = Sort(tempElements, e => e.AddTime, order).ThenBy(e => e.Id);
+            }
+            else if ("Sort".Equals(sort, StringComparison.InvariantCultureIgnoreCase))
+            {
+                tempElements = Sort(tempElements, e => e.Sort, order).ThenBy(e => e.Id);
+            }
+            else
+            {
+                tempElements = Sort(tempElements, u => u.Id, order);
+            }
+            #endregion
+            var elements = ModuleElementServices
+                .LoadPageEntities(pageIndex, pageSize, tempElements);
+            int totalCount = elements.Count();
+            int pageCount = PageHelper.GetPageCount(totalCount, pageSize);
+            return Json(new
+            {
+                total = totalCount,
+                rows = elements.Select(e => new
+                {
+                    e.Id,
+                    e.DomId,
+                    e.Attr,
+                    e.Class,
+                    e.Icon,
+                    e.Remark,
+                    e.Script,
+                    e.Type,
+                    e.Sort,
+                    e.Name,
+                    e.Action,
+                    e.AddTime
+                })
+            });
+        }
+
+        [HttpPost]
+        public IHttpActionResult Add([FromBody]ModuleElementEdit moduleElementEdit)
+        {
+            ModuleElement moduleElement = Mapper.Map<ModuleElement>(moduleElementEdit);
+            ModuleElementServices.AddEntity(moduleElement);
+            return Json(new Result<int>
+            {
+                State = 1,
+                Message = "添加成功",
+                Data = moduleElement.Id
+            });
+        }
+
+        [HttpPut]
+        public IHttpActionResult Edit([FromBody]ModuleElementEdit moduleElementEdit)
+        {
+            ModuleElement moduleElement = ModuleElementServices
+                    .LoadFirst(r => r.Id == moduleElementEdit.Id.Value);
+            if (moduleElement == null)
+            {
+                return Json(new Result
+                {
+                    State = 0,
+                    Message = "修改的角色不存在"
+                });
+            }
+            moduleElement = Mapper.Map(moduleElementEdit, moduleElement);
+            if (ModuleElementServices.EditEntity(moduleElement))
+            {
+                return Json(new Result
+                {
+                    State = 1,
+                    Message = "修改成功"
+                });
+            }
+            else
+            {
+                return Json(new Result
+                {
+                    State = 0,
+                    Message = "修改失败"
+                });
+            }
+        }
+
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
+        {
+            ModuleElement moduleElement = ModuleElementServices
+                .LoadFirst(u => u.Id == id);
+            if (moduleElement != null)
+            {
+                ModuleElementServices.DeleteEntity(moduleElement);
+                return Json(new Result
+                {
+                    State = 1,
+                    Message = "删除成功"
+                });
+            }
+            else
+            {
+                return Json(new Result
+                {
+                    State = 0,
+                    Message = "模块元素不存在"
+                });
+            }
+        }
+    }
+}

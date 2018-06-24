@@ -116,6 +116,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
 
         [HttpPost]
         [Authenticate]
+        [ValidateAntiForgeryToken]
         public ActionResult Add(UserEdit userEdit)
         {
             if (ModelState.IsValid)
@@ -165,6 +166,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(UserEdit userEdit)
         {
             if (ModelState.IsValid)
@@ -269,6 +271,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
 
         [HttpPost]
         [Authenticate]
+        [ValidateAntiForgeryToken]
         public ActionResult Roles(int firstId, string secondId)
         {
             string[] tempIds = secondId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -337,6 +340,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
 
         [HttpPost]
         [Authenticate]
+        [ValidateAntiForgeryToken]
         public ActionResult Modules(int firstId, string secondId)
         {
             string[] tempIds = secondId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -397,6 +401,7 @@ namespace Cl.AuthorityManagement.Web.Controllers
 
         [HttpPost]
         [Authenticate]
+        [ValidateAntiForgeryToken]
         public ActionResult ModuleElements(int userId, string elementId, int moduleId)
         {
             string[] tempIds = elementId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);

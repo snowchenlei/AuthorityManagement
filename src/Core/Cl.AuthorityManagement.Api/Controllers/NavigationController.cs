@@ -7,6 +7,7 @@ using Cl.AuthorityManagement.IServices;
 using Cl.AuthorityManagement.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace Cl.AuthorityManagement.Api.Controllers
 {
@@ -16,28 +17,44 @@ namespace Cl.AuthorityManagement.Api.Controllers
     {
         private readonly IModuleServices ModuleServices = null;
         private readonly IUserInfoServices UserInfoServices = null;
+        private readonly IDistributedCache Cache = null;
         public NavigationController(
             IModuleServices moduleServices,
-            IUserInfoServices userInfoServices)
+            IUserInfoServices userInfoServices,
+            IDistributedCache cache)
         {
             ModuleServices = moduleServices;
             UserInfoServices = userInfoServices;
+            Cache = cache;
         }
         [HttpGet]
         public ActionResult<IEnumerable<object>> Get()
         {
-            UserInfo user = UserInfoServices.LoadFirst(u => u.UserName == "admin");
+            string username = Cache.GetString("user") ?? "admin";
+            UserInfo user = UserInfoServices.LoadFirst(u => u.UserName == username);
             List<Module> modules = ModuleServices.LoadSelectModules(user);
             return Ok(new Result<object>
             {
                 State = 1,
-                Data = modules.Select(m => new
+                Data = modules
+                .Where(m=>m.Parent == null)
+                .Select(m => new
                 {
                     m.ID,
-                    parentID = m.Parent?.ID,
                     m.Name,
                     m.IconName,
-                    m.Sort
+                    m.Url,
+                    m.Sort,
+                    Children = modules
+                                .Where(c=>c.Parent.ID==m.ID)
+                                .Select(c => new
+                                {
+                                    c.ID,
+                                    c.Name,
+                                    c.IconName,
+                                    c.Url,
+                                    c.Sort,
+                                })
                 })
             });
         }
