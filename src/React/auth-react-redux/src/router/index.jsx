@@ -5,17 +5,17 @@ import {
   } from 'react-router-dom'
 
 import Login from '../containers/Login'
-import NavigateListContainer from '../containers/navigation/NavigateList'
-import App from '../App'
+import MenuListContainer from '../containers/menu/MenuList'
+import Home from '../components/Home'
 
 class RouteMap extends React.Component {
     render(){
       return (
         <Router>
           <div>
-            <Route exact path="/" component = {App} />
+            <Route exact path="/" component = {Home} />
             <Route path="/Login" component={Login} />
-            <Route path="/Nav" component={NavigateListContainer} />
+            <Route path="/Menu" component={MenuListContainer} />
           </div>
         </Router>
       )

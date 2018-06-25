@@ -37,7 +37,7 @@ namespace Cl.AuthorityManagement.Api.Controllers
             {
                 State = 1,
                 Data = modules
-                .Where(m=>m.Parent == null)
+                .Where(m => m.Parent == null)
                 .Select(m => new
                 {
                     m.ID,
@@ -46,7 +46,7 @@ namespace Cl.AuthorityManagement.Api.Controllers
                     m.Url,
                     m.Sort,
                     Children = modules
-                                .Where(c=>c.Parent.ID==m.ID)
+                                .Where(c => c.Parent?.ID == m.ID)
                                 .Select(c => new
                                 {
                                     c.ID,
@@ -54,6 +54,7 @@ namespace Cl.AuthorityManagement.Api.Controllers
                                     c.IconName,
                                     c.Url,
                                     c.Sort,
+                                    Children = new object[0]
                                 })
                 })
             });

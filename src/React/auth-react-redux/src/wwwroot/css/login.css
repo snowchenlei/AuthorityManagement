@@ -1,6 +1,6 @@
 body{
     background: url("../img/1.jpg");
-    animation-name:myfirst;
+    /* animation-name:myfirst; */
     /*变换时间*/
     animation-duration:20s;
     /*动画开始时间*/

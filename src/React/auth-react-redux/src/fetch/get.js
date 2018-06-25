@@ -3,10 +3,12 @@ import 'es6-promise'
 
 export function get(url){
   return fetch(url,{
+    method:'GET',
     credentials:'include',
-    mode: "cors",
+    //mode: "cros",
     headers:{
-      'Accept':'application/json, text/plain,*/*'
+      // 'Accept':'application/json, text/plain,*/*'
+      'Content-Type':'application/json'
     }
   })
 }

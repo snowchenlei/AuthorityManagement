@@ -142,9 +142,9 @@ namespace Cl.AuthorityManagement.Api
             {
                 app.UseHsts();
             }
-            app.UseAuthentication();
-
             app.UseCors("any");
+
+            app.UseAuthentication();
             
             app.UseHttpsRedirection();
 
