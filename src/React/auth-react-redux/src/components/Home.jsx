@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 
-import MenuList from './menu/MenuList'
+import MenuList from './MenuBar'
 import Header from './Header'
 import Fotter from './Fotter'
 

@@ -3,6 +3,8 @@ import { PostLogin } from '../fetch/acount/Account'
 
 import LoginComponent from '../components/Login'
 
+import login from '../wwwroot/css/login.css'
+
 class LoginContainer extends Component {
     // contextTypes = {
     //     router: React.PropTypes.isRequired

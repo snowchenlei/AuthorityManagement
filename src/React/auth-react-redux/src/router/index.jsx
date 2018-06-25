@@ -5,7 +5,7 @@ import {
   } from 'react-router-dom'
 
 import Login from '../containers/Login'
-import MenuListContainer from '../containers/menu/MenuList'
+import MenuBarContainer from '../containers/MenuBar'
 import Home from '../components/Home'
 
 class RouteMap extends React.Component {
@@ -15,7 +15,7 @@ class RouteMap extends React.Component {
           <div>
             <Route exact path="/" component = {Home} />
             <Route path="/Login" component={Login} />
-            <Route path="/Menu" component={MenuListContainer} />
+            <Route path="/Menu" component={MenuBarContainer} />
           </div>
         </Router>
       )

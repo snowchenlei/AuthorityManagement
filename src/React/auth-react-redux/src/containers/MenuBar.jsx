@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
-import MenuListComponent from '../../components/menu/MenuList'
+import MenuBarComponent from '../components/MenuBar'
 
-import { GetNavigation } from '../../fetch/main/Navigate'
+import { GetNavigation } from '../fetch/main/Navigate'
 
 //import WrapWithLoadAjax from '../higher_components/WrapWithLoadAjax'
 
-class MenuListContainer extends Component {
+class MenuBarContainer extends Component {
   static propTypes = {
     data: PropTypes.any,
   }
@@ -48,11 +48,11 @@ class MenuListContainer extends Component {
   render() {
     return (
       <div>
-        <MenuListComponent
+        <MenuBarComponent
           data={this.state.data}
           onReload={this.handleReload.bind(this)} />
       </div>
     )
   }
 }
-export default MenuListContainer
+export default MenuBarContainer

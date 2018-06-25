@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'react-bootstrap';
 
-import '../wwwroot/css/login.css'
-
 export default class Login extends Component {
     static propTypes = {
         onSubmit: PropTypes.func,
