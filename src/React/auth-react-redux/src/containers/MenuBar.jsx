@@ -19,6 +19,7 @@ class MenuBarContainer extends Component {
   }
 
   componentWillMount() {
+    console.log('component Will mount')
     // componentWillMount 生命周期中初始化用户名
     this._loadNavigation()
   }
@@ -34,7 +35,7 @@ class MenuBarContainer extends Component {
         response.json().then(json => ({ json, response }))
       ).then(({ json, response }) => {
         if (response.ok) {
-          if (json.State == 1) {
+          if (json.State === 1) {
             this.setState({ data: json.Data });
           } else {
             console.log(json.Message)

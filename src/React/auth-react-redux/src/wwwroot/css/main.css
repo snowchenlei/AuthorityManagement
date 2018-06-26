@@ -1,0 +1,22 @@
+.headBody{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #09c;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    width: 100%;
+    z-index: 10;
+    padding: 0;
+}
+.headBody span,a{
+    padding: 0 20px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 50px;
+    border-right: 1px solid #008fbf;
+}
+.fotterBody{
+    height: 30px;
+}

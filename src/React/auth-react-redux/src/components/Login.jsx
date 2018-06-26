@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'react-bootstrap';
 
+import styles from '../wwwroot/css/login.css'
+
 export default class Login extends Component {
     static propTypes = {
         onSubmit: PropTypes.func,
@@ -46,9 +48,10 @@ export default class Login extends Component {
 
     render() {
         return (
+            <div className='bg'>
             <div className="container">
                 <div className="form row">
-                    <h3 className="form-title">登陆</h3>
+                    <h3 className="form-title" style={{ textAlign: 'center' }}>登陆</h3>
                     <div className="center-block">
                         <div className="form-group">
                             <div className="input-group">
@@ -79,12 +82,14 @@ export default class Login extends Component {
                                 type='submit'
                                 bsStyle="info"
                                 className="btn btn-success form-control"
-                                onClick={this.handleSubmit.bind(this)}>
+                                onClick={this.handleSubmit.bind(this)}
+                                style={{ marginTop: '10px' }}>
                                 登陆
                                 </Button>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
             // <div>
             //     <span className='comment-field-name'>用户名：</span>

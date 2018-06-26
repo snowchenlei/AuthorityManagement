@@ -1,4 +1,4 @@
-body{
+.bg{
     background: url("../img/1.jpg");
     /* animation-name:myfirst; */
     /*变换时间*/
@@ -9,12 +9,6 @@ body{
     animation-iteration-count:infinite;
     /*动画开始运行*/
     animation-play-state:running;
-}
-h3{
-    text-align: center;
-}
-button{
-    margin-top: 10px;
 }
 
 @keyframes myfirst

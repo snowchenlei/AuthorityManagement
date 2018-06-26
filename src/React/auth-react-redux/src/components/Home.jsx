@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
 
-import MenuList from './MenuBar'
+import Container from './/Container'
 import Header from './Header'
-import Fotter from './Fotter'
 
 class Home extends Component {
     render() {
@@ -12,10 +10,7 @@ class Home extends Component {
                 <Header>
                     <h1>Welcome</h1>
                 </Header>
-                <MenuList />
-                <Fotter>
-                    <h1>Welcome</h1>
-                </Fotter>
+                <Container />               
             </div>
         )
     }
