@@ -27,11 +27,6 @@ class MenuBarComponent extends Component {
                     )
                 }
             }
-            childContents.push(
-                <Menu.Item key='9999'>
-                            <Link to='/Login'>登陆</Link>
-                        </Menu.Item>
-            )
             menuContents.push(
                 <SubMenu key={menu.ID} title={<span><Icon type={menu.IconName} style={{ color: 'rgba(0,0,0,.25)' }} /><span>{menu.Name}</span></span>}>
                     {childContents}
@@ -52,6 +47,7 @@ class MenuBarComponent extends Component {
                 defaultSelectedKeys={['0']}
                 defaultOpenKeys={['sub0']}
                 mode="inline"
+                theme="dark"
             >
                 {this.props.data.map((menu, i) =>
                     this._loadMenu(menu, i)

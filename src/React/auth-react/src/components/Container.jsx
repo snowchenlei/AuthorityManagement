@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import MenuBar from '../containers/MenuBar'
-import Content from './Content'
+import Content from './Welcome'
 import Fotter from './Fotter'
 
 class Container extends Component {
