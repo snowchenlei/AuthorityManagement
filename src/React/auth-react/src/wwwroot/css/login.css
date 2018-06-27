@@ -1,0 +1,36 @@
+.loginBody{
+    background: url("../img/1.jpg");
+    /* animation-name:myfirst; */
+    /*变换时间*/
+    animation-duration:20s;
+    /*动画开始时间*/
+    animation-delay:10s;
+    /*下一周期循环播放*/
+    animation-iteration-count:infinite;
+    /*动画开始运行*/
+    animation-play-state:running;
+}
+
+@keyframes myfirst
+{
+    0%   {background:url("../img/1.jpg");}
+    34%  {background:url("../img/3.jpg");}
+    67%  {background:url("../img/4.jpg");}
+    100% {background:url("../img/1.jpg");}
+}
+
+.loginForm {
+    max-width: 300px;
+    min-width: 150px;
+    background: rgba(255,255,255,0.4);
+    margin:120px auto;
+    padding: 20px 30px 10px 30px;
+    border-radius: 20px;    
+  }
+  .loginFormTitle{
+      text-align: center;
+      font-size: 18px;
+  }
+  .loginFormButton {
+    width: 100%;
+  }

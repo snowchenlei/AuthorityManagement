@@ -37,7 +37,7 @@ namespace Cl.AuthorityManagement.Api.Controllers
 
         [HttpPost]
         [Route("login")]
-        public IActionResult Login(string username, string password)
+        public IActionResult Login([FromBody]JObject jobj)
         {
             //if (!string.Equals(HttpContext.Session.Get<string>("verCode")
             //    , login.VerifyCode, StringComparison.InvariantCultureIgnoreCase))
@@ -49,10 +49,10 @@ namespace Cl.AuthorityManagement.Api.Controllers
             //    });
             //}
             //string s = jobj["fsfsf"].ToString();
-            //string username = jobj["username"]?.ToString(),
-            //    password = jobj["password"]?.ToString();
-
-            if (!IsValidUserAndPasswordCombination(username, password))
+            string username = jobj["username"]?.ToString(),
+                password = jobj["password"]?.ToString();
+            
+            if (IsValidUserAndPasswordCombination(username, password))
             {
                 return BadRequest(new Result
                 {
@@ -95,6 +95,7 @@ namespace Cl.AuthorityManagement.Api.Controllers
 
         private bool IsValidUserAndPasswordCombination(string username, string password)
         {
+            return string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password);
             return !string.IsNullOrEmpty(username) && username == password;
         }
 
