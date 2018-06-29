@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
+import FontAwesome from 'react-fontawesome'
+
+import styles from '../wwwroot/css/main.css'
 const SubMenu = Menu.SubMenu;
 
 class MenuBarComponent extends Component {
@@ -28,7 +31,9 @@ class MenuBarComponent extends Component {
                 }
             }
             menuContents.push(
-                <SubMenu key={menu.ID} title={<span><Icon type={menu.IconName} style={{ color: 'rgba(0,0,0,.25)' }} /><span>{menu.Name}</span></span>}>
+                // <SubMenu key={menu.ID} title={<span><Icon type={menu.IconName} style={{ color: 'rgba(0,0,0,.25)' }} /><span>{menu.Name}</span></span>}>
+                // <SubMenu key={menu.ID} title={<span><i className={`glyphicon ${menu.IconName}`} /><span>{menu.Name}</span></span>}>
+                <SubMenu key={menu.ID} title={<span><FontAwesome className={styles.menuIcon} name={menu.IconName} /><span>{menu.Name}</span></span>}>
                     {childContents}
                 </SubMenu>
             )
@@ -47,7 +52,7 @@ class MenuBarComponent extends Component {
                 defaultSelectedKeys={['0']}
                 defaultOpenKeys={['sub0']}
                 mode="inline"
-                theme="dark"
+                theme="light"
             >
                 {this.props.data.map((menu, i) =>
                     this._loadMenu(menu, i)

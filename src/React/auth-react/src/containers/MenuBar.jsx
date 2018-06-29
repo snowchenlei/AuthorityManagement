@@ -19,7 +19,6 @@ class MenuBarContainer extends Component {
   }
 
   componentWillMount() {
-    console.log('component Will mount')
     // componentWillMount 生命周期中初始化用户名
     this._loadNavigation()
   }

@@ -13,7 +13,7 @@ import {
   import Role from './containers/authorization/Role'
   import Module from './containers/authorization/Module'
   import ModuleElement from './containers/authorization/ModuleElement'
-  import Fotter from './components/Fotter'
+  import Footer from './components/Footer'
   import Header from './components/Header'
 
   class App extends React.Component {
@@ -24,19 +24,20 @@ import {
             <Header>
               <h1>Welcome</h1>
             </Header>
-            <div style={{ paddingTop: '50px' }}>
-              <div style={{ float: 'left' }}>
+            <div>
+              {/* <div style={{ float: 'left' }}> */}
+              <div className='pull-left' style={{ position: 'fixed', height: '100%', backgroundColor: '#e8e8e8' }}>
                 <MenuBar />
               </div>
-              <div>
-                <div>
-                  <Route exact path="/" component={Welcome} />
+              <div style={{ paddingLeft: '200px' }}>
+                <div style={{ padding: '15px' }}>
+                  <Route exact path="/" component={Module} />
                   <Route path="/User" component={User} />
                   <Route path="/Role" component={Role} />
                   <Route path="/Module" component={Module} />
                   <Route path="/ModuleElement" component={ModuleElement} />
                 </div>
-                <Fotter />
+                <Footer />
               </div>
             </div>
           </div>

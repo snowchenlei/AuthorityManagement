@@ -1,15 +1,28 @@
-.headBody{
-    position: fixed;
-    top: 0;
-    left: 0;
+.headbar{    
     background-color: #09c;
     height: 50px;
     line-height: 50px;
     color: #fff;
     width: 100%;
-    z-index: 10;
     padding: 0;
 }
+.headbarBrand{
+    color: #fff;
+    font-size: 20px;
+    text-shadow: none;    
+}
+.headTitle{
+    /* line-height: 50px; */
+    width: 200px;
+    text-align: center;
+    /* border-right: 1px solid #ddd; */
+}
+.menuIcon{
+    /* font-size: 18px; */
+    font-weight: 400;
+    margin-right: 5px;
+}
+
 /* .headBody span,a{
     padding: 0 20px;
     color: #fff;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import MenuBar from '../containers/MenuBar'
 import Content from './Welcome'
-import Fotter from './Fotter'
+import Footer from './Footer'
 
 class Container extends Component {
     render() {
@@ -13,7 +13,7 @@ class Container extends Component {
                 </div>
                 <div style={{ display: 'inline-block' }}>
                     <Content />
-                    <Fotter />
+                    <Footer />
                 </div>
             </div>
         )

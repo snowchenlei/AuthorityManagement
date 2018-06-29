@@ -3,3 +3,13 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.footerContent{
+  text-align: center;
+  padding: 8px;
+  border-top: 3px double #e5e5e5;
+  margin-left: 12px;
+  margin-right: 12px;
+  bottom: 0px;
+  left: 200px;
+}
