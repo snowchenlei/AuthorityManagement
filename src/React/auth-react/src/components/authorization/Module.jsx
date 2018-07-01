@@ -56,32 +56,17 @@ const RemotePagination = ({ data, columns, loading, page, sizePerPage, totalSize
 );
 
 class ModuleComponent extends React.Component {
-    propTypes = {
-        data: PropTypes.array.isRequired,
-        pageIndex: PropTypes.number.isRequired,
-        loading: PropTypes.bool.isRequired,
-        totalSize: PropTypes.number.isRequired,
-        pageSize: PropTypes.number.isRequired,
-        onTableChange: PropTypes.func.isRequired
-    };
     constructor(props) {
         super(props)
         this.state = {
-            expanded: false
+            expanded: false,
+            loading: false
         }
     }
     //点击搜索框
     handlerExpanded() {
         this.setState({ expanded: !this.state.expanded })
         //this.angle.transform = 'rotatez(' + 180 + 'deg)';
-    }
-
-    //表格页码改变
-    handleTableChange = (type, { page, sizePerPage }) => {
-        if (this.props.onTableChange) {
-            this.props.onTableChange(page, sizePerPage);
-        }
-        this.setState({ loading: true });
     }
 
     render() {
@@ -109,14 +94,6 @@ class ModuleComponent extends React.Component {
                         </Form>
                     </Panel.Body>
                 </Panel>
-                <RemotePagination
-                    data={this.props.data}
-                    columns={this.props.columns}
-                    loading={this.state.loading}
-                    page={this.props.pageIndex}
-                    sizePerPage={this.props.pageSize}
-                    totalSize={this.props.totalSize}
-                    onTableChange={this.handleTableChange} />
             </div>
         )
     }
