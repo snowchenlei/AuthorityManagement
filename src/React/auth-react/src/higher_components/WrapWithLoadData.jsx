@@ -57,7 +57,8 @@ export default (WrappedComponent, relativeUrl, paras) => {
                     loading={this.state.loading}
                     pageIndex={this.state.pageIndex}
                     pageSize={this.state.pageSize}
-                    totalSize={this.state.totalSize}/>
+                    totalSize={this.state.totalSize}
+                    onTableChange={this.handleTableChange} />
             )
         }
     }
