@@ -34,11 +34,8 @@ class ModuleContainer extends React.Component {
     //         pageSize: this.state.pageSize
     //     });
     // }
-    // handleChange(pageIndex, pageSize) {
-    //     this._loadModule({
-    //         pageIndex: pageIndex,
-    //         pageSize: pageSize
-    //     });
+    // handleTableChange(pageIndex, pageSize) {
+    //     this.setState({pageIndex,pageSize});
     // }
     // _loadModule(paras) {
     //     let pageIndex = paras.pageIndex;
@@ -73,12 +70,8 @@ class ModuleContainer extends React.Component {
                 <BootstrapTable
                     columns={columns}
                     relativeUrl='module'
-                    // data={this.state.data}
-                    // totalSize={this.state.totalSize}
-                    // loading={this.state.loading}
-                    // pageIndex={this.state.pageIndex}
-                    // pageSize={this.state.pageSize}
-                    // onTableChange={this.handleChange.bind(this)} 
+                    pageIndex= {this.state.pageIndex}
+                    pageSize= {this.state.pageSize}
                     />
             </div>
         )

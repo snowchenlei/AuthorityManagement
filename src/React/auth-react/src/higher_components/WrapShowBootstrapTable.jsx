@@ -54,7 +54,8 @@ export default (WrappedComponent, columns) => {
     class LoadBootstrapTable extends React.Component {
         handleTableChange = (type, { page, sizePerPage }) => {
             if (this.props.onTableChange) {
-                this.props.onTableChange(page, sizePerPage);
+                this.props.onTableChange({pageIndex: page,
+                    pageSize: sizePerPage});
                 // this.timer = setTimeout(() => {
                 //     this.setState({ loading: false });
                 //   }, 100)
@@ -64,7 +65,6 @@ export default (WrappedComponent, columns) => {
         }
 
         render() {
-            console.log(this.props)
             return (
                 <div>
                     <WrappedComponent
@@ -76,7 +76,7 @@ export default (WrappedComponent, columns) => {
                         pageIndex={this.props.pageIndex}
                         pageSize={this.props.pageSize}
                         totalSize={this.props.totalSize}
-                        onTableChange={this.handleTableChange} 
+                        onTableChange={this.handleTableChange.bind(this)} 
                         />
                 </div>
             )
