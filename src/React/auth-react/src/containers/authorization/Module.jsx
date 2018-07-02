@@ -2,18 +2,29 @@ import React from 'react';
 
 import ModuleComponent from '../../components/authorization/Module'
 import { GetModules } from '../../fetch/authorization/Module'
-import BootstrapTable from '../BootstrapTable'
+//import Table from '../BootstrapTable'
+import Table from '../AntdTable'
 import WrapShowBootstrapTable from '../../higher_components/WrapShowBootstrapTable'
 
+// const columns = [
+//     { dataField: 'ID', text: '主键', hidden: true },
+//     { dataField: 'Name', text: '模块名称' },
+//     { dataField: 'Url', text: '请求地址' },
+//     { dataField: 'IconName', text: '图标名称' },
+//     { dataField: 'Sort', text: '排序', sort: true },
+//     { dataField: 'ParentID', text: '父ID', hidden: true },
+//     { dataField: 'ParentName', text: '父模块' },
+//     { dataField: 'AddTime', text: '添加时间', sort: true }
+// ];
 const columns = [
-    { dataField: 'ID', text: '主键', hidden: true },
-    { dataField: 'Name', text: '模块名称' },
-    { dataField: 'Url', text: '请求地址' },
-    { dataField: 'IconName', text: '图标名称' },
-    { dataField: 'Sort', text: '排序', sort: true },
-    { dataField: 'ParentID', text: '父ID', hidden: true },
-    { dataField: 'ParentName', text: '父模块' },
-    { dataField: 'AddTime', text: '添加时间', sort: true }
+    { dataIndex: 'ID', title: '主键', hidden: true },
+    { dataIndex: 'Name', title: '模块名称' },
+    { dataIndex: 'Url', title: '请求地址' },
+    { dataIndex: 'IconName', title: '图标名称' },
+    { dataIndex: 'Sort', title: '排序', sorter: true },
+    { dataIndex: 'ParentID', title: '父ID', hidden: true },
+    { dataIndex: 'ParentName', title: '父模块' },
+    { dataIndex: 'AddTime', title: '添加时间', sort: true }
 ];
 const apiName = 'module';
 class ModuleContainer extends React.Component {
@@ -67,7 +78,7 @@ class ModuleContainer extends React.Component {
         return (
             <div>
                 <ModuleComponent />
-                <BootstrapTable
+                <Table
                     columns={columns}
                     relativeUrl='module'
                     pageIndex= {this.state.pageIndex}
