@@ -27,31 +27,31 @@ const customTotal = (from, to, size) => (
 //远程分页
 const RemotePagination = ({ data, columns, loading, page, sizePerPage, totalSize, onTableChange }) => (
     <div>
-    <BootstrapTable
-        remote
-        loading={loading}
-        keyField="ID"
-        data={data}
-        columns={columns}
-        rowClasses={rowClasses}
-        pagination={paginationFactory({
-            page: page,
-            sizePerPage: sizePerPage,
-            totalSize: totalSize,
-            firstPageText: '<<',
-            prePageText: '<',
-            nextPageText: '>',
-            lastPageText: '>>',
-            nextPageTitle: '首页',
-            prePageTitle: '上一页',
-            firstPageTitle: '下一页',
-            lastPageTitle: '尾页',
-            showTotal: true,
-            paginationTotalRenderer: customTotal,
-        })}
-        onTableChange={onTableChange}
-        overlay={ overlayFactory({ spinner: true, background: 'rgba(192,192,192,0.3)' }) }
-    />
+        <BootstrapTable
+            remote
+            loading={loading}
+            keyField="ID"
+            data={data}
+            columns={columns}
+            rowClasses={rowClasses}
+            pagination={paginationFactory({
+                page: page,
+                sizePerPage: sizePerPage,
+                totalSize: totalSize,
+                firstPageText: '<<',
+                prePageText: '<',
+                nextPageText: '>',
+                lastPageText: '>>',
+                nextPageTitle: '首页',
+                prePageTitle: '上一页',
+                firstPageTitle: '下一页',
+                lastPageTitle: '尾页',
+                showTotal: true,
+                paginationTotalRenderer: customTotal,
+            })}
+            onTableChange={onTableChange}
+            overlay={ overlayFactory({ spinner: true, background: 'rgba(192,192,192,0.3)' }) }
+        />
     </div>
 );
 

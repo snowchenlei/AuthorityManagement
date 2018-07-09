@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
 using Cl.AuthorityManagement.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -63,7 +64,7 @@ namespace Cl.AuthorityManagement.Api
             }, ServiceLifetime.Scoped);
             #endregion
 
-            //services.AddAutoMapper();
+            services.AddAutoMapper();
 
             services.AddMvc(options =>
             {
